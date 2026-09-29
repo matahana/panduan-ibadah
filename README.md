@@ -1,8 +1,8 @@
-# Panduan Ibadah — Umrah, Haji, Jarak & Waktu, Lokasi Sejarah
+# Panduan Ibadah — Umrah, Haji, Jarak & Waktu, Lokasi Sejarah, Bahasa Arab
 
 **Situs:** https://matahana.github.io/panduan-ibadah/
 
-Empat panduan ibadah dalam satu halaman bertab, lengkap dengan ilustrasi dan berkas unduhan.
+Lima panduan ibadah dalam satu halaman bertab, lengkap dengan ilustrasi dan berkas unduhan.
 
 | Tab | Isi | Bab | Ilustrasi |
 |---|---|---:|---:|
@@ -10,9 +10,10 @@ Empat panduan ibadah dalam satu halaman bertab, lengkap dengan ilustrasi dan ber
 | [Haji](https://matahana.github.io/panduan-ibadah/#haji) | Syarat, rukun, wajib, sunnah, tiga jenis haji, Armuzna, tahallul dua tahap, dam | 14 | 9 |
 | [Jarak & Waktu](https://matahana.github.io/panduan-ibadah/#jarak) | Jarak dan durasi thawaf, sa'i, satu umrah, Armuzna, antar kota, situs | 8 | 7 |
 | [Lokasi Sejarah](https://matahana.github.io/panduan-ibadah/#sejarah) | Kisah Hajar–Zamzam, Ka'bah, hijrah, Masjid Nabawi, Badar–Uhud–Khandaq, situs dan adab ziarah | 13 | 10 |
+| [Bahasa Arab](https://matahana.github.io/panduan-ibadah/#arab) | Alfabet, tata bahasa dasar, kosakata dan dialog Arab–Indonesia–English (bandara, hotel, restoran, transportasi, kesehatan, belanja, darurat), doa manasik, indeks 291 kosakata | 19 | — |
 
 Setiap panduan tersedia sebagai **PDF** (siap cetak A4) dan **Word** melalui tombol *Unduh* di situs,
-atau langsung dari folder [`unduh/`](unduh/).
+atau langsung dari folder [`unduh/`](unduh/). Panduan *Bahasa Arab* tersedia sebagai PDF saja.
 
 ## Catatan penyusunan
 
@@ -26,6 +27,10 @@ atau langsung dari folder [`unduh/`](unduh/).
 - Peta bersifat **skematis dan tidak berskala**; hanya arah dan urutan yang dapat diandalkan.
 - Nomor hadits mengikuti penomoran yang lazim dipakai. Periksa kembali pada kitab asalnya sebelum
   dikutip secara akademik.
+- Panduan **Bahasa Arab** memakai transliterasi sederhana (ā/ī/ū vokal panjang; ḥ/ṣ/ḍ/ṭ/ẓ konsonan
+  tebal; kh/gh/sh/th/dh gabungan huruf; tanda ' untuk hamzah dan 'ain), disertai arti Indonesia dan
+  English pada setiap entri. Lafal doa manasik mengikuti yang umum dipakai buku manasik resmi
+  Kemenag RI; bukan pengganti pembelajaran bahasa Arab formal.
 
 ## Penafian
 
