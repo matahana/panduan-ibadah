@@ -165,6 +165,28 @@ iframe.aktif{display:block}
     elMain.insertBefore(f, elMuat);
   });
 
+  /* Statistik pengunjung (GoatCounter: tanpa cookie, tanpa data pribadi).
+     Isi GC_KODE dengan kode situs dari goatcounter.com, mis. 'panduan-ibadah'
+     (untuk panduan-ibadah.goatcounter.com). Kosong = tidak ada pelacakan. */
+  var GC_KODE = '';
+  var gcSiap = false;
+  function hitung(path, judul, peristiwa){
+    if(!GC_KODE || location.protocol.indexOf('http') !== 0) return;
+    if(!gcSiap){
+      gcSiap = true;
+      window.goatcounter = {no_onload:true, endpoint:'https://'+GC_KODE+'.goatcounter.com/count'};
+      var s = document.createElement('script'); s.async = true; s.src = 'https://gc.zgo.at/count.js';
+      document.head.appendChild(s);
+    }
+    var kirim = function(n){
+      if(window.goatcounter && window.goatcounter.count){
+        window.goatcounter.count({path:path, title:judul, event:!!peristiwa});
+      } else if(n < 40){ setTimeout(function(){ kirim(n+1) }, 250) }
+    };
+    kirim(0);
+  }
+  var tabTerakhir = null;
+
   function pilih(id, dariPengguna){
     if(urut.indexOf(id) < 0) id = urut[0];
     aktif = id;
@@ -186,6 +208,7 @@ iframe.aktif{display:block}
     }
     var t = tabs[urut.indexOf(id)];
     document.title = t.label + ' \u2014 Panduan Ibadah Lengkap';
+    if(tabTerakhir !== id){ tabTerakhir = id; hitung('/'+id, t.label, false) }
     try{ history.replaceState(null, '', '#'+id) }catch(e){}
     simpan('tab', id);
     var bt = document.getElementById('t-'+id);
@@ -199,6 +222,10 @@ iframe.aktif{display:block}
   document.getElementById('btnCetak').addEventListener('click', function(){
     var f = document.getElementById('f-'+aktif);
     try{ f.contentWindow.focus(); f.contentWindow.print() }catch(e){ window.print() }
+  });
+  document.addEventListener('click', function(e){
+    var a = e.target.closest && e.target.closest('.unduh a[href^="unduh/"]');
+    if(a) hitung('unduh/'+a.getAttribute('href').split('/').pop(), 'Unduh '+a.textContent.trim(), true);
   });
   window.addEventListener('hashchange', function(){ var h = location.hash.replace('#',''); if(h && h!==aktif) pilih(h, true) });
 
