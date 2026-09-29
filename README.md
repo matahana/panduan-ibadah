@@ -1,8 +1,9 @@
-# Panduan Ibadah — Umrah, Haji, Jarak & Waktu, Lokasi Sejarah, Bahasa Arab
+# Panduan Ibadah — Umrah, Haji, Jarak & Waktu, Lokasi Sejarah, Bahasa Arab, Belajar Qur'an
 
 **Situs:** https://matahana.github.io/panduan-ibadah/
 
-Lima panduan ibadah dalam satu halaman bertab, lengkap dengan ilustrasi dan berkas unduhan.
+Tujuh panduan dalam satu halaman bertab — lima panduan ibadah dan dua panduan belajar bahasa
+Arab/Al-Qur'an — lengkap dengan ilustrasi dan berkas unduhan.
 
 | Tab | Isi | Bab | Ilustrasi |
 |---|---|---:|---:|
@@ -11,9 +12,12 @@ Lima panduan ibadah dalam satu halaman bertab, lengkap dengan ilustrasi dan berk
 | [Jarak & Waktu](https://matahana.github.io/panduan-ibadah/#jarak) | Jarak dan durasi thawaf, sa'i, satu umrah, Armuzna, antar kota, situs | 8 | 7 |
 | [Lokasi Sejarah](https://matahana.github.io/panduan-ibadah/#sejarah) | Kisah Hajar–Zamzam, Ka'bah, hijrah, Masjid Nabawi, Badar–Uhud–Khandaq, situs dan adab ziarah | 13 | 10 |
 | [Bahasa Arab](https://matahana.github.io/panduan-ibadah/#arab) | Alfabet, tata bahasa dasar, kosakata dan dialog Arab–Indonesia–English (bandara, hotel, restoran, transportasi, kesehatan, belanja, darurat), doa manasik, indeks 291 kosakata | 19 | — |
+| [Bahasa Arab Dasar](https://matahana.github.io/panduan-ibadah/#bahasa-arab-dasar) | Alfabet dan bentuk huruf menurut posisi (lepas/awal/tengah/akhir), peringkat huruf tersering di Al-Qur'an, jenis kata dan pola kalimat Qur'ani, 6 tahap belajar dari huruf sampai makna ayat dengan rujukan surat/ayat, rencana belajar 12 bulan | 15 | 2 |
+| [Kosakata Pareto](https://matahana.github.io/panduan-ibadah/#kosakata-pareto) | 750 kata tersering di Al-Qur'an (250 kata kerja + 500 kata non-kerja) yang mencakup ≈81% teks, berikut akar kata, kelas kata, dan arti — tabel dapat dicari langsung di situs | 6 | 1 |
 
 Setiap panduan tersedia sebagai **PDF** (siap cetak A4) dan **Word** melalui tombol *Unduh* di situs,
-atau langsung dari folder [`unduh/`](unduh/). Panduan *Bahasa Arab* tersedia sebagai PDF saja.
+atau langsung dari folder [`unduh/`](unduh/). Panduan *Bahasa Arab*, *Bahasa Arab Dasar*, dan
+*Kosakata Pareto* tersedia sebagai PDF saja.
 
 ## Catatan penyusunan
 
@@ -31,6 +35,11 @@ atau langsung dari folder [`unduh/`](unduh/). Panduan *Bahasa Arab* tersedia seb
   tebal; kh/gh/sh/th/dh gabungan huruf; tanda ' untuk hamzah dan 'ain), disertai arti Indonesia dan
   English pada setiap entri. Lafal doa manasik mengikuti yang umum dipakai buku manasik resmi
   Kemenag RI; bukan pengganti pembelajaran bahasa Arab formal.
+- Panduan **Bahasa Arab Dasar** dan **Kosakata Pareto** memakai ejaan Arab yang disederhanakan
+  (alif polos, tanpa tanda madda/alif khanjariyah) agar konsisten dengan gaya penulisan di seluruh
+  situs ini; peringkat huruf dan daftar kosakata dihitung dari data frekuensi *Quranic Arabic
+  Corpus*. Keduanya adalah materi belajar bahasa Arab/Al-Qur'an umum, bukan bagian dari rangkaian
+  panduan manasik, dan disertakan di situs ini sebagai pelengkap.
 
 ## Penafian
 
