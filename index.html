@@ -170,8 +170,16 @@ iframe.aktif{display:block}
      (untuk panduan-ibadah.goatcounter.com). Kosong = tidak ada pelacakan. */
   var GC_KODE = 'panduan-ibadah';
   var gcSiap = false;
+  /* Abaikan kunjungan pemilik: buka  .../panduan-ibadah/?statistik=off  sekali di tiap
+     peramban/perangkat untuk berhenti dihitung, dan  ?statistik=on  untuk menghitung lagi. */
+  try{
+    var qs = /[?&]statistik=(on|off)\b/.exec(location.search);
+    if(qs){ if(qs[1]==='off') localStorage.setItem('skipgc','t'); else localStorage.removeItem('skipgc');
+      history.replaceState(null,'',location.pathname+location.hash); }
+  }catch(e){}
+  function diabaikan(){ try{ return localStorage.getItem('skipgc')==='t' }catch(e){ return false } }
   function hitung(path, judul, peristiwa){
-    if(!GC_KODE || location.protocol.indexOf('http') !== 0) return;
+    if(!GC_KODE || location.protocol.indexOf('http') !== 0 || diabaikan()) return;
     if(!gcSiap){
       gcSiap = true;
       window.goatcounter = {no_onload:true, endpoint:'https://'+GC_KODE+'.goatcounter.com/count'};
