@@ -1,0 +1,3333 @@
+{
+ "schema": "madinah-explorer/content@1",
+ "version": "0.1.0-draf",
+ "data_date": "2026-09-30",
+ "status": "draf",
+ "nabawi": {
+  "lat": 24.468647,
+  "lon": 39.611172
+ },
+ "sites": [
+  {
+   "id": "S01",
+   "priority": "P0",
+   "type": "masjid",
+   "names": {
+    "id": "Masjid Nabawi",
+    "ar": "المسجد النبوي",
+    "en": "Prophet's Mosque"
+   },
+   "translit": [
+    "nabawi",
+    "nabawiy",
+    "masjid nabawi",
+    "prophets mosque",
+    "haram madinah"
+   ],
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     39.611172,
+     24.468647
+    ]
+   },
+   "rep_method": "osm_way_centroid",
+   "pack": "inti",
+   "distance_from_nabawi_m": 0,
+   "position": {
+    "label": "bersumber",
+    "spread_m": 49,
+    "sources": [
+     {
+      "name": "Wikipedia EN",
+      "url": "https://en.wikipedia.org/wiki/Prophet%27s_Mosque",
+      "lat": 24.46833,
+      "lon": 39.61083
+     },
+     {
+      "name": "OSM way 461699097",
+      "url": "https://mapcarta.com/W461699097",
+      "lat": 24.468647,
+      "lon": 39.611172
+     }
+    ]
+   },
+   "history": "kuat",
+   "history_note": null,
+   "dispute": "tidak",
+   "dispute_note": null,
+   "model3d": "modul",
+   "module": "nabawi",
+   "summary": {
+    "id": "Masjid Nabi ﷺ di pusat kota. Interior, Raudhah, dan sekitarnya dibahas rinci di modul Nabawi 3D Explorer.",
+    "ar": "مسجد النبي ﷺ في قلب المدينة. التفاصيل الداخلية والروضة وما حولها في وحدة «نبوي ثلاثي الأبعاد».",
+    "en": "The Prophet's Mosque ﷺ at the heart of the city. The interior, the Rawdah and surroundings are covered in the Nabawi 3D Explorer module."
+   },
+   "narration": {
+    "id": "Anda berada di kawasan Masjid Nabawi. Rincian masjid tersedia di modul Nabawi 3D Explorer.",
+    "ar": "أنت في منطقة المسجد النبوي. تفاصيل المسجد في وحدة نبوي ثلاثي الأبعاد.",
+    "en": "You are in the area of the Prophet's Mosque. Mosque details are in the Nabawi 3D Explorer module."
+   },
+   "rulings": [
+    {
+     "activity": {
+      "id": "Bepergian dengan niat shalat di Masjid Nabawi",
+      "ar": "شدّ الرحال للصلاة في المسجد النبوي",
+      "en": "Travelling to pray in the Prophet's Mosque"
+     },
+     "status": "sunnah",
+     "evidence": [
+      "EV-BUKHARI-1189",
+      "EV-MUSLIM-1397"
+     ],
+     "note": null
+    }
+   ],
+   "dynamic_ids": [],
+   "geofence": {
+    "radius_m": 150,
+    "mute_inside": true
+   },
+   "line_name": null,
+   "official_url": null,
+   "wiki_url": null,
+   "status": "draf",
+   "validation": [
+    {
+     "role": "sejarah",
+     "reviewer": null,
+     "decision": null,
+     "date": null
+    },
+    {
+     "role": "geospasial",
+     "reviewer": null,
+     "decision": null,
+     "date": null
+    },
+    {
+     "role": "syariah",
+     "reviewer": null,
+     "decision": null,
+     "date": null
+    }
+   ]
+  },
+  {
+   "id": "S02",
+   "priority": "P0",
+   "type": "area_masjid",
+   "names": {
+    "id": "Raudhah",
+    "ar": "الروضة",
+    "en": "Rawdah"
+   },
+   "translit": [
+    "raudhah",
+    "raudah",
+    "rawdah",
+    "rawda",
+    "roudhoh"
+   ],
+   "geometry": null,
+   "rep_method": null,
+   "pack": null,
+   "distance_from_nabawi_m": null,
+   "position": {
+    "label": "modul",
+    "spread_m": null,
+    "sources": []
+   },
+   "history": "kuat",
+   "history_note": null,
+   "dispute": "tidak",
+   "dispute_note": null,
+   "model3d": "modul",
+   "module": "nabawi",
+   "summary": {
+    "id": "Area di dalam Masjid Nabawi. Rincian dan rujukannya ada di modul Nabawi 3D Explorer.",
+    "ar": "بقعة داخل المسجد النبوي. التفاصيل والمراجع في وحدة «نبوي ثلاثي الأبعاد».",
+    "en": "An area inside the Prophet's Mosque. Details and references are in the Nabawi 3D Explorer module."
+   },
+   "narration": null,
+   "rulings": [],
+   "dynamic_ids": [],
+   "geofence": null,
+   "line_name": null,
+   "official_url": null,
+   "wiki_url": null,
+   "status": "draf",
+   "validation": [
+    {
+     "role": "sejarah",
+     "reviewer": null,
+     "decision": null,
+     "date": null
+    },
+    {
+     "role": "geospasial",
+     "reviewer": null,
+     "decision": null,
+     "date": null
+    },
+    {
+     "role": "syariah",
+     "reviewer": null,
+     "decision": null,
+     "date": null
+    }
+   ]
+  },
+  {
+   "id": "S03",
+   "priority": "P0",
+   "type": "makam",
+   "names": {
+    "id": "Baqi'",
+    "ar": "بقيع الغرقد",
+    "en": "Al-Baqi' Cemetery"
+   },
+   "translit": [
+    "baqi",
+    "baqie",
+    "baki",
+    "bakie",
+    "baqi gharqad",
+    "jannatul baqi"
+   ],
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     39.616325,
+     24.466672
+    ]
+   },
+   "rep_method": "osm_way_centroid",
+   "pack": "inti",
+   "distance_from_nabawi_m": 566,
+   "position": {
+    "label": "perkiraan",
+    "spread_m": null,
+    "sources": [
+     {
+      "name": "OSM way 65541621",
+      "url": "https://mapcarta.com/W65541621",
+      "lat": 24.466672,
+      "lon": 39.616325
+     }
+    ],
+    "note": {
+     "id": "1 sumber di aplikasi ini; verifikasi di modul Nabawi.",
+     "ar": "مصدر واحد هنا؛ التحقق في وحدة نبوي.",
+     "en": "One source here; verified in the Nabawi module."
+    }
+   },
+   "history": "kuat",
+   "history_note": null,
+   "dispute": "tidak",
+   "dispute_note": null,
+   "model3d": "modul",
+   "module": "nabawi",
+   "summary": {
+    "id": "Pemakaman utama Madinah di timur Masjid Nabawi. Nabi ﷺ menziarahinya serta mengucapkan salam dan doa bagi penghuninya (Muslim 974).",
+    "ar": "المقبرة الرئيسة في المدينة شرقي المسجد النبوي. زارها النبي ﷺ وسلّم على أهلها ودعا لهم (مسلم 974).",
+    "en": "Madinah's main cemetery, east of the Prophet's Mosque. The Prophet ﷺ visited it, greeting and praying for those buried there (Muslim 974)."
+   },
+   "narration": {
+    "id": "Anda mendekati Pemakaman Baqi'. Ziarah kubur dilakukan dengan salam dan doa.",
+    "ar": "أنت تقترب من مقبرة البقيع. تكون زيارة القبور بالسلام والدعاء.",
+    "en": "You are approaching al-Baqi' Cemetery. Graves are visited with greetings and prayer."
+   },
+   "rulings": [
+    {
+     "activity": {
+      "id": "Ziarah kubur dengan salam dan doa",
+      "ar": "زيارة القبور بالسلام والدعاء",
+      "en": "Visiting graves with greetings and prayer"
+     },
+     "status": "sunnah",
+     "evidence": [
+      "EV-MUSLIM-977",
+      "EV-MUSLIM-974"
+     ],
+     "note": {
+      "id": "Sunnah bagi laki-laki; hukum bagi perempuan diperselisihkan, ditampilkan netral.",
+      "ar": "سنة للرجال؛ وحكمها للنساء مختلف فيه، ويُعرض بحياد.",
+      "en": "Sunnah for men; the ruling for women is disputed and shown neutrally."
+     }
+    },
+    {
+     "activity": {
+      "id": "Mengusap dinding, mengambil tanah/batu, mengikat kain, meminta kepada penghuni kubur",
+      "ar": "التمسح بالجدران، وأخذ التراب أو الحجارة، وربط الخِرَق، وسؤال أصحاب القبور",
+      "en": "Rubbing walls, taking soil or stones, tying cloth, asking the dead"
+     },
+     "status": "tidak_berdasar",
+     "evidence": [],
+     "note": {
+      "id": "Tidak berdasar dalil; sebagian terlarang. Dalil dan redaksi diisi peninjau syariah.",
+      "ar": "لا دليل عليها، وبعضها محرم. الأدلة والصياغة يحددها المراجع الشرعي.",
+      "en": "No textual basis; some are forbidden. Evidence and wording to be set by the sharia reviewer."
+     }
+    }
+   ],
+   "dynamic_ids": [],
+   "geofence": {
+    "radius_m": 120,
+    "mute_inside": true
+   },
+   "line_name": null,
+   "official_url": null,
+   "wiki_url": null,
+   "status": "draf",
+   "validation": [
+    {
+     "role": "sejarah",
+     "reviewer": null,
+     "decision": null,
+     "date": null
+    },
+    {
+     "role": "geospasial",
+     "reviewer": null,
+     "decision": null,
+     "date": null
+    },
+    {
+     "role": "syariah",
+     "reviewer": null,
+     "decision": null,
+     "date": null
+    }
+   ]
+  },
+  {
+   "id": "S04",
+   "priority": "P0",
+   "type": "masjid",
+   "names": {
+    "id": "Masjid Quba",
+    "ar": "مسجد قباء",
+    "en": "Quba Mosque"
+   },
+   "translit": [
+    "quba",
+    "qubaa",
+    "kuba",
+    "koba",
+    "qoba",
+    "quba mosque"
+   ],
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     39.617263,
+     24.439597
+    ]
+   },
+   "rep_method": "osm_node",
+   "pack": "selatan",
+   "distance_from_nabawi_m": 3289,
+   "position": {
+    "label": "bersumber",
+    "spread_m": 48,
+    "sources": [
+     {
+      "name": "OSM node 12407794803",
+      "url": "https://mapcarta.com/N12407794803",
+      "lat": 24.439597,
+      "lon": 39.617263
+     },
+     {
+      "name": "Wikipedia EN",
+      "url": "https://en.wikipedia.org/wiki/Quba_Mosque",
+      "lat": 24.43917,
+      "lon": 39.61722
+     }
+    ],
+    "note": {
+     "id": "WikiShia (11 m) tidak dihitung independen.",
+     "ar": "WikiShia (11 م) لا يُعدّ مصدرًا مستقلًا.",
+     "en": "WikiShia (11 m) not counted as independent."
+    }
+   },
+   "history": "kuat",
+   "history_note": null,
+   "dispute": "tidak",
+   "dispute_note": null,
+   "model3d": "perlu_dibuat",
+   "module": null,
+   "summary": {
+    "id": "Masjid di Quba, tempat Nabi ﷺ singgah ketika tiba dalam Hijrah (E01). Beliau biasa mendatanginya setiap Sabtu, berjalan kaki atau berkendara (Bukhari 1193; Muslim 1399).",
+    "ar": "مسجد في قباء حيث نزل النبي ﷺ عند قدومه مهاجرًا. وكان يأتيه كل سبت ماشيًا وراكبًا (البخاري 1193؛ مسلم 1399).",
+    "en": "The mosque at Quba, where the Prophet ﷺ stopped on arriving during the Hijrah (E01). He used to come to it every Saturday, walking or riding (Bukhari 1193; Muslim 1399)."
+   },
+   "narration": {
+    "id": "Anda mendekati Masjid Quba. Nabi shallallahu 'alaihi wa sallam biasa mengunjunginya setiap hari Sabtu, berjalan kaki atau berkendara.",
+    "ar": "أنت تقترب من مسجد قباء. كان النبي صلى الله عليه وسلم يأتيه كل سبت ماشيًا وراكبًا.",
+    "en": "You are approaching Quba Mosque. The Prophet, peace be upon him, used to visit it every Saturday, walking or riding."
+   },
+   "rulings": [
+    {
+     "activity": {
+      "id": "Mendatangi Masjid Quba dan shalat di sana",
+      "ar": "إتيان مسجد قباء والصلاة فيه",
+      "en": "Coming to Quba Mosque and praying there"
+     },
+     "status": "sunnah",
+     "evidence": [
+      "EV-BUKHARI-1193",
+      "EV-BUKHARI-1194",
+      "EV-MUSLIM-1399",
+      "EV-IBNMAJAH-1412"
+     ],
+     "note": {
+      "id": "Pahala seperti umrah bagi yang bersuci di rumahnya lalu shalat di Quba: Ibnu Majah 1412 (hasan menurut Darussalam; sahih menurut al-Albani).",
+      "ar": "له أجر عمرة لمن تطهر في بيته ثم صلى في قباء: ابن ماجه 1412 (حسن عند دار السلام، صحيح عند الألباني).",
+      "en": "Reward like an umrah for one who purifies at home then prays at Quba: Ibn Majah 1412 (hasan per Darussalam; sahih per al-Albani)."
+     }
+    },
+    {
+     "activity": {
+      "id": "Mengusap dinding, mengambil tanah/batu, mengikat kain, meminta kepada penghuni kubur",
+      "ar": "التمسح بالجدران، وأخذ التراب أو الحجارة، وربط الخِرَق، وسؤال أصحاب القبور",
+      "en": "Rubbing walls, taking soil or stones, tying cloth, asking the dead"
+     },
+     "status": "tidak_berdasar",
+     "evidence": [],
+     "note": {
+      "id": "Tidak berdasar dalil; sebagian terlarang. Dalil dan redaksi diisi peninjau syariah.",
+      "ar": "لا دليل عليها، وبعضها محرم. الأدلة والصياغة يحددها المراجع الشرعي.",
+      "en": "No textual basis; some are forbidden. Evidence and wording to be set by the sharia reviewer."
+     }
+    }
+   ],
+   "dynamic_ids": [
+    "DI-S04-BUS"
+   ],
+   "geofence": {
+    "radius_m": 150,
+    "mute_inside": true
+   },
+   "line_name": null,
+   "official_url": null,
+   "wiki_url": null,
+   "status": "draf",
+   "validation": [
+    {
+     "role": "sejarah",
+     "reviewer": null,
+     "decision": null,
+     "date": null
+    },
+    {
+     "role": "geospasial",
+     "reviewer": null,
+     "decision": null,
+     "date": null
+    },
+    {
+     "role": "syariah",
+     "reviewer": null,
+     "decision": null,
+     "date": null
+    }
+   ]
+  },
+  {
+   "id": "S05",
+   "priority": "P2",
+   "type": "sumur",
+   "names": {
+    "id": "Sumur Aris (Bi'r al-Khatam)",
+    "ar": "بئر أريس",
+    "en": "Well of Aris"
+   },
+   "translit": [
+    "aris",
+    "arees",
+    "bir aris",
+    "khatam",
+    "sumur aris",
+    "bir al khatam"
+   ],
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     39.616532,
+     24.438911
+    ]
+   },
+   "rep_method": "osm_node_marker",
+   "pack": "selatan",
+   "distance_from_nabawi_m": 3351,
+   "position": {
+    "label": "perkiraan",
+    "spread_m": null,
+    "sources": [
+     {
+      "name": "OSM node 7012655085",
+      "url": "https://mapcarta.com/N7012655085",
+      "lat": 24.438911,
+      "lon": 39.616532
+     }
+    ],
+    "note": {
+     "id": "Berita menyebut ±38 m barat dinding masjid dan sumur tertimbun.",
+     "ar": "تذكر الأخبار أنها على نحو 38 م غرب جدار المسجد وأنها رُدمت.",
+     "en": "Reports place it about 38 m west of the mosque wall, now buried."
+    }
+   },
+   "history": "kuat",
+   "history_note": null,
+   "dispute": "ya",
+   "dispute_note": {
+    "id": "Fisik sumur tidak tampak.",
+    "ar": "البئر غير ظاهرة.",
+    "en": "The well is no longer visible."
+   },
+   "model3d": "tidak",
+   "module": null,
+   "summary": {
+    "id": "Sumur dalam hadis Abu Musa: Nabi ﷺ duduk di tepinya, lalu Abu Bakr, Umar, dan Utsman datang dan masing-masing diberi kabar gembira surga (Bukhari 3674). Menurut Al-Watan dan Okaz, sumur ini tertimbun perluasan Masjid Quba, sehingga penanda di peta adalah perkiraan.",
+    "ar": "البئر المذكورة في حديث أبي موسى: جلس النبي ﷺ على حافتها، ثم جاء أبو بكر وعمر وعثمان فبُشّر كلٌّ منهم بالجنة (البخاري 3674). وبحسب صحيفتَي الوطن وعكاظ رُدمت البئر ضمن توسعة مسجد قباء، فالعلامة على الخريطة تقريبية.",
+    "en": "The well in Abu Musa's hadith: the Prophet ﷺ sat at its edge, then Abu Bakr, Umar and Uthman came and each was given glad tidings of Paradise (Bukhari 3674). According to Al-Watan and Okaz the well is buried under the Quba expansion, so the map marker is approximate."
+   },
+   "narration": {
+    "id": "Di dekat Anda terdapat penanda perkiraan Sumur Aris, yang kini tertimbun perluasan Masjid Quba.",
+    "ar": "بالقرب منك علامة تقريبية لبئر أريس التي رُدمت ضمن توسعة مسجد قباء.",
+    "en": "Nearby is an approximate marker for the Well of Aris, now buried under the Quba expansion."
+   },
+   "rulings": [],
+   "dynamic_ids": [
+    "DI-S05-LOKASI"
+   ],
+   "geofence": null,
+   "line_name": null,
+   "official_url": null,
+   "wiki_url": null,
+   "status": "draf",
+   "validation": [
+    {
+     "role": "sejarah",
+     "reviewer": null,
+     "decision": null,
+     "date": null
+    },
+    {
+     "role": "geospasial",
+     "reviewer": null,
+     "decision": null,
+     "date": null
+    },
+    {
+     "role": "syariah",
+     "reviewer": null,
+     "decision": null,
+     "date": null
+    }
+   ]
+  },
+  {
+   "id": "S06",
+   "priority": "P0",
+   "type": "masjid",
+   "names": {
+    "id": "Masjid Qiblatain",
+    "ar": "مسجد القبلتين",
+    "en": "Masjid al-Qiblatayn"
+   },
+   "translit": [
+    "qiblatain",
+    "qiblatayn",
+    "kiblatain",
+    "qiblatein",
+    "dua kiblat"
+   ],
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     39.578811,
+     24.484157
+    ]
+   },
+   "rep_method": "osm_way_centroid",
+   "pack": "barat",
+   "distance_from_nabawi_m": 3701,
+   "position": {
+    "label": "bersumber",
+    "spread_m": 13,
+    "sources": [
+     {
+      "name": "OSM way 66510098",
+      "url": "https://mapcarta.com/29219122",
+      "lat": 24.484157,
+      "lon": 39.578811
+     },
+     {
+      "name": "Wikipedia EN",
+      "url": "https://en.wikipedia.org/wiki/Masjid_al-Qiblatayn",
+      "lat": 24.4840861,
+      "lon": 39.5789083
+     }
+    ]
+   },
+   "history": "kuat",
+   "history_note": {
+    "id": "Peristiwa kuat; penetapan masjid ini masyhur, rinciannya diperselisihkan.",
+    "ar": "الحادثة ثابتة؛ ونسبتها إلى هذا المسجد مشهورة وتفاصيلها مختلف فيها.",
+    "en": "The event is firm; linking it to this mosque is well known, details disputed."
+   },
+   "dispute": "sebagian",
+   "dispute_note": null,
+   "model3d": "perlu_dibuat",
+   "module": null,
+   "summary": {
+    "id": "Dikaitkan dengan perubahan kiblat dari Baitul Maqdis ke Ka'bah (QS al-Baqarah 142–150; Bukhari 40, 4486). Penetapan masjid ini sebagai tempat peristiwa masyhur, sedangkan rinciannya diperselisihkan.",
+    "ar": "يرتبط بتحويل القبلة من بيت المقدس إلى الكعبة (البقرة 142–150؛ البخاري 40، 4486). ونسبة الحادثة إلى هذا المسجد مشهورة، وتفاصيلها مختلف فيها.",
+    "en": "Associated with the change of qibla from Jerusalem to the Kaaba (Qur’an 2:142–150; Bukhari 40, 4486). Linking the event to this mosque is well known, while its details are disputed."
+   },
+   "narration": {
+    "id": "Anda mendekati Masjid Qiblatain, yang dikaitkan dengan peristiwa perubahan kiblat ke Ka'bah.",
+    "ar": "أنت تقترب من مسجد القبلتين، المرتبط بحادثة تحويل القبلة إلى الكعبة.",
+    "en": "You are approaching Masjid al-Qiblatayn, associated with the change of the qibla to the Kaaba."
+   },
+   "rulings": [
+    {
+     "activity": {
+      "id": "Berkunjung untuk belajar sirah",
+      "ar": "الزيارة للتعرّف على السيرة",
+      "en": "Visiting to learn the sirah"
+     },
+     "status": "mubah",
+     "evidence": [],
+     "note": {
+      "id": "Tanpa keutamaan khusus tempat; adab masuk masjid berlaku umum.",
+      "ar": "لا فضل خاص للمكان؛ آداب دخول المسجد عامة.",
+      "en": "No special merit for the place; general mosque etiquette applies."
+     }
+    },
+    {
+     "activity": {
+      "id": "Mengusap dinding, mengambil tanah/batu, mengikat kain, meminta kepada penghuni kubur",
+      "ar": "التمسح بالجدران، وأخذ التراب أو الحجارة، وربط الخِرَق، وسؤال أصحاب القبور",
+      "en": "Rubbing walls, taking soil or stones, tying cloth, asking the dead"
+     },
+     "status": "tidak_berdasar",
+     "evidence": [],
+     "note": {
+      "id": "Tidak berdasar dalil; sebagian terlarang. Dalil dan redaksi diisi peninjau syariah.",
+      "ar": "لا دليل عليها، وبعضها محرم. الأدلة والصياغة يحددها المراجع الشرعي.",
+      "en": "No textual basis; some are forbidden. Evidence and wording to be set by the sharia reviewer."
+     }
+    }
+   ],
+   "dynamic_ids": [
+    "DI-S06-JAM"
+   ],
+   "geofence": {
+    "radius_m": 120,
+    "mute_inside": true
+   },
+   "line_name": null,
+   "official_url": null,
+   "wiki_url": null,
+   "status": "draf",
+   "validation": [
+    {
+     "role": "sejarah",
+     "reviewer": null,
+     "decision": null,
+     "date": null
+    },
+    {
+     "role": "geospasial",
+     "reviewer": null,
+     "decision": null,
+     "date": null
+    },
+    {
+     "role": "syariah",
+     "reviewer": null,
+     "decision": null,
+     "date": null
+    }
+   ]
+  },
+  {
+   "id": "S07",
+   "priority": "P1",
+   "type": "masjid",
+   "names": {
+    "id": "Masjid Jumu'ah",
+    "ar": "مسجد الجمعة",
+    "en": "Al-Jumu'ah Mosque"
+   },
+   "translit": [
+    "jumuah",
+    "jumah",
+    "jumat",
+    "jum at",
+    "jummah",
+    "juma"
+   ],
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     39.615333,
+     24.4455
+    ]
+   },
+   "rep_method": "wikipedia_label",
+   "pack": "selatan",
+   "distance_from_nabawi_m": 2608,
+   "position": {
+    "label": "perkiraan",
+    "spread_m": 6,
+    "sources": [
+     {
+      "name": "Wikipedia EN",
+      "url": "https://en.wikipedia.org/wiki/Al_Jum%27ah_Mosque",
+      "lat": 24.4455,
+      "lon": 39.615333
+     },
+     {
+      "name": "Wikipedia AR",
+      "url": "https://ar.wikipedia.org/wiki/%D9%85%D8%B3%D8%AC%D8%AF_%D8%A7%D9%84%D8%AC%D9%85%D8%B9%D8%A9",
+      "lat": 24.4454889,
+      "lon": 39.6152778
+     }
+    ],
+    "note": {
+     "id": "Belum lulus: dua sumber satu rantai (Wikipedia). Perlu OSM atau survei.",
+     "ar": "لم يستوفِ القاعدة: المصدران من سلسلة واحدة (ويكيبيديا).",
+     "en": "Not passed: both sources are one chain (Wikipedia)."
+    }
+   },
+   "history": "masyhur",
+   "history_note": {
+    "id": "Masyhur; tanggal diperselisihkan.",
+    "ar": "مشهور؛ والتاريخ مختلف فيه.",
+    "en": "Well known; the date is disputed."
+   },
+   "dispute": "tidak",
+   "dispute_note": null,
+   "model3d": "perlu_dibuat",
+   "module": null,
+   "summary": {
+    "id": "Dikenal sebagai tempat Jumat pertama Nabi ﷺ di Madinah, di Wadi Ranuna (masyhur; tanggal lihat E02). Posisi di peta belum lulus aturan dua sumber.",
+    "ar": "يُعرف بأنه موضع أول جمعة صلاها النبي ﷺ في المدينة، في وادي رانوناء (مشهور؛ التاريخ في E02). موقعه على الخريطة لم يستوفِ قاعدة المصدرين.",
+    "en": "Known as the site of the Prophet's ﷺ first Friday prayer in Madinah, in Wadi Ranuna (well known; date in E02). Its map position has not yet passed the two-source rule."
+   },
+   "narration": {
+    "id": "Anda mendekati Masjid Jumu'ah, yang dikenal sebagai tempat Jumat pertama Nabi di Madinah.",
+    "ar": "أنت تقترب من مسجد الجمعة، المعروف بأنه موضع أول جمعة صلاها النبي في المدينة.",
+    "en": "You are approaching al-Jumu'ah Mosque, known as the site of the Prophet's first Friday prayer in Madinah."
+   },
+   "rulings": [
+    {
+     "activity": {
+      "id": "Berkunjung untuk belajar sirah",
+      "ar": "الزيارة للتعرّف على السيرة",
+      "en": "Visiting to learn the sirah"
+     },
+     "status": "mubah",
+     "evidence": [],
+     "note": {
+      "id": "Tanpa keutamaan khusus tempat; adab masuk masjid berlaku umum.",
+      "ar": "لا فضل خاص للمكان؛ آداب دخول المسجد عامة.",
+      "en": "No special merit for the place; general mosque etiquette applies."
+     }
+    },
+    {
+     "activity": {
+      "id": "Mengusap dinding, mengambil tanah/batu, mengikat kain, meminta kepada penghuni kubur",
+      "ar": "التمسح بالجدران، وأخذ التراب أو الحجارة، وربط الخِرَق، وسؤال أصحاب القبور",
+      "en": "Rubbing walls, taking soil or stones, tying cloth, asking the dead"
+     },
+     "status": "tidak_berdasar",
+     "evidence": [],
+     "note": {
+      "id": "Tidak berdasar dalil; sebagian terlarang. Dalil dan redaksi diisi peninjau syariah.",
+      "ar": "لا دليل عليها، وبعضها محرم. الأدلة والصياغة يحددها المراجع الشرعي.",
+      "en": "No textual basis; some are forbidden. Evidence and wording to be set by the sharia reviewer."
+     }
+    }
+   ],
+   "dynamic_ids": [],
+   "geofence": {
+    "radius_m": 100,
+    "mute_inside": true
+   },
+   "line_name": null,
+   "official_url": null,
+   "wiki_url": null,
+   "status": "draf",
+   "validation": [
+    {
+     "role": "sejarah",
+     "reviewer": null,
+     "decision": null,
+     "date": null
+    },
+    {
+     "role": "geospasial",
+     "reviewer": null,
+     "decision": null,
+     "date": null
+    },
+    {
+     "role": "syariah",
+     "reviewer": null,
+     "decision": null,
+     "date": null
+    }
+   ]
+  },
+  {
+   "id": "S08",
+   "priority": "P0",
+   "type": "kompleks_masjid",
+   "names": {
+    "id": "Masjid al-Fath & Sab'ah Masajid",
+    "ar": "مسجد الفتح والمساجد السبعة",
+    "en": "Al-Fath Mosque & Seven Mosques"
+   },
+   "translit": [
+    "sabah masajid",
+    "sab ah masajid",
+    "tujuh masjid",
+    "seven mosques",
+    "al fath",
+    "fath",
+    "khandaq",
+    "khandak",
+    "masjid fath"
+   ],
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     39.595105,
+     24.4771
+    ]
+   },
+   "rep_method": "osm_area_centroid",
+   "pack": "inti",
+   "distance_from_nabawi_m": 1878,
+   "position": {
+    "label": "bersumber",
+    "spread_m": 93,
+    "sources": [
+     {
+      "name": "OSM way 1544963301 (area)",
+      "url": "https://mapcarta.com/W1544963301",
+      "lat": 24.4771,
+      "lon": 39.595105
+     },
+     {
+      "name": "Wikipedia EN (titik Masjid Khandaq)",
+      "url": "https://en.wikipedia.org/wiki/The_Seven_Mosques",
+      "lat": 24.476833,
+      "lon": 39.595972
+     }
+    ],
+    "note": {
+     "id": "Kompleks lolos ambang area 150 m; titik Masjid al-Fath (OSM way 1536783060, 100 m dari sentroid) masih 1 sumber.",
+     "ar": "المجمع ضمن حد 150 م للمساحات؛ ونقطة مسجد الفتح من مصدر واحد.",
+     "en": "The complex passes the 150 m area threshold; the al-Fath point is still one source."
+    }
+   },
+   "history": "kuat",
+   "history_note": {
+    "id": "Khandaq kuat (QS al-Ahzab); doa di al-Fath diperselisihkan; nama masjid lain tanpa riwayat sahih.",
+    "ar": "الخندق ثابت (الأحزاب)؛ الدعاء في الفتح مختلف فيه؛ أسماء بقية المساجد بلا رواية صحيحة.",
+    "en": "The Trench is firm (al-Ahzab); the al-Fath supplication is disputed; other mosque names lack authentic reports."
+   },
+   "dispute": "ya",
+   "dispute_note": {
+    "id": "Jumlah, nama, dan status bangunan diperselisihkan.",
+    "ar": "العدد والأسماء وحالة المباني مختلف فيها.",
+    "en": "Number, names and status of the buildings are disputed."
+   },
+   "model3d": "perlu_dibuat",
+   "module": null,
+   "summary": {
+    "id": "Kawasan Perang Khandaq (QS al-Ahzab). Riwayat doa Nabi ﷺ di Masjid al-Fath diperselisihkan derajatnya. Nama dan jumlah masjid lain tidak berdasar riwayat sahih, dan mengunjunginya satu per satu sebagai rangkaian ibadah tidak berdasar dalil.",
+    "ar": "منطقة غزوة الخندق (سورة الأحزاب). حديث دعاء النبي ﷺ في مسجد الفتح مختلف في درجته. وأسماء بقية المساجد وعددها لا تستند إلى رواية صحيحة، وزيارتها واحدًا تلو الآخر على أنها عبادة لا دليل عليها.",
+    "en": "The Battle of the Trench area (Qur'an, al-Ahzab). The report of the Prophet's ﷺ supplication at Masjid al-Fath has a disputed grade. The names and number of the other mosques rest on no authentic report, and visiting them one by one as a ritual has no textual basis."
+   },
+   "narration": {
+    "id": "Anda memasuki kawasan Khandaq. Mengunjungi masjid-masjid di sini satu per satu sebagai rangkaian ibadah tidak berdasar dalil.",
+    "ar": "أنت تدخل منطقة الخندق. زيارة هذه المساجد واحدًا تلو الآخر على أنها عبادة لا دليل عليها.",
+    "en": "You are entering the Trench area. Visiting these mosques one by one as a ritual has no textual basis."
+   },
+   "rulings": [
+    {
+     "activity": {
+      "id": "Doa di Masjid al-Fath pada Rabu antara Zuhur dan Asar",
+      "ar": "الدعاء في مسجد الفتح يوم الأربعاء بين الظهر والعصر",
+      "en": "Supplication at Masjid al-Fath on Wednesday between Zuhr and Asr"
+     },
+     "status": "diperselisihkan",
+     "evidence": [
+      "EV-AHMAD-FATH",
+      "EV-ADAB-704"
+     ],
+     "note": {
+      "id": "Dihasankan al-Albani; sanadnya dilemahkan Syu’aib al-Arna’uth. Riwayat diperselisihkan, bukan anjuran.",
+      "ar": "حسّنه الألباني، وضعّف إسناده شعيب الأرناؤوط. الرواية مختلف فيها، وليست توصية.",
+      "en": "Graded hasan by al-Albani; its chain weakened by Shu’ayb al-Arna’ut. Disputed report, not a recommendation."
+     }
+    },
+    {
+     "activity": {
+      "id": "Mengunjungi Sab'ah Masajid satu per satu sebagai rangkaian ibadah",
+      "ar": "زيارة المساجد السبعة واحدًا تلو الآخر على أنها عبادة",
+      "en": "Visiting the Seven Mosques one by one as a ritual"
+     },
+     "status": "tidak_berdasar",
+     "evidence": [
+      "EV-MADAIN-FATH"
+     ],
+     "note": {
+      "id": "Tidak ditemukan riwayat keutamaannya; rujukan fatwa diisi peninjau.",
+      "ar": "لم يُعثر على رواية في فضلها؛ مرجع الفتوى يحدده المراجع.",
+      "en": "No report of merit found; fatwa reference to be added by the reviewer."
+     }
+    },
+    {
+     "activity": {
+      "id": "Mengusap dinding, mengambil tanah/batu, mengikat kain, meminta kepada penghuni kubur",
+      "ar": "التمسح بالجدران، وأخذ التراب أو الحجارة، وربط الخِرَق، وسؤال أصحاب القبور",
+      "en": "Rubbing walls, taking soil or stones, tying cloth, asking the dead"
+     },
+     "status": "tidak_berdasar",
+     "evidence": [],
+     "note": {
+      "id": "Tidak berdasar dalil; sebagian terlarang. Dalil dan redaksi diisi peninjau syariah.",
+      "ar": "لا دليل عليها، وبعضها محرم. الأدلة والصياغة يحددها المراجع الشرعي.",
+      "en": "No textual basis; some are forbidden. Evidence and wording to be set by the sharia reviewer."
+     }
+    }
+   ],
+   "dynamic_ids": [],
+   "geofence": {
+    "radius_m": 150,
+    "mute_inside": true
+   },
+   "line_name": null,
+   "official_url": null,
+   "wiki_url": null,
+   "status": "draf",
+   "validation": [
+    {
+     "role": "sejarah",
+     "reviewer": null,
+     "decision": null,
+     "date": null
+    },
+    {
+     "role": "geospasial",
+     "reviewer": null,
+     "decision": null,
+     "date": null
+    },
+    {
+     "role": "syariah",
+     "reviewer": null,
+     "decision": null,
+     "date": null
+    }
+   ]
+  },
+  {
+   "id": "S09",
+   "priority": "P1",
+   "type": "bukit",
+   "names": {
+    "id": "Jabal Sala'",
+    "ar": "جبل سلع",
+    "en": "Mount Sala'"
+   },
+   "translit": [
+    "sala",
+    "salaa",
+    "sal",
+    "jabal sala",
+    "salah",
+    "sala mountain"
+   ],
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     39.599614,
+     24.475113
+    ]
+   },
+   "rep_method": "osm_way_centroid",
+   "pack": "inti",
+   "distance_from_nabawi_m": 1373,
+   "position": {
+    "label": "bersumber",
+    "spread_m": 21,
+    "sources": [
+     {
+      "name": "OSM way 687685395",
+      "url": "https://mapcarta.com/W687685395",
+      "lat": 24.475113,
+      "lon": 39.599614
+     },
+     {
+      "name": "Wikipedia AR",
+      "url": "https://ar.wikipedia.org/wiki/%D8%AC%D8%A8%D9%84_%D8%B3%D9%84%D8%B9",
+      "lat": 24.475,
+      "lon": 39.59944444
+     }
+    ]
+   },
+   "history": "masyhur",
+   "history_note": null,
+   "dispute": "tidak",
+   "dispute_note": null,
+   "model3d": "dem",
+   "module": null,
+   "summary": {
+    "id": "Bukit di barat laut Masjid Nabawi yang menjadi latar Perang Khandaq (masyhur dalam kitab sirah).",
+    "ar": "جبل شمال غربي المسجد النبوي، كان مسرحًا لغزوة الخندق (مشهور في كتب السيرة).",
+    "en": "A hill north-west of the Prophet's Mosque that formed the setting of the Battle of the Trench (well known in the sirah books)."
+   },
+   "narration": {
+    "id": "Di depan Anda Jabal Sala', latar Perang Khandaq.",
+    "ar": "أمامك جبل سلع، مسرح غزوة الخندق.",
+    "en": "Ahead of you is Mount Sala', the setting of the Battle of the Trench."
+   },
+   "rulings": [
+    {
+     "activity": {
+      "id": "Berkunjung untuk belajar sirah",
+      "ar": "الزيارة للتعرّف على السيرة",
+      "en": "Visiting to learn the sirah"
+     },
+     "status": "mubah",
+     "evidence": [],
+     "note": {
+      "id": "Tanpa keutamaan khusus tempat; adab masuk masjid berlaku umum.",
+      "ar": "لا فضل خاص للمكان؛ آداب دخول المسجد عامة.",
+      "en": "No special merit for the place; general mosque etiquette applies."
+     }
+    }
+   ],
+   "dynamic_ids": [],
+   "geofence": {
+    "radius_m": 200,
+    "mute_inside": false
+   },
+   "line_name": null,
+   "official_url": null,
+   "wiki_url": null,
+   "status": "draf",
+   "validation": [
+    {
+     "role": "sejarah",
+     "reviewer": null,
+     "decision": null,
+     "date": null
+    },
+    {
+     "role": "geospasial",
+     "reviewer": null,
+     "decision": null,
+     "date": null
+    },
+    {
+     "role": "syariah",
+     "reviewer": null,
+     "decision": null,
+     "date": null
+    }
+   ]
+  },
+  {
+   "id": "S10",
+   "priority": "P0",
+   "type": "gunung",
+   "names": {
+    "id": "Jabal Uhud",
+    "ar": "جبل أحد",
+    "en": "Mount Uhud"
+   },
+   "translit": [
+    "uhud",
+    "uhd",
+    "ohod",
+    "ohud",
+    "jabal uhud",
+    "gunung uhud"
+   ],
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     39.61389,
+     24.51028
+    ]
+   },
+   "rep_method": "wikipedia_label",
+   "pack": "utara",
+   "distance_from_nabawi_m": 4638,
+   "position": {
+    "label": "bersumber",
+    "spread_m": 1747,
+    "sources": [
+     {
+      "name": "Wikipedia EN/AR (titik label)",
+      "url": "https://en.wikipedia.org/wiki/Mount_Uhud",
+      "lat": 24.51028,
+      "lon": 39.61389
+     },
+     {
+      "name": "OSM way 587267723 (sentroid)",
+      "url": "https://mapcarta.com/W587267723",
+      "lat": 24.522116,
+      "lon": 39.622538
+     },
+     {
+      "name": "PeakVisor (puncak)",
+      "url": "https://peakvisor.com/peak/summit-mount-uhud.html",
+      "lat": 24.521255,
+      "lon": 39.626253
+     }
+    ],
+    "note": {
+     "id": "Bersumber sebagai poligon; titik representatif antarsumber beda 1,6–1,7 km karena metode (label, sentroid, puncak).",
+     "ar": "مصدَّر كمضلع؛ النقاط التمثيلية تختلف 1.6–1.7 كم بحسب الطريقة.",
+     "en": "Sourced as a polygon; representative points differ 1.6–1.7 km by method (label, centroid, summit)."
+    }
+   },
+   "history": "kuat",
+   "history_note": null,
+   "dispute": "tidak",
+   "dispute_note": null,
+   "model3d": "dem",
+   "module": null,
+   "summary": {
+    "id": "Gunung di utara kota. Nabi ﷺ bersabda, \"Ini gunung yang mencintai kita dan kita mencintainya\" (Bukhari 4084; Muslim 1393). Medan Perang Uhud (3 H) berada di kakinya.",
+    "ar": "جبل شمالي المدينة، قال فيه النبي ﷺ: «هذا جبل يحبنا ونحبه» (البخاري 4084؛ مسلم 1393). وعند سفحه كانت غزوة أحد سنة 3 هـ.",
+    "en": "A mountain north of the city. The Prophet ﷺ said, \"This is a mountain that loves us and we love it\" (Bukhari 4084; Muslim 1393). The Battle of Uhud (3 AH) was fought at its foot."
+   },
+   "narration": {
+    "id": "Anda berada di kaki Jabal Uhud. Nabi bersabda, ini gunung yang mencintai kita dan kita mencintainya.",
+    "ar": "أنت عند سفح جبل أحد. قال النبي: هذا جبل يحبنا ونحبه.",
+    "en": "You are at the foot of Mount Uhud. The Prophet said: this is a mountain that loves us and we love it."
+   },
+   "rulings": [
+    {
+     "activity": {
+      "id": "Berkunjung untuk belajar sirah",
+      "ar": "الزيارة للتعرّف على السيرة",
+      "en": "Visiting to learn the sirah"
+     },
+     "status": "mubah",
+     "evidence": [],
+     "note": {
+      "id": "Tanpa keutamaan khusus tempat; adab masuk masjid berlaku umum.",
+      "ar": "لا فضل خاص للمكان؛ آداب دخول المسجد عامة.",
+      "en": "No special merit for the place; general mosque etiquette applies."
+     }
+    }
+   ],
+   "dynamic_ids": [],
+   "geofence": {
+    "radius_m": 250,
+    "mute_inside": false
+   },
+   "line_name": null,
+   "official_url": null,
+   "wiki_url": null,
+   "status": "draf",
+   "validation": [
+    {
+     "role": "sejarah",
+     "reviewer": null,
+     "decision": null,
+     "date": null
+    },
+    {
+     "role": "geospasial",
+     "reviewer": null,
+     "decision": null,
+     "date": null
+    },
+    {
+     "role": "syariah",
+     "reviewer": null,
+     "decision": null,
+     "date": null
+    }
+   ]
+  },
+  {
+   "id": "S11",
+   "priority": "P0",
+   "type": "makam",
+   "names": {
+    "id": "Makam Syuhada Uhud",
+    "ar": "مقبرة شهداء أحد",
+    "en": "Uhud Martyrs' Cemetery"
+   },
+   "translit": [
+    "syuhada",
+    "syuhada uhud",
+    "shuhada",
+    "martyrs",
+    "hamzah",
+    "hamza",
+    "makam uhud"
+   ],
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     39.611753,
+     24.5038
+    ]
+   },
+   "rep_method": "osm_way_centroid",
+   "pack": "utara",
+   "distance_from_nabawi_m": 3909,
+   "position": {
+    "label": "perkiraan",
+    "spread_m": null,
+    "sources": [
+     {
+      "name": "OSM way 444240032",
+      "url": "https://mapcarta.com/W444240032",
+      "lat": 24.5038,
+      "lon": 39.611753
+     }
+    ],
+    "note": {
+     "id": "1 sumber; jarak relatif ke Jabal Rumat lulus (+14%).",
+     "ar": "مصدر واحد؛ المسافة النسبية إلى جبل الرماة ضمن الحد (+14%).",
+     "en": "One source; relative distance to Jabal Rumat passes (+14%)."
+    }
+   },
+   "history": "kuat",
+   "history_note": null,
+   "dispute": "perlu_verifikasi",
+   "dispute_note": {
+    "id": "Ada klaim pemindahan kubur masa Mu'awiyah (sumber lemah).",
+    "ar": "هناك دعوى نقل القبور زمن معاوية (مصدر ضعيف).",
+    "en": "A claim of graves moved in Mu'awiyah's time (weak source)."
+   },
+   "model3d": "perlu_dibuat",
+   "module": null,
+   "summary": {
+    "id": "Makam para syahid Perang Uhud, termasuk Hamzah bin Abdul Muthalib menurut kitab sirah. Delapan tahun setelah Uhud, Nabi ﷺ menyalatkan mereka seperti orang yang berpamitan (Bukhari 4042).",
+    "ar": "مقبرة شهداء غزوة أحد، ومنهم حمزة بن عبد المطلب كما في كتب السيرة. وبعد ثماني سنين صلّى عليهم النبي ﷺ كالمودِّع (البخاري 4042).",
+    "en": "The graves of the martyrs of Uhud, including Hamzah ibn Abd al-Muttalib according to the sirah books. Eight years after Uhud the Prophet ﷺ prayed over them like one bidding farewell (Bukhari 4042)."
+   },
+   "narration": {
+    "id": "Anda mendekati Makam Syuhada Uhud. Ziarah kubur dilakukan dengan salam dan doa.",
+    "ar": "أنت تقترب من مقبرة شهداء أحد. تكون زيارة القبور بالسلام والدعاء.",
+    "en": "You are approaching the Uhud Martyrs' Cemetery. Graves are visited with greetings and prayer."
+   },
+   "rulings": [
+    {
+     "activity": {
+      "id": "Ziarah kubur dengan salam dan doa",
+      "ar": "زيارة القبور بالسلام والدعاء",
+      "en": "Visiting graves with greetings and prayer"
+     },
+     "status": "sunnah",
+     "evidence": [
+      "EV-MUSLIM-977",
+      "EV-BUKHARI-4042"
+     ],
+     "note": {
+      "id": "Sunnah bagi laki-laki; hukum bagi perempuan diperselisihkan, ditampilkan netral.",
+      "ar": "سنة للرجال؛ وحكمها للنساء مختلف فيه، ويُعرض بحياد.",
+      "en": "Sunnah for men; the ruling for women is disputed and shown neutrally."
+     }
+    },
+    {
+     "activity": {
+      "id": "Mengusap dinding, mengambil tanah/batu, mengikat kain, meminta kepada penghuni kubur",
+      "ar": "التمسح بالجدران، وأخذ التراب أو الحجارة، وربط الخِرَق، وسؤال أصحاب القبور",
+      "en": "Rubbing walls, taking soil or stones, tying cloth, asking the dead"
+     },
+     "status": "tidak_berdasar",
+     "evidence": [],
+     "note": {
+      "id": "Tidak berdasar dalil; sebagian terlarang. Dalil dan redaksi diisi peninjau syariah.",
+      "ar": "لا دليل عليها، وبعضها محرم. الأدلة والصياغة يحددها المراجع الشرعي.",
+      "en": "No textual basis; some are forbidden. Evidence and wording to be set by the sharia reviewer."
+     }
+    }
+   ],
+   "dynamic_ids": [],
+   "geofence": {
+    "radius_m": 120,
+    "mute_inside": true
+   },
+   "line_name": null,
+   "official_url": null,
+   "wiki_url": null,
+   "status": "draf",
+   "validation": [
+    {
+     "role": "sejarah",
+     "reviewer": null,
+     "decision": null,
+     "date": null
+    },
+    {
+     "role": "geospasial",
+     "reviewer": null,
+     "decision": null,
+     "date": null
+    },
+    {
+     "role": "syariah",
+     "reviewer": null,
+     "decision": null,
+     "date": null
+    }
+   ]
+  },
+  {
+   "id": "S12",
+   "priority": "P0",
+   "type": "bukit",
+   "names": {
+    "id": "Jabal Rumat",
+    "ar": "جبل الرماة (جبل عينين)",
+    "en": "Archers' Hill"
+   },
+   "translit": [
+    "rumat",
+    "rumah",
+    "rumat uhud",
+    "bukit pemanah",
+    "archers",
+    "ainain",
+    "aynayn",
+    "jabal rumah"
+   ],
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     39.612157,
+     24.502188
+    ]
+   },
+   "rep_method": "derived_offset",
+   "pack": "utara",
+   "distance_from_nabawi_m": 3731,
+   "position": {
+    "label": "diturunkan",
+    "spread_m": 82,
+    "sources": [
+     {
+      "name": "OSM turunan: way 458125948 + 120 m arah tenggara",
+      "url": "https://mapcarta.com/W458125948",
+      "lat": 24.502188,
+      "lon": 39.612157
+     },
+     {
+      "name": "Wikipedia AR",
+      "url": "https://ar.wikipedia.org/wiki/%D8%AC%D8%A8%D9%84_%D8%A7%D9%84%D8%B1%D9%85%D8%A7%D8%A9",
+      "lat": 24.502778,
+      "lon": 39.611667
+     }
+    ],
+    "note": {
+     "id": "Wikipedia EN \"Al Romat Mountain\" ditolak (meleset 8,7 km).",
+     "ar": "رُفضت ويكيبيديا الإنجليزية (انحراف 8.7 كم).",
+     "en": "English Wikipedia \"Al Romat Mountain\" rejected (8.7 km off)."
+    }
+   },
+   "history": "masyhur",
+   "history_note": {
+    "id": "Masyhur; nomor hadis terkait perlu verifikasi.",
+    "ar": "مشهور؛ رقم الحديث يحتاج إلى تحقق.",
+    "en": "Well known; the related hadith number needs verification."
+   },
+   "dispute": "tidak",
+   "dispute_note": null,
+   "model3d": "perlu_dibuat",
+   "module": null,
+   "summary": {
+    "id": "Bukit kecil tempat pasukan pemanah ditempatkan dalam Perang Uhud (masyhur). Posisi di peta diturunkan dari data OSM; nomor hadis terkait masih perlu verifikasi.",
+    "ar": "تلّ صغير أُقيم عليه الرماة في غزوة أحد (مشهور). الموقع مشتق من بيانات OSM، ورقم الحديث المتعلق به يحتاج إلى تحقق.",
+    "en": "A small hill where the archers were stationed at Uhud (well known). Its position is derived from OSM data; the related hadith number still needs verification."
+   },
+   "narration": {
+    "id": "Di dekat Anda Jabal Rumat, bukit tempat pasukan pemanah ditempatkan dalam Perang Uhud.",
+    "ar": "بالقرب منك جبل الرماة، التل الذي أقيم عليه الرماة في غزوة أحد.",
+    "en": "Nearby is Archers' Hill, where the archers were stationed at the Battle of Uhud."
+   },
+   "rulings": [
+    {
+     "activity": {
+      "id": "Berkunjung untuk belajar sirah",
+      "ar": "الزيارة للتعرّف على السيرة",
+      "en": "Visiting to learn the sirah"
+     },
+     "status": "mubah",
+     "evidence": [],
+     "note": {
+      "id": "Tanpa keutamaan khusus tempat; adab masuk masjid berlaku umum.",
+      "ar": "لا فضل خاص للمكان؛ آداب دخول المسجد عامة.",
+      "en": "No special merit for the place; general mosque etiquette applies."
+     }
+    }
+   ],
+   "dynamic_ids": [],
+   "geofence": {
+    "radius_m": 100,
+    "mute_inside": false
+   },
+   "line_name": null,
+   "official_url": null,
+   "wiki_url": null,
+   "status": "draf",
+   "validation": [
+    {
+     "role": "sejarah",
+     "reviewer": null,
+     "decision": null,
+     "date": null
+    },
+    {
+     "role": "geospasial",
+     "reviewer": null,
+     "decision": null,
+     "date": null
+    },
+    {
+     "role": "syariah",
+     "reviewer": null,
+     "decision": null,
+     "date": null
+    }
+   ]
+  },
+  {
+   "id": "S13",
+   "priority": "P0",
+   "type": "miqat",
+   "names": {
+    "id": "Miqat Dzul Hulaifah (Abyar Ali)",
+    "ar": "ميقات ذي الحليفة (أبيار علي)",
+    "en": "Dhu al-Hulayfah Miqat"
+   },
+   "translit": [
+    "miqat",
+    "bir ali",
+    "abyar ali",
+    "dzul hulaifah",
+    "dhul hulayfah",
+    "zulhulaifah",
+    "bir ali miqat"
+   ],
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     39.54279,
+     24.41374
+    ]
+   },
+   "rep_method": "osm_way_centroid",
+   "pack": "barat",
+   "distance_from_nabawi_m": 9230,
+   "position": {
+    "label": "bersumber",
+    "spread_m": 33,
+    "sources": [
+     {
+      "name": "OSM way 457470976",
+      "url": "https://mapcarta.com/W457470976",
+      "lat": 24.41374,
+      "lon": 39.54279
+     },
+     {
+      "name": "Wikipedia EN",
+      "url": "https://en.wikipedia.org/wiki/Miqat_Dhu_al-Hulayfah",
+      "lat": 24.413611,
+      "lon": 39.5425
+     }
+    ],
+    "note": {
+     "id": "WikiShia (14 m dari Wikipedia) tidak dihitung independen.",
+     "ar": "WikiShia لا يُعدّ مستقلًا.",
+     "en": "WikiShia not counted as independent."
+    }
+   },
+   "history": "kuat",
+   "history_note": null,
+   "dispute": "tidak",
+   "dispute_note": null,
+   "model3d": "perlu_dibuat",
+   "module": null,
+   "summary": {
+    "id": "Miqat penduduk Madinah dan orang yang melewatinya (Bukhari 1529; Muslim 1181). Masjid di sini menjadi penanda wilayah miqat.",
+    "ar": "ميقات أهل المدينة ومن مرّ به من غيرهم (البخاري 1529؛ مسلم 1181). والمسجد هنا علامة على موضع الميقات.",
+    "en": "The miqat for the people of Madinah and those passing through it (Bukhari 1529; Muslim 1181). The mosque here marks the miqat area."
+   },
+   "narration": {
+    "id": "Anda mendekati Miqat Dzul Hulaifah. Bagi yang berniat haji atau umrah dari arah Madinah, ihram dimulai dari miqat ini.",
+    "ar": "أنت تقترب من ميقات ذي الحليفة. من أراد الحج أو العمرة من جهة المدينة يُحرم من هذا الميقات.",
+    "en": "You are approaching the Dhu al-Hulayfah miqat. Those intending hajj or umrah from Madinah enter ihram at this miqat."
+   },
+   "rulings": [
+    {
+     "activity": {
+      "id": "Berihram dari miqat bagi yang melewatinya dengan niat haji atau umrah",
+      "ar": "الإحرام من الميقات لمن مرّ به يريد الحج أو العمرة",
+      "en": "Entering ihram at the miqat when passing it with intent for hajj or umrah"
+     },
+     "status": "wajib",
+     "evidence": [
+      "EV-BUKHARI-1529",
+      "EV-MUSLIM-1181"
+     ],
+     "note": {
+      "id": "Rincian hukum melewati tanpa ihram ditetapkan peninjau syariah.",
+      "ar": "تفاصيل حكم مجاوزته بلا إحرام يحددها المراجع الشرعي.",
+      "en": "Details on passing without ihram to be set by the sharia reviewer."
+     }
+    },
+    {
+     "activity": {
+      "id": "Mengusap dinding, mengambil tanah/batu, mengikat kain, meminta kepada penghuni kubur",
+      "ar": "التمسح بالجدران، وأخذ التراب أو الحجارة، وربط الخِرَق، وسؤال أصحاب القبور",
+      "en": "Rubbing walls, taking soil or stones, tying cloth, asking the dead"
+     },
+     "status": "tidak_berdasar",
+     "evidence": [],
+     "note": {
+      "id": "Tidak berdasar dalil; sebagian terlarang. Dalil dan redaksi diisi peninjau syariah.",
+      "ar": "لا دليل عليها، وبعضها محرم. الأدلة والصياغة يحددها المراجع الشرعي.",
+      "en": "No textual basis; some are forbidden. Evidence and wording to be set by the sharia reviewer."
+     }
+    }
+   ],
+   "dynamic_ids": [],
+   "geofence": {
+    "radius_m": 200,
+    "mute_inside": true
+   },
+   "line_name": null,
+   "official_url": null,
+   "wiki_url": null,
+   "status": "draf",
+   "validation": [
+    {
+     "role": "sejarah",
+     "reviewer": null,
+     "decision": null,
+     "date": null
+    },
+    {
+     "role": "geospasial",
+     "reviewer": null,
+     "decision": null,
+     "date": null
+    },
+    {
+     "role": "syariah",
+     "reviewer": null,
+     "decision": null,
+     "date": null
+    }
+   ]
+  },
+  {
+   "id": "S14",
+   "priority": "P1",
+   "type": "lembah",
+   "names": {
+    "id": "Wadi Aqiq",
+    "ar": "وادي العقيق",
+    "en": "Al-Aqiq Valley"
+   },
+   "translit": [
+    "aqiq",
+    "akik",
+    "aqeeq",
+    "wadi aqiq",
+    "wadi al aqiq",
+    "lembah aqiq"
+   ],
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     39.57726,
+     24.466164
+    ]
+   },
+   "rep_method": "osm_line_nearest_to_nabawi",
+   "pack": "barat",
+   "distance_from_nabawi_m": 3443,
+   "position": {
+    "label": "perkiraan",
+    "spread_m": null,
+    "sources": [
+     {
+      "name": "OSM waterway \"وادي العقيق\" (via tile Protomaps)",
+      "url": "https://www.openstreetmap.org/copyright",
+      "lat": 24.466164,
+      "lon": 39.57726
+     }
+    ],
+    "note": {
+     "id": "Garis OSM; titik = titik garis terdekat ke Masjid Nabawi. Perlu digitasi dan verifikasi.",
+     "ar": "خط OSM؛ النقطة أقرب نقطة من الخط إلى المسجد النبوي. يحتاج إلى رقمنة وتحقق.",
+     "en": "OSM line; the point is the line's nearest point to the Prophet's Mosque. Needs digitising and verification."
+    }
+   },
+   "history": "kuat",
+   "history_note": null,
+   "dispute": "perlu_verifikasi",
+   "dispute_note": {
+    "id": "Alur historis vs modern perlu verifikasi.",
+    "ar": "المجرى التاريخي مقابل الحديث يحتاج إلى تحقق.",
+    "en": "Historic vs modern course needs verification."
+   },
+   "model3d": "dem",
+   "module": null,
+   "summary": {
+    "id": "Lembah di barat kota. Umar meriwayatkan bahwa di Wadi Aqiq Nabi ﷺ bersabda: telah datang utusan dari Rabb-ku dan berkata, \"Shalatlah di lembah yang diberkahi ini\" (Bukhari 1534).",
+    "ar": "وادٍ غربي المدينة. روى عمر أن النبي ﷺ قال بوادي العقيق: «أتاني الليلة آتٍ من ربي فقال: صلِّ في هذا الوادي المبارك» (البخاري 1534).",
+    "en": "A valley west of the city. Umar narrated that at Wadi al-Aqiq the Prophet ﷺ said: one came to me from my Lord and said, \"Pray in this blessed valley\" (Bukhari 1534)."
+   },
+   "narration": {
+    "id": "Anda mendekati Wadi Aqiq, lembah yang disebut diberkahi dalam hadis riwayat Bukhari.",
+    "ar": "أنت تقترب من وادي العقيق، الوادي الموصوف بالمبارك في حديث رواه البخاري.",
+    "en": "You are approaching Wadi al-Aqiq, the valley described as blessed in a hadith reported by al-Bukhari."
+   },
+   "rulings": [
+    {
+     "activity": {
+      "id": "Keberkahan lembah",
+      "ar": "بركة الوادي",
+      "en": "Blessing of the valley"
+     },
+     "status": "informasi",
+     "evidence": [
+      "EV-BUKHARI-1534"
+     ],
+     "note": {
+      "id": "Informasi keutamaan, bukan anjuran amalan; status amalan khusus hari ini ditetapkan peninjau.",
+      "ar": "معلومة فضل لا توصية بعمل؛ حكم العمل الخاص اليوم يحدده المراجع.",
+      "en": "Information on merit, not a recommended act; any specific practice today is for the reviewer to set."
+     }
+    }
+   ],
+   "dynamic_ids": [],
+   "geofence": {
+    "radius_m": 200,
+    "mute_inside": false
+   },
+   "line_name": "وادي العقيق",
+   "official_url": null,
+   "wiki_url": null,
+   "status": "draf",
+   "validation": [
+    {
+     "role": "sejarah",
+     "reviewer": null,
+     "decision": null,
+     "date": null
+    },
+    {
+     "role": "geospasial",
+     "reviewer": null,
+     "decision": null,
+     "date": null
+    },
+    {
+     "role": "syariah",
+     "reviewer": null,
+     "decision": null,
+     "date": null
+    }
+   ]
+  },
+  {
+   "id": "S15",
+   "priority": "P1",
+   "type": "museum",
+   "names": {
+    "id": "Museum & Stasiun Hijaz",
+    "ar": "متحف سكة الحجاز",
+    "en": "Hejaz Railway Museum"
+   },
+   "translit": [
+    "hijaz",
+    "hejaz",
+    "stasiun hijaz",
+    "museum hijaz",
+    "hejaz railway",
+    "kereta hijaz"
+   ],
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     39.60101,
+     24.461946
+    ]
+   },
+   "rep_method": "osm_way_centroid",
+   "pack": "inti",
+   "distance_from_nabawi_m": 1270,
+   "position": {
+    "label": "bersumber",
+    "spread_m": 6,
+    "sources": [
+     {
+      "name": "OSM way 112566263",
+      "url": "https://mapcarta.com/W112566263",
+      "lat": 24.461946,
+      "lon": 39.60101
+     },
+     {
+      "name": "Wikipedia EN Al-Madinah Museum",
+      "url": "https://en.wikipedia.org/wiki/Al-Madinah_Museum",
+      "lat": 24.461981,
+      "lon": 39.60097
+     },
+     {
+      "name": "Islamic Architectural Heritage 966-4-9",
+      "url": "https://www.islamicarchitecturalheritage.com/listings/hejaz-railway-station-in-medina",
+      "lat": 24.461925,
+      "lon": 39.600969
+     }
+    ],
+    "note": {
+     "id": "Wikidata Q138647416 ditolak (meleset 148 km); UNESCO 152 m (kemungkinan titik kompleks).",
+     "ar": "رُفضت ويكي بيانات (148 كم)؛ اليونسكو 152 م.",
+     "en": "Wikidata rejected (148 km off); UNESCO 152 m (likely complex point)."
+    }
+   },
+   "history": "kuat",
+   "history_note": {
+    "id": "Sejarah modern.",
+    "ar": "تاريخ حديث.",
+    "en": "Modern history."
+   },
+   "dispute": "tidak",
+   "dispute_note": null,
+   "model3d": "perlu_dibuat",
+   "module": null,
+   "summary": {
+    "id": "Stasiun akhir Kereta Api Hijaz, kini museum. Kereta pertama tiba 22 Rajab 1326 H menurut inventaris Islamic Architectural Heritage; tanggal ini perlu verifikasi.",
+    "ar": "المحطة الأخيرة لسكة حديد الحجاز، وهي اليوم متحف. وصل أول قطار في 22 رجب 1326 هـ بحسب سجل Islamic Architectural Heritage، والتاريخ يحتاج إلى تحقق.",
+    "en": "The terminus of the Hejaz Railway, now a museum. The first train arrived on 22 Rajab 1326 AH according to the Islamic Architectural Heritage inventory; this date needs verification."
+   },
+   "narration": {
+    "id": "Anda mendekati Stasiun dan Museum Hijaz, ujung jalur Kereta Api Hijaz.",
+    "ar": "أنت تقترب من محطة ومتحف سكة حديد الحجاز.",
+    "en": "You are approaching the Hejaz Railway station and museum."
+   },
+   "rulings": [
+    {
+     "activity": {
+      "id": "Berkunjung untuk belajar sirah",
+      "ar": "الزيارة للتعرّف على السيرة",
+      "en": "Visiting to learn the sirah"
+     },
+     "status": "mubah",
+     "evidence": [],
+     "note": {
+      "id": "Tanpa keutamaan khusus tempat; adab masuk masjid berlaku umum.",
+      "ar": "لا فضل خاص للمكان؛ آداب دخول المسجد عامة.",
+      "en": "No special merit for the place; general mosque etiquette applies."
+     }
+    }
+   ],
+   "dynamic_ids": [],
+   "geofence": {
+    "radius_m": 120,
+    "mute_inside": false
+   },
+   "line_name": null,
+   "official_url": null,
+   "wiki_url": null,
+   "status": "draf",
+   "validation": [
+    {
+     "role": "sejarah",
+     "reviewer": null,
+     "decision": null,
+     "date": null
+    },
+    {
+     "role": "geospasial",
+     "reviewer": null,
+     "decision": null,
+     "date": null
+    },
+    {
+     "role": "syariah",
+     "reviewer": null,
+     "decision": null,
+     "date": null
+    }
+   ]
+  },
+  {
+   "id": "S16",
+   "priority": "P2",
+   "type": "kategori",
+   "names": {
+    "id": "Kebun kurma",
+    "ar": "مزارع النخيل",
+    "en": "Date farms"
+   },
+   "translit": [
+    "kurma",
+    "kebun kurma",
+    "ajwa",
+    "ajwah",
+    "date farm",
+    "nakhil"
+   ],
+   "geometry": null,
+   "rep_method": null,
+   "pack": null,
+   "distance_from_nabawi_m": null,
+   "position": {
+    "label": "per_poi",
+    "spread_m": null,
+    "sources": []
+   },
+   "history": "kuat",
+   "history_note": {
+    "id": "Keutamaan ajwa kuat; tidak untuk kebun tertentu.",
+    "ar": "فضل العجوة ثابت؛ ولا يخص مزرعة بعينها.",
+    "en": "The 'ajwa merit is firm; not tied to a particular farm."
+   },
+   "dispute": "tidak",
+   "dispute_note": null,
+   "model3d": "tidak",
+   "module": null,
+   "summary": {
+    "id": "Kebun kurma yang umum dikunjungi rombongan. Keutamaan tujuh kurma ajwa di pagi hari (Bukhari 5445; Muslim 2047b) tidak terkait kebun tertentu dan bukan klaim medis.",
+    "ar": "مزارع نخيل يزورها الحجاج والمعتمرون عادةً. فضل سبع تمرات عجوة صباحًا (البخاري 5445؛ مسلم 2047) لا يختص بمزرعة بعينها، وليس ادعاءً طبيًا.",
+    "en": "Date farms that groups commonly visit. The virtue of seven 'ajwa dates in the morning (Bukhari 5445; Muslim 2047b) is not tied to any particular farm and is not a medical claim."
+   },
+   "narration": null,
+   "rulings": [
+    {
+     "activity": {
+      "id": "Tujuh kurma ajwa di pagi hari",
+      "ar": "سبع تمرات عجوة صباحًا",
+      "en": "Seven 'ajwa dates in the morning"
+     },
+     "status": "informasi",
+     "evidence": [
+      "EV-BUKHARI-5445",
+      "EV-MUSLIM-2047B"
+     ],
+     "note": {
+      "id": "Informasi keutamaan (hadis sahih); status anjuran ditetapkan peninjau. Tidak dikaitkan dengan kebun tertentu; bukan klaim medis.",
+      "ar": "معلومة فضل (حديث صحيح)؛ ويحدد المراجع حكم الاستحباب. لا يرتبط بمزرعة بعينها وليس ادعاءً طبيًا.",
+      "en": "Information on merit (sahih hadith); recommendation status to be set by the reviewer. Not tied to a farm; not a medical claim."
+     }
+    }
+   ],
+   "dynamic_ids": [],
+   "geofence": null,
+   "line_name": null,
+   "official_url": null,
+   "wiki_url": null,
+   "status": "draf",
+   "validation": [
+    {
+     "role": "sejarah",
+     "reviewer": null,
+     "decision": null,
+     "date": null
+    },
+    {
+     "role": "geospasial",
+     "reviewer": null,
+     "decision": null,
+     "date": null
+    },
+    {
+     "role": "syariah",
+     "reviewer": null,
+     "decision": null,
+     "date": null
+    }
+   ]
+  },
+  {
+   "id": "S17",
+   "priority": "P2",
+   "type": "masjid",
+   "names": {
+    "id": "Masjid al-Ijabah",
+    "ar": "مسجد الإجابة",
+    "en": "Al-Ijabah Mosque"
+   },
+   "translit": [
+    "ijabah",
+    "ijaba",
+    "ijabah mosque",
+    "bani muawiyah",
+    "muawiyah"
+   ],
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     39.618444,
+     24.472
+    ]
+   },
+   "rep_method": "wikipedia_label",
+   "pack": "inti",
+   "distance_from_nabawi_m": 825,
+   "position": {
+    "label": "perkiraan",
+    "spread_m": null,
+    "sources": [
+     {
+      "name": "Wikipedia EN",
+      "url": "https://en.wikipedia.org/wiki/Al-Ijabah_Mosque",
+      "lat": 24.472,
+      "lon": 39.618444
+     }
+    ]
+   },
+   "history": "kuat",
+   "history_note": null,
+   "dispute": "tidak",
+   "dispute_note": null,
+   "model3d": "tidak",
+   "module": null,
+   "summary": {
+    "id": "Masjid Bani Mu'awiyah. Nabi ﷺ shalat dan berdoa di sini, memohon tiga hal: dua dikabulkan dan satu tidak (Muslim 2890).",
+    "ar": "مسجد بني معاوية. صلى فيه النبي ﷺ ودعا ربه ثلاثًا، فأعطاه اثنتين ومنعه واحدة (مسلم 2890).",
+    "en": "The mosque of Banu Mu'awiyah. The Prophet ﷺ prayed and supplicated here, asking for three things: two were granted and one withheld (Muslim 2890)."
+   },
+   "narration": null,
+   "rulings": [
+    {
+     "activity": {
+      "id": "Berkunjung",
+      "ar": "الزيارة",
+      "en": "Visiting"
+     },
+     "status": "mubah",
+     "evidence": [],
+     "note": {
+      "id": "Klasifikasi amalan khusus di masjid ini ditetapkan peninjau syariah.",
+      "ar": "حكم أي عمل خاص في هذا المسجد يحدده المراجع الشرعي.",
+      "en": "Any specific practice here is for the sharia reviewer to classify."
+     }
+    },
+    {
+     "activity": {
+      "id": "Mengusap dinding, mengambil tanah/batu, mengikat kain, meminta kepada penghuni kubur",
+      "ar": "التمسح بالجدران، وأخذ التراب أو الحجارة، وربط الخِرَق، وسؤال أصحاب القبور",
+      "en": "Rubbing walls, taking soil or stones, tying cloth, asking the dead"
+     },
+     "status": "tidak_berdasar",
+     "evidence": [],
+     "note": {
+      "id": "Tidak berdasar dalil; sebagian terlarang. Dalil dan redaksi diisi peninjau syariah.",
+      "ar": "لا دليل عليها، وبعضها محرم. الأدلة والصياغة يحددها المراجع الشرعي.",
+      "en": "No textual basis; some are forbidden. Evidence and wording to be set by the sharia reviewer."
+     }
+    }
+   ],
+   "dynamic_ids": [],
+   "geofence": null,
+   "line_name": null,
+   "official_url": null,
+   "wiki_url": null,
+   "status": "draf",
+   "validation": [
+    {
+     "role": "sejarah",
+     "reviewer": null,
+     "decision": null,
+     "date": null
+    },
+    {
+     "role": "geospasial",
+     "reviewer": null,
+     "decision": null,
+     "date": null
+    },
+    {
+     "role": "syariah",
+     "reviewer": null,
+     "decision": null,
+     "date": null
+    }
+   ]
+  },
+  {
+   "id": "S18",
+   "priority": "P2",
+   "type": "reruntuhan",
+   "names": {
+    "id": "Masjid Fasyh",
+    "ar": "مسجد الفسح",
+    "en": "Fas'h Mosque"
+   },
+   "translit": [
+    "fasyh",
+    "fash",
+    "fas h",
+    "fasih",
+    "fasih mosque"
+   ],
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     39.612861,
+     24.510028
+    ]
+   },
+   "rep_method": "wikipedia_label",
+   "pack": "utara",
+   "distance_from_nabawi_m": 4605,
+   "position": {
+    "label": "perkiraan",
+    "spread_m": null,
+    "sources": [
+     {
+      "name": "Wikipedia EN",
+      "url": "https://en.wikipedia.org/wiki/Fas%27h_Mosque",
+      "lat": 24.510028,
+      "lon": 39.612861
+     }
+    ],
+    "note": {
+     "id": "1 sumber; jarak tertulis lulus (−2%).",
+     "ar": "مصدر واحد؛ المسافة المكتوبة ضمن الحد (−2%).",
+     "en": "One source; stated distance passes (−2%)."
+    }
+   },
+   "history": "diperselisihkan",
+   "history_note": null,
+   "dispute": "perlu_verifikasi",
+   "dispute_note": null,
+   "model3d": "tidak",
+   "module": null,
+   "summary": {
+    "id": "Reruntuhan masjid di jalur Uhud. Riwayat yang dikaitkan dengannya diperselisihkan; posisi dari satu sumber.",
+    "ar": "أطلال مسجد على طريق أحد. الروايات المنسوبة إليه مختلف فيها، وموقعه من مصدر واحد.",
+    "en": "Ruins of a mosque on the Uhud route. Reports attached to it are disputed; its position comes from one source."
+   },
+   "narration": {
+    "id": "Di dekat Anda reruntuhan Masjid Fasyh; riwayat tentangnya diperselisihkan.",
+    "ar": "بالقرب منك أطلال مسجد الفسح؛ والروايات عنه مختلف فيها.",
+    "en": "Nearby are the ruins of Fas'h Mosque; reports about it are disputed."
+   },
+   "rulings": [
+    {
+     "activity": {
+      "id": "Berkunjung untuk belajar sirah",
+      "ar": "الزيارة للتعرّف على السيرة",
+      "en": "Visiting to learn the sirah"
+     },
+     "status": "mubah",
+     "evidence": [],
+     "note": {
+      "id": "Tanpa keutamaan khusus tempat; adab masuk masjid berlaku umum.",
+      "ar": "لا فضل خاص للمكان؛ آداب دخول المسجد عامة.",
+      "en": "No special merit for the place; general mosque etiquette applies."
+     }
+    }
+   ],
+   "dynamic_ids": [],
+   "geofence": {
+    "radius_m": 100,
+    "mute_inside": false
+   },
+   "line_name": null,
+   "official_url": null,
+   "wiki_url": null,
+   "status": "draf",
+   "validation": [
+    {
+     "role": "sejarah",
+     "reviewer": null,
+     "decision": null,
+     "date": null
+    },
+    {
+     "role": "geospasial",
+     "reviewer": null,
+     "decision": null,
+     "date": null
+    },
+    {
+     "role": "syariah",
+     "reviewer": null,
+     "decision": null,
+     "date": null
+    }
+   ]
+  },
+  {
+   "id": "S19",
+   "priority": "P2",
+   "type": "masjid",
+   "names": {
+    "id": "Masjid al-Dir'",
+    "ar": "مسجد الدرع",
+    "en": "Al-Deraa Mosque"
+   },
+   "translit": [
+    "dir",
+    "dira",
+    "deraa",
+    "dir mosque",
+    "masjid dir",
+    "syaikhain",
+    "shaykhayn"
+   ],
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     39.60861,
+     24.48917
+    ]
+   },
+   "rep_method": "wikipedia_label",
+   "pack": "utara",
+   "distance_from_nabawi_m": 2297,
+   "position": {
+    "label": "perkiraan",
+    "spread_m": null,
+    "sources": [
+     {
+      "name": "Wikipedia EN",
+      "url": "https://en.wikipedia.org/wiki/Al-Deraa_Mosque",
+      "lat": 24.48917,
+      "lon": 39.60861
+     }
+    ]
+   },
+   "history": "perlu_verifikasi",
+   "history_note": null,
+   "dispute": "perlu_verifikasi",
+   "dispute_note": null,
+   "model3d": "tidak",
+   "module": null,
+   "summary": {
+    "id": "Masjid di rute menuju Uhud. Kisah yang dikaitkan dengannya perlu verifikasi; posisi dari satu sumber (Wikipedia EN).",
+    "ar": "مسجد على الطريق إلى أحد. الخبر المرتبط به يحتاج إلى تحقق، وموقعه من مصدر واحد (ويكيبيديا الإنجليزية).",
+    "en": "A mosque on the way to Uhud. The story attached to it needs verification; its position comes from one source (English Wikipedia)."
+   },
+   "narration": null,
+   "rulings": [
+    {
+     "activity": {
+      "id": "Berkunjung untuk belajar sirah",
+      "ar": "الزيارة للتعرّف على السيرة",
+      "en": "Visiting to learn the sirah"
+     },
+     "status": "mubah",
+     "evidence": [],
+     "note": {
+      "id": "Tanpa keutamaan khusus tempat; adab masuk masjid berlaku umum.",
+      "ar": "لا فضل خاص للمكان؛ آداب دخول المسجد عامة.",
+      "en": "No special merit for the place; general mosque etiquette applies."
+     }
+    }
+   ],
+   "dynamic_ids": [],
+   "geofence": null,
+   "line_name": null,
+   "official_url": null,
+   "wiki_url": null,
+   "status": "draf",
+   "validation": [
+    {
+     "role": "sejarah",
+     "reviewer": null,
+     "decision": null,
+     "date": null
+    },
+    {
+     "role": "geospasial",
+     "reviewer": null,
+     "decision": null,
+     "date": null
+    },
+    {
+     "role": "syariah",
+     "reviewer": null,
+     "decision": null,
+     "date": null
+    }
+   ]
+  },
+  {
+   "id": "S20",
+   "priority": "P2",
+   "type": "masjid",
+   "names": {
+    "id": "Masjid Bani Haritsah",
+    "ar": "مسجد بني حارثة",
+    "en": "Bani Harithah Mosque"
+   },
+   "translit": [
+    "haritsah",
+    "harithah",
+    "haritha",
+    "bani haritsah",
+    "mustarah",
+    "mustaraha"
+   ],
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     39.609722,
+     24.491889
+    ]
+   },
+   "rep_method": "wikipedia_label",
+   "pack": "utara",
+   "distance_from_nabawi_m": 2589,
+   "position": {
+    "label": "perkiraan",
+    "spread_m": null,
+    "sources": [
+     {
+      "name": "Wikipedia EN",
+      "url": "https://en.wikipedia.org/wiki/Bani_Harithah_Mosque",
+      "lat": 24.491889,
+      "lon": 39.609722
+     }
+    ]
+   },
+   "history": "perlu_verifikasi",
+   "history_note": null,
+   "dispute": "perlu_verifikasi",
+   "dispute_note": null,
+   "model3d": "tidak",
+   "module": null,
+   "summary": {
+    "id": "Masjid di rute pulang dari Uhud, juga disebut Masjid al-Mustarah menurut Wikipedia EN. Kisah terkait perlu verifikasi; posisi dari satu sumber.",
+    "ar": "مسجد على طريق العودة من أحد، ويسمى أيضًا مسجد المستراح بحسب ويكيبيديا الإنجليزية. الخبر المرتبط به يحتاج إلى تحقق، وموقعه من مصدر واحد.",
+    "en": "A mosque on the way back from Uhud, also called Masjid al-Mustarah according to English Wikipedia. The related story needs verification; its position comes from one source."
+   },
+   "narration": null,
+   "rulings": [
+    {
+     "activity": {
+      "id": "Berkunjung untuk belajar sirah",
+      "ar": "الزيارة للتعرّف على السيرة",
+      "en": "Visiting to learn the sirah"
+     },
+     "status": "mubah",
+     "evidence": [],
+     "note": {
+      "id": "Tanpa keutamaan khusus tempat; adab masuk masjid berlaku umum.",
+      "ar": "لا فضل خاص للمكان؛ آداب دخول المسجد عامة.",
+      "en": "No special merit for the place; general mosque etiquette applies."
+     }
+    }
+   ],
+   "dynamic_ids": [],
+   "geofence": null,
+   "line_name": null,
+   "official_url": null,
+   "wiki_url": null,
+   "status": "draf",
+   "validation": [
+    {
+     "role": "sejarah",
+     "reviewer": null,
+     "decision": null,
+     "date": null
+    },
+    {
+     "role": "geospasial",
+     "reviewer": null,
+     "decision": null,
+     "date": null
+    },
+    {
+     "role": "syariah",
+     "reviewer": null,
+     "decision": null,
+     "date": null
+    }
+   ]
+  },
+  {
+   "id": "S21",
+   "priority": "P2",
+   "type": "masjid",
+   "names": {
+    "id": "Masjid al-Rayah",
+    "ar": "مسجد الراية",
+    "en": "Al-Rayah Mosque"
+   },
+   "translit": [
+    "rayah",
+    "raya",
+    "rayah mosque",
+    "dzubab",
+    "dhubab",
+    "zubab"
+   ],
+   "geometry": null,
+   "rep_method": null,
+   "pack": null,
+   "distance_from_nabawi_m": null,
+   "position": {
+    "label": "belum_ada",
+    "spread_m": null,
+    "sources": [],
+    "note": {
+     "id": "Wikipedia EN tidak memuat koordinat; cari 2 sumber.",
+     "ar": "لا إحداثيات في ويكيبيديا الإنجليزية؛ يلزم مصدران.",
+     "en": "English Wikipedia has no coordinates; find two sources."
+    }
+   },
+   "history": "perlu_verifikasi",
+   "history_note": null,
+   "dispute": "perlu_verifikasi",
+   "dispute_note": null,
+   "model3d": "tidak",
+   "module": null,
+   "summary": {
+    "id": "Masjid di atas Jabal Dzubab dekat Jabal Sala' (Wikipedia EN). Koordinat belum tersedia, jadi belum tampil di peta.",
+    "ar": "مسجد فوق جبل ذباب قرب جبل سلع (ويكيبيديا الإنجليزية). لا تتوفر إحداثياته بعد، فلا يظهر على الخريطة.",
+    "en": "A mosque on Jabal Dhubab near Mount Sala' (English Wikipedia). No coordinates yet, so it is not shown on the map."
+   },
+   "narration": null,
+   "rulings": [
+    {
+     "activity": {
+      "id": "Berkunjung untuk belajar sirah",
+      "ar": "الزيارة للتعرّف على السيرة",
+      "en": "Visiting to learn the sirah"
+     },
+     "status": "mubah",
+     "evidence": [],
+     "note": {
+      "id": "Tanpa keutamaan khusus tempat; adab masuk masjid berlaku umum.",
+      "ar": "لا فضل خاص للمكان؛ آداب دخول المسجد عامة.",
+      "en": "No special merit for the place; general mosque etiquette applies."
+     }
+    }
+   ],
+   "dynamic_ids": [],
+   "geofence": null,
+   "line_name": null,
+   "official_url": null,
+   "wiki_url": "https://en.wikipedia.org/wiki/Al-Rayah_mosque",
+   "status": "draf",
+   "validation": [
+    {
+     "role": "sejarah",
+     "reviewer": null,
+     "decision": null,
+     "date": null
+    },
+    {
+     "role": "geospasial",
+     "reviewer": null,
+     "decision": null,
+     "date": null
+    },
+    {
+     "role": "syariah",
+     "reviewer": null,
+     "decision": null,
+     "date": null
+    }
+   ]
+  },
+  {
+   "id": "S22",
+   "priority": "P2",
+   "type": "gunung",
+   "names": {
+    "id": "Jabal 'Ayr",
+    "ar": "جبل عير",
+    "en": "Mount Ayr"
+   },
+   "translit": [
+    "ayr",
+    "air",
+    "eer",
+    "jabal ayr",
+    "jabal air",
+    "ayer"
+   ],
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     39.55694,
+     24.39944
+    ]
+   },
+   "rep_method": "wikipedia_label",
+   "pack": "barat",
+   "distance_from_nabawi_m": 9453,
+   "position": {
+    "label": "perkiraan",
+    "spread_m": null,
+    "sources": [
+     {
+      "name": "Wikipedia EN",
+      "url": "https://en.wikipedia.org/wiki/Ayr_Mountain",
+      "lat": 24.39944,
+      "lon": 39.55694
+     }
+    ]
+   },
+   "history": "kuat",
+   "history_note": {
+    "id": "Batas kuat; penentuannya di lapangan diperselisihkan.",
+    "ar": "الحد ثابت؛ وتعيينه على الأرض مختلف فيه.",
+    "en": "The bound is firm; its placement on the ground is disputed."
+   },
+   "dispute": "ya",
+   "dispute_note": {
+    "id": "Penanda batas di lapangan dipersoalkan peneliti.",
+    "ar": "علامات الحدود على الأرض محل نقاش الباحثين.",
+    "en": "Boundary markers on the ground are debated by researchers."
+   },
+   "model3d": "dem",
+   "module": null,
+   "summary": {
+    "id": "Gunung di selatan kota yang disebut dalam hadis batas Haram Madinah, \"antara 'Ayr dan Tsaur\" (Muslim 1370). Aplikasi tidak menggambar garis batas.",
+    "ar": "جبل جنوبي المدينة ورد في حديث حدود حرم المدينة: «ما بين عَيْر إلى ثور» (مسلم 1370). التطبيق لا يرسم خط الحدود.",
+    "en": "A mountain south of the city named in the hadith on the bounds of Madinah's Haram, \"between 'Ayr and Thawr\" (Muslim 1370). The app does not draw a boundary line."
+   },
+   "narration": null,
+   "rulings": [
+    {
+     "activity": {
+      "id": "Batas Tanah Haram Madinah",
+      "ar": "حدود حرم المدينة",
+      "en": "Bounds of Madinah's Haram"
+     },
+     "status": "informasi",
+     "evidence": [
+      "EV-MUSLIM-1370"
+     ],
+     "note": {
+      "id": "Garis batas tidak digambar sampai ada geodata resmi yang ditinjau.",
+      "ar": "لا يُرسم خط الحد حتى تتوفر بيانات رسمية مراجعة.",
+      "en": "No boundary line is drawn until reviewed official geodata exists."
+     }
+    }
+   ],
+   "dynamic_ids": [],
+   "geofence": null,
+   "line_name": null,
+   "official_url": null,
+   "wiki_url": null,
+   "status": "draf",
+   "validation": [
+    {
+     "role": "sejarah",
+     "reviewer": null,
+     "decision": null,
+     "date": null
+    },
+    {
+     "role": "geospasial",
+     "reviewer": null,
+     "decision": null,
+     "date": null
+    },
+    {
+     "role": "syariah",
+     "reviewer": null,
+     "decision": null,
+     "date": null
+    }
+   ]
+  },
+  {
+   "id": "S23",
+   "priority": "P1",
+   "type": "transportasi",
+   "names": {
+    "id": "Stasiun Haramain Madinah",
+    "ar": "محطة قطار الحرمين – المدينة المنورة",
+    "en": "Haramain Railway Station, Madinah"
+   },
+   "translit": [
+    "haramain",
+    "kereta cepat",
+    "train",
+    "hhr",
+    "stasiun kereta",
+    "railway station",
+    "qitar"
+   ],
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     39.6996,
+     24.4723
+    ]
+   },
+   "rep_method": "osm_node",
+   "pack": "kota",
+   "distance_from_nabawi_m": 8959,
+   "position": {
+    "label": "perkiraan",
+    "spread_m": null,
+    "sources": [
+     {
+      "name": "OSM node 10957110707",
+      "url": "https://mapcarta.com/N10957110707",
+      "lat": 24.4723,
+      "lon": 39.6996
+     }
+    ],
+    "note": {
+     "id": "1 sumber (OSM, 4 desimal); perlu sumber kedua.",
+     "ar": "مصدر واحد (OSM)؛ يلزم مصدر ثانٍ.",
+     "en": "One source (OSM, 4 decimals); needs a second source."
+    }
+   },
+   "history": null,
+   "history_note": null,
+   "dispute": "tidak",
+   "dispute_note": null,
+   "model3d": "tidak",
+   "module": null,
+   "summary": {
+    "id": "Stasiun kereta cepat Haramain di Madinah. Jadwal dan tiket: lihat situs resmi HHR. Posisi dari satu sumber (OSM).",
+    "ar": "محطة قطار الحرمين السريع في المدينة المنورة. المواعيد والتذاكر في الموقع الرسمي. الموقع من مصدر واحد (OSM).",
+    "en": "The Haramain high-speed railway station in Madinah. For timetables and tickets, see the official HHR site. Position from one source (OSM)."
+   },
+   "narration": null,
+   "rulings": [],
+   "dynamic_ids": [],
+   "geofence": null,
+   "line_name": null,
+   "official_url": "https://sar.hhr.sa/",
+   "wiki_url": null,
+   "status": "draf",
+   "validation": [
+    {
+     "role": "sejarah",
+     "reviewer": null,
+     "decision": null,
+     "date": null
+    },
+    {
+     "role": "geospasial",
+     "reviewer": null,
+     "decision": null,
+     "date": null
+    },
+    {
+     "role": "syariah",
+     "reviewer": null,
+     "decision": null,
+     "date": null
+    }
+   ]
+  }
+ ],
+ "evidence": [
+  {
+   "id": "EV-QURAN-2-142-150",
+   "type": "quran",
+   "ref": {
+    "id": "QS al-Baqarah 142–150",
+    "ar": "البقرة 142–150",
+    "en": "Qur'an 2:142–150"
+   },
+   "grade": null,
+   "url": null
+  },
+  {
+   "id": "EV-QURAN-AHZAB",
+   "type": "quran",
+   "ref": {
+    "id": "QS al-Ahzab (rentang ayat perlu verifikasi)",
+    "ar": "سورة الأحزاب (نطاق الآيات يحتاج إلى تحقق)",
+    "en": "Qur'an, al-Ahzab (verse range to verify)"
+   },
+   "grade": null,
+   "url": null
+  },
+  {
+   "id": "EV-BUKHARI-40",
+   "type": "hadis",
+   "ref": {
+    "id": "Bukhari 40",
+    "ar": "البخاري 40",
+    "en": "Bukhari 40"
+   },
+   "grade": "sahih",
+   "grader": "al-Bukhari (Sahih)",
+   "url": "https://sunnah.com/bukhari:40"
+  },
+  {
+   "id": "EV-BUKHARI-1189",
+   "type": "hadis",
+   "ref": {
+    "id": "Bukhari 1189",
+    "ar": "البخاري 1189",
+    "en": "Bukhari 1189"
+   },
+   "grade": "sahih",
+   "grader": "al-Bukhari (Sahih)",
+   "url": "https://sunnah.com/bukhari:1189"
+  },
+  {
+   "id": "EV-BUKHARI-1193",
+   "type": "hadis",
+   "ref": {
+    "id": "Bukhari 1193",
+    "ar": "البخاري 1193",
+    "en": "Bukhari 1193"
+   },
+   "grade": "sahih",
+   "grader": "al-Bukhari (Sahih)",
+   "url": "https://sunnah.com/bukhari/20"
+  },
+  {
+   "id": "EV-BUKHARI-1194",
+   "type": "hadis",
+   "ref": {
+    "id": "Bukhari 1194",
+    "ar": "البخاري 1194",
+    "en": "Bukhari 1194"
+   },
+   "grade": "sahih",
+   "grader": "al-Bukhari (Sahih)",
+   "url": "https://sunnah.com/bukhari/20"
+  },
+  {
+   "id": "EV-BUKHARI-1529",
+   "type": "hadis",
+   "ref": {
+    "id": "Bukhari 1529",
+    "ar": "البخاري 1529",
+    "en": "Bukhari 1529"
+   },
+   "grade": "sahih",
+   "grader": "al-Bukhari (Sahih)",
+   "url": "https://en.tohed.com/hadith/bukhari/1529/"
+  },
+  {
+   "id": "EV-BUKHARI-1534",
+   "type": "hadis",
+   "ref": {
+    "id": "Bukhari 1534",
+    "ar": "البخاري 1534",
+    "en": "Bukhari 1534"
+   },
+   "grade": "sahih",
+   "grader": "al-Bukhari (Sahih)",
+   "url": "https://sunnah.com/bukhari:1534"
+  },
+  {
+   "id": "EV-BUKHARI-3674",
+   "type": "hadis",
+   "ref": {
+    "id": "Bukhari 3674",
+    "ar": "البخاري 3674",
+    "en": "Bukhari 3674"
+   },
+   "grade": "sahih",
+   "grader": "al-Bukhari (Sahih)",
+   "url": "https://sunnah.com/bukhari:3674"
+  },
+  {
+   "id": "EV-BUKHARI-4042",
+   "type": "hadis",
+   "ref": {
+    "id": "Bukhari 4042",
+    "ar": "البخاري 4042",
+    "en": "Bukhari 4042"
+   },
+   "grade": "sahih",
+   "grader": "al-Bukhari (Sahih)",
+   "url": "https://sunnah.com/bukhari:4042"
+  },
+  {
+   "id": "EV-BUKHARI-4084",
+   "type": "hadis",
+   "ref": {
+    "id": "Bukhari 4084",
+    "ar": "البخاري 4084",
+    "en": "Bukhari 4084"
+   },
+   "grade": "sahih",
+   "grader": "al-Bukhari (Sahih)",
+   "url": "https://sunnah.com/bukhari:4084"
+  },
+  {
+   "id": "EV-BUKHARI-4097",
+   "type": "hadis",
+   "ref": {
+    "id": "Bukhari 4097 (bab Ghazwah al-Khandaq)",
+    "ar": "البخاري 4097 (باب غزوة الخندق)",
+    "en": "Bukhari 4097 (chapter on the Battle of the Trench)"
+   },
+   "grade": "sahih",
+   "grader": "al-Bukhari (Sahih)",
+   "url": "https://sunnah.com/bukhari:4097"
+  },
+  {
+   "id": "EV-BUKHARI-4486",
+   "type": "hadis",
+   "ref": {
+    "id": "Bukhari 4486",
+    "ar": "البخاري 4486",
+    "en": "Bukhari 4486"
+   },
+   "grade": "sahih",
+   "grader": "al-Bukhari (Sahih)",
+   "url": "https://sunnah.com/bukhari:4486"
+  },
+  {
+   "id": "EV-BUKHARI-5445",
+   "type": "hadis",
+   "ref": {
+    "id": "Bukhari 5445",
+    "ar": "البخاري 5445",
+    "en": "Bukhari 5445"
+   },
+   "grade": "sahih",
+   "grader": "al-Bukhari (Sahih)",
+   "url": "https://sunnah.com/bukhari/70/74"
+  },
+  {
+   "id": "EV-MUSLIM-524",
+   "type": "hadis",
+   "ref": {
+    "id": "Muslim 524",
+    "ar": "مسلم 524",
+    "en": "Muslim 524"
+   },
+   "grade": "sahih",
+   "grader": "Muslim (Sahih)",
+   "url": "https://sunnah.com/muslim:524"
+  },
+  {
+   "id": "EV-MUSLIM-974",
+   "type": "hadis",
+   "ref": {
+    "id": "Muslim 974",
+    "ar": "مسلم 974",
+    "en": "Muslim 974"
+   },
+   "grade": "sahih",
+   "grader": "Muslim (Sahih)",
+   "url": "https://sunnah.com/muslim:974"
+  },
+  {
+   "id": "EV-MUSLIM-977",
+   "type": "hadis",
+   "ref": {
+    "id": "Muslim 977",
+    "ar": "مسلم 977",
+    "en": "Muslim 977"
+   },
+   "grade": "sahih",
+   "grader": "Muslim (Sahih)",
+   "url": "https://sunnah.com/muslim:977"
+  },
+  {
+   "id": "EV-MUSLIM-1181",
+   "type": "hadis",
+   "ref": {
+    "id": "Muslim 1181",
+    "ar": "مسلم 1181",
+    "en": "Muslim 1181"
+   },
+   "grade": "sahih",
+   "grader": "Muslim (Sahih)",
+   "url": "https://sunnah.com/muslim/15"
+  },
+  {
+   "id": "EV-MUSLIM-1370",
+   "type": "hadis",
+   "ref": {
+    "id": "Muslim 1370",
+    "ar": "مسلم 1370",
+    "en": "Muslim 1370"
+   },
+   "grade": "sahih",
+   "grader": "Muslim (Sahih)",
+   "url": "https://abukhadeejah.com/the-virtues-of-prophets-madeenah-narrations-that-put-a-yearning-into-the-hearts/"
+  },
+  {
+   "id": "EV-MUSLIM-1393",
+   "type": "hadis",
+   "ref": {
+    "id": "Muslim 1393",
+    "ar": "مسلم 1393",
+    "en": "Muslim 1393"
+   },
+   "grade": "sahih",
+   "grader": "Muslim (Sahih)",
+   "url": "https://sunnah.com/muslim:1393b"
+  },
+  {
+   "id": "EV-MUSLIM-1397",
+   "type": "hadis",
+   "ref": {
+    "id": "Muslim 1397",
+    "ar": "مسلم 1397",
+    "en": "Muslim 1397"
+   },
+   "grade": "sahih",
+   "grader": "Muslim (Sahih)",
+   "url": "https://sunnah.com/muslim:1397"
+  },
+  {
+   "id": "EV-MUSLIM-1399",
+   "type": "hadis",
+   "ref": {
+    "id": "Muslim 1399",
+    "ar": "مسلم 1399",
+    "en": "Muslim 1399"
+   },
+   "grade": "sahih",
+   "grader": "Muslim (Sahih)",
+   "url": "https://islamqa.info/en/answers/70467"
+  },
+  {
+   "id": "EV-MUSLIM-2047B",
+   "type": "hadis",
+   "ref": {
+    "id": "Muslim 2047b",
+    "ar": "مسلم 2047",
+    "en": "Muslim 2047b"
+   },
+   "grade": "sahih",
+   "grader": "Muslim (Sahih)",
+   "url": "https://sunnah.com/muslim:2047b"
+  },
+  {
+   "id": "EV-MUSLIM-2890",
+   "type": "hadis",
+   "ref": {
+    "id": "Muslim 2890",
+    "ar": "مسلم 2890",
+    "en": "Muslim 2890"
+   },
+   "grade": "sahih",
+   "grader": "Muslim (Sahih)",
+   "url": "https://sunnah.com/muslim:2890a"
+  },
+  {
+   "id": "EV-IBNMAJAH-1412",
+   "type": "hadis",
+   "ref": {
+    "id": "Ibnu Majah 1412",
+    "ar": "ابن ماجه 1412",
+    "en": "Ibn Majah 1412"
+   },
+   "grade": "hasan (Darussalam); sahih (al-Albani)",
+   "grader": "Darussalam; al-Albani",
+   "url": "https://sunnah.com/ibnmajah:1412"
+  },
+  {
+   "id": "EV-ADAB-704",
+   "type": "hadis",
+   "ref": {
+    "id": "al-Adab al-Mufrad 704",
+    "ar": "الأدب المفرد 704",
+    "en": "al-Adab al-Mufrad 704"
+   },
+   "grade": "hasan (al-Albani); sanad lemah (Syu’aib al-Arna’uth)",
+   "grader": "al-Albani; Syu’aib al-Arna’uth",
+   "url": "https://sunnah.com/adab:704"
+  },
+  {
+   "id": "EV-AHMAD-FATH",
+   "type": "hadis",
+   "ref": {
+    "id": "Musnad Ahmad (nomor perlu verifikasi)",
+    "ar": "مسند أحمد (الرقم يحتاج إلى تحقق)",
+    "en": "Musnad Ahmad (number to verify)"
+   },
+   "grade": "diperselisihkan",
+   "grader": "lihat Islamweb 113067",
+   "url": "https://www.islamweb.net/ar/fatwa/113067"
+  },
+  {
+   "id": "EV-MADAIN-FATH",
+   "type": "kajian",
+   "ref": {
+    "id": "Madain Project: Masjid al-Fath (tidak ditemukan riwayat keutamaan)",
+    "ar": "Madain Project: مسجد الفتح (لم تُعثر رواية في فضل الزيارة)",
+    "en": "Madain Project: Masjid al-Fath (no report of merit found)"
+   },
+   "grade": null,
+   "url": "https://madainproject.com/al_fatah_mosque_(seven_mosques)"
+  }
+ ],
+ "events": [
+  {
+   "id": "E01",
+   "names": {
+    "id": "Hijrah: Nabi ﷺ tiba di Quba",
+    "ar": "الهجرة: وصول النبي ﷺ إلى قباء",
+    "en": "Hijrah: the Prophet ﷺ arrives at Quba"
+   },
+   "hijri": {
+    "year": {
+     "value": 1,
+     "certainty": "kuat"
+    },
+    "month": {
+     "value": 3,
+     "certainty": "masyhur"
+    },
+    "day": {
+     "values": [
+      12
+     ],
+     "certainty": "diperselisihkan"
+    }
+   },
+   "certainty": "kuat",
+   "site_ids": [
+    "S04"
+   ],
+   "evidence": [
+    "EV-MUSLIM-524"
+   ],
+   "note": {
+    "id": "Hari dan lama tinggal diperselisihkan: 4 hari menurut SPA; 14 malam menurut Muslim 524. Tanggal 12 Rabiul Awal menurut SPA.",
+    "ar": "اليوم ومدة الإقامة مختلف فيهما: 4 أيام بحسب واس؛ 14 ليلة عند مسلم 524. والتاريخ 12 ربيع الأول بحسب واس.",
+    "en": "The day and length of stay are disputed: 4 days per SPA; 14 nights per Muslim 524. 12 Rabi al-Awwal per SPA."
+   },
+   "sources": [
+    {
+     "name": "SPA",
+     "url": "https://www.spa.gov.sa/2369973"
+    }
+   ]
+  },
+  {
+   "id": "E02",
+   "names": {
+    "id": "Jumat pertama di Wadi Ranuna",
+    "ar": "أول جمعة في وادي رانوناء",
+    "en": "First Friday prayer in Wadi Ranuna"
+   },
+   "hijri": {
+    "year": {
+     "value": 1,
+     "certainty": "kuat"
+    },
+    "month": {
+     "value": 3,
+     "certainty": "masyhur"
+    },
+    "day": {
+     "values": [
+      16
+     ],
+     "certainty": "diperselisihkan"
+    }
+   },
+   "certainty": "masyhur",
+   "site_ids": [
+    "S07"
+   ],
+   "evidence": [],
+   "note": {
+    "id": "16 Rabiul Awal 1 H menurut SPA dan Saudipedia; tanggal bergantung E01.",
+    "ar": "16 ربيع الأول 1 هـ بحسب واس والموسوعة السعودية؛ ويتبع E01.",
+    "en": "16 Rabi al-Awwal 1 AH per SPA and Saudipedia; depends on E01."
+   },
+   "sources": [
+    {
+     "name": "SPA",
+     "url": "https://www.spa.gov.sa/2369973"
+    }
+   ]
+  },
+  {
+   "id": "E03",
+   "names": {
+    "id": "Perubahan kiblat",
+    "ar": "تحويل القبلة",
+    "en": "Change of the qibla"
+   },
+   "hijri": {
+    "year": {
+     "value": 2,
+     "certainty": "diturunkan"
+    },
+    "month": {
+     "value": null,
+     "certainty": "perlu_verifikasi"
+    },
+    "day": {
+     "values": [],
+     "certainty": "perlu_verifikasi"
+    }
+   },
+   "certainty": "kuat",
+   "site_ids": [
+    "S06"
+   ],
+   "evidence": [
+    "EV-QURAN-2-142-150",
+    "EV-BUKHARI-40",
+    "EV-BUKHARI-4486"
+   ],
+   "note": {
+    "id": "16 atau 17 bulan setelah Nabi ﷺ tiba (Bukhari 40); tahun 2 H diturunkan dari itu. Bulan pasti perlu verifikasi kitab sirah.",
+    "ar": "بعد ستة عشر أو سبعة عشر شهرًا من قدوم النبي ﷺ (البخاري 40)؛ والسنة 2 هـ مستنتجة. الشهر يحتاج إلى تحقق.",
+    "en": "16 or 17 months after the Prophet ﷺ arrived (Bukhari 40); year 2 AH is derived. The exact month needs verification."
+   },
+   "sources": []
+  },
+  {
+   "id": "E04",
+   "names": {
+    "id": "Perang Uhud",
+    "ar": "غزوة أحد",
+    "en": "Battle of Uhud"
+   },
+   "hijri": {
+    "year": {
+     "value": 3,
+     "certainty": "kuat"
+    },
+    "month": {
+     "value": 10,
+     "certainty": "kuat"
+    },
+    "day": {
+     "values": [
+      7,
+      3
+     ],
+     "certainty": "diperselisihkan"
+    }
+   },
+   "certainty": "kuat",
+   "site_ids": [
+    "S10",
+    "S11",
+    "S12"
+   ],
+   "evidence": [
+    "EV-BUKHARI-4042",
+    "EV-BUKHARI-4084"
+   ],
+   "note": {
+    "id": "Hari: 7 Syawal (Al-Riyadh) vs 3 Syawal (Wikipedia EN \"Mount Uhud\").",
+    "ar": "اليوم: 7 شوال (الرياض) مقابل 3 شوال (ويكيبيديا الإنجليزية).",
+    "en": "Day: 7 Shawwal (Al-Riyadh) vs 3 Shawwal (English Wikipedia \"Mount Uhud\")."
+   },
+   "sources": [
+    {
+     "name": "Al-Riyadh",
+     "url": "https://www.alriyadh.com/2069027"
+    },
+    {
+     "name": "Wikipedia EN",
+     "url": "https://en.wikipedia.org/wiki/Mount_Uhud"
+    }
+   ]
+  },
+  {
+   "id": "E05",
+   "names": {
+    "id": "Perang Khandaq (Ahzab)",
+    "ar": "غزوة الخندق (الأحزاب)",
+    "en": "Battle of the Trench (al-Ahzab)"
+   },
+   "hijri": {
+    "year": {
+     "values": [
+      5,
+      4
+     ],
+     "certainty": "diperselisihkan"
+    },
+    "month": {
+     "value": 10,
+     "certainty": "perlu_verifikasi"
+    },
+    "day": {
+     "values": [],
+     "certainty": "perlu_verifikasi"
+    }
+   },
+   "certainty": "kuat",
+   "site_ids": [
+    "S08",
+    "S09"
+   ],
+   "evidence": [
+    "EV-QURAN-AHZAB",
+    "EV-BUKHARI-4097"
+   ],
+   "note": {
+    "id": "5 H menurut SPA (via Al Arabiya); Syawal 4 H menurut Wikipedia AR \"Jabal Sala'\". Tahun diperselisihkan.",
+    "ar": "5 هـ بحسب واس (عن العربية)؛ شوال 4 هـ بحسب ويكيبيديا العربية. السنة مختلف فيها.",
+    "en": "5 AH per SPA (via Al Arabiya); Shawwal 4 AH per Arabic Wikipedia. The year is disputed."
+   },
+   "sources": [
+    {
+     "name": "Al Arabiya",
+     "url": "https://english.alarabiya.net/features/2018/08/10/What-s-the-story-of-the-Seven-Mosques-which-pilgrims-visit-in-Medina-"
+    }
+   ]
+  },
+  {
+   "id": "E06",
+   "names": {
+    "id": "Nabi ﷺ menyalatkan syuhada Uhud",
+    "ar": "صلاة النبي ﷺ على شهداء أحد",
+    "en": "The Prophet ﷺ prays over the martyrs of Uhud"
+   },
+   "hijri": {
+    "year": {
+     "value": 11,
+     "certainty": "diturunkan"
+    },
+    "month": {
+     "value": null,
+     "certainty": "perlu_verifikasi"
+    },
+    "day": {
+     "values": [],
+     "certainty": "perlu_verifikasi"
+    }
+   },
+   "certainty": "kuat",
+   "site_ids": [
+    "S11"
+   ],
+   "evidence": [
+    "EV-BUKHARI-4042"
+   ],
+   "note": {
+    "id": "Delapan tahun setelah Uhud (Bukhari 4042); tahun ±11 H diturunkan.",
+    "ar": "بعد ثماني سنين من أحد (البخاري 4042)؛ والسنة نحو 11 هـ مستنتجة.",
+    "en": "Eight years after Uhud (Bukhari 4042); the year of about 11 AH is derived."
+   },
+   "sources": []
+  },
+  {
+   "id": "E07",
+   "names": {
+    "id": "Kereta Hijaz pertama tiba di Madinah",
+    "ar": "وصول أول قطار حجازي إلى المدينة",
+    "en": "First Hejaz Railway train reaches Madinah"
+   },
+   "hijri": {
+    "year": {
+     "value": 1326,
+     "certainty": "perlu_verifikasi"
+    },
+    "month": {
+     "value": 7,
+     "certainty": "perlu_verifikasi"
+    },
+    "day": {
+     "values": [
+      22
+     ],
+     "certainty": "perlu_verifikasi"
+    }
+   },
+   "certainty": "sejarah_modern",
+   "site_ids": [
+    "S15"
+   ],
+   "evidence": [],
+   "note": {
+    "id": "22 Rajab 1326 H menurut inventaris Islamic Architectural Heritage; halaman UNESCO memuat tanggal berbeda.",
+    "ar": "22 رجب 1326 هـ بحسب سجل Islamic Architectural Heritage؛ وصفحة اليونسكو تذكر تاريخًا آخر.",
+    "en": "22 Rajab 1326 AH per the Islamic Architectural Heritage inventory; the UNESCO page gives a different date."
+   },
+   "sources": [
+    {
+     "name": "Islamic Architectural Heritage",
+     "url": "https://www.islamicarchitecturalheritage.com/listings/hejaz-railway-station-in-medina"
+    }
+   ]
+  }
+ ],
+ "tours": [
+  {
+   "id": "TUR-QUBA",
+   "names": {
+    "id": "Tur Quba dan Qiblatain",
+    "ar": "جولة قباء والقبلتين",
+    "en": "Quba and Qiblatayn tour"
+   },
+   "stops": [
+    "S04",
+    "S05",
+    "S07",
+    "S06"
+   ],
+   "moscow": "Must",
+   "dwell_min": 20,
+   "intro": {
+    "id": "Mulai dari Masjid Quba, lanjut penanda Sumur Aris dan Masjid Jumu'ah, lalu Masjid Qiblatain di barat.",
+    "ar": "تبدأ من مسجد قباء، ثم علامة بئر أريس ومسجد الجمعة، ثم مسجد القبلتين غربًا.",
+    "en": "Starts at Quba Mosque, then the Well of Aris marker and al-Jumu'ah Mosque, then Masjid al-Qiblatayn to the west."
+   },
+   "packs": [
+    "barat",
+    "selatan"
+   ]
+  },
+  {
+   "id": "TUR-UHUD",
+   "names": {
+    "id": "Tur Uhud",
+    "ar": "جولة أحد",
+    "en": "Uhud tour"
+   },
+   "stops": [
+    "S11",
+    "S12",
+    "S10",
+    "S18"
+   ],
+   "moscow": "Must",
+   "dwell_min": 20,
+   "intro": {
+    "id": "Makam Syuhada Uhud, Jabal Rumat, pandangan ke Jabal Uhud, lalu reruntuhan Masjid Fasyh.",
+    "ar": "مقبرة شهداء أحد، ثم جبل الرماة، ثم إطلالة على جبل أحد، ثم أطلال مسجد الفسح.",
+    "en": "The Uhud Martyrs' Cemetery, Archers' Hill, a view of Mount Uhud, then the ruins of Fas'h Mosque."
+   },
+   "packs": [
+    "utara"
+   ]
+  },
+  {
+   "id": "TUR-KHANDAQ",
+   "names": {
+    "id": "Tur Khandaq",
+    "ar": "جولة الخندق",
+    "en": "Trench tour"
+   },
+   "stops": [
+    "S09",
+    "S08"
+   ],
+   "moscow": "Should",
+   "dwell_min": 20,
+   "intro": {
+    "id": "Jabal Sala' sebagai latar, lalu kawasan Masjid al-Fath dan Sab'ah Masajid.",
+    "ar": "جبل سلع مسرحًا، ثم منطقة مسجد الفتح والمساجد السبعة.",
+    "en": "Mount Sala' as the setting, then the al-Fath Mosque and Seven Mosques area."
+   },
+   "packs": [
+    "inti"
+   ]
+  }
+ ],
+ "general_notes": [
+  {
+   "activity": {
+    "id": "Bepergian khusus dengan niat ibadah ke tempat selain tiga masjid",
+    "ar": "شدّ الرحال بنية العبادة إلى غير المساجد الثلاثة",
+    "en": "Travelling specially for worship to places other than the three mosques"
+   },
+   "status": "diperselisihkan",
+   "evidence": [
+    "EV-BUKHARI-1189",
+    "EV-MUSLIM-1397"
+   ],
+   "note": {
+    "id": "Cakupan larangannya diperselisihkan; tidak dianjurkan, ditampilkan sebagai informasi netral.",
+    "ar": "نطاق النهي مختلف فيه؛ لا يُوصى به ويُعرض بحياد.",
+    "en": "The scope of the prohibition is disputed; not recommended, shown neutrally."
+   }
+  },
+  {
+   "activity": {
+    "id": "Mengusap dinding, mengambil tanah/batu, mengikat kain, meminta kepada penghuni kubur",
+    "ar": "التمسح بالجدران، وأخذ التراب أو الحجارة، وربط الخِرَق، وسؤال أصحاب القبور",
+    "en": "Rubbing walls, taking soil or stones, tying cloth, asking the dead"
+   },
+   "status": "tidak_berdasar",
+   "evidence": [],
+   "note": {
+    "id": "Tidak berdasar dalil; sebagian terlarang. Dalil dan redaksi diisi peninjau syariah.",
+    "ar": "لا دليل عليها، وبعضها محرم. الأدلة والصياغة يحددها المراجع الشرعي.",
+    "en": "No textual basis; some are forbidden. Evidence and wording to be set by the sharia reviewer."
+   }
+  },
+  {
+   "activity": {
+    "id": "Aturan otoritas setempat (jam kunjung, larangan memanjat, jalur)",
+    "ar": "أنظمة الجهات المختصة (أوقات الزيارة، منع التسلق، المسارات)",
+    "en": "Local authority rules (visiting hours, no climbing, routes)"
+   },
+   "status": "aturan",
+   "evidence": [],
+   "note": {
+    "id": "Bukan klasifikasi fikih; tampil sebagai info dinamis bertanggal.",
+    "ar": "ليست حكمًا فقهيًا؛ تُعرض معلومات متغيرة مؤرخة.",
+    "en": "Not a fiqh classification; shown as dated dynamic info."
+   }
+  }
+ ],
+ "kaaba": {
+  "lat": 21.42252,
+  "lon": 39.82618,
+  "spread_m": 2,
+  "sources": [
+   {
+    "name": "OSM way 103914569",
+    "url": "https://mapcarta.com/13242970",
+    "lat": 21.42252,
+    "lon": 39.82618
+   },
+   {
+    "name": "Wikipedia EN",
+    "url": "https://en.wikipedia.org/wiki/Kaaba",
+    "lat": 21.4225,
+    "lon": 39.82617
+   }
+  ]
+ },
+ "haram_boundary": {
+  "status": "tidak_digambar",
+  "evidence": [
+   "EV-MUSLIM-1370"
+  ],
+  "text": {
+   "id": "Hadis menyebut Madinah haram antara 'Ayr dan Tsaur (Muslim 1370). Fuqaha berbeda pendapat, dan posisi penanda di lapangan dipersoalkan peneliti. Garis batas tidak digambar sampai ada geodata resmi dari otoritas berwenang yang telah ditinjau.",
+   "ar": "ورد في الحديث أن المدينة حرم ما بين عير إلى ثور (مسلم 1370). واختلف الفقهاء، ومواضع العلامات على الأرض محل نقاش الباحثين. لا يُرسم خط الحد حتى تتوفر بيانات رسمية من الجهة المختصة بعد مراجعتها.",
+   "en": "The hadith says Madinah is sacred between 'Ayr and Thawr (Muslim 1370). Jurists differ, and researchers debate the markers on the ground. No boundary line is drawn until reviewed official geodata from the competent authority exists."
+  },
+  "sources": [
+   {
+    "name": "Kajian ResearchGate",
+    "url": "https://www.researchgate.net/publication/342564541_hrm_almdynt_almnwrt_whdwdh_br_altarykh"
+   },
+   {
+    "name": "Alukah: komite batas 1389 H & 1419 H",
+    "url": "https://www.alukah.net/sharia/0/30186/"
+   },
+   {
+    "name": "Al-Madina: penanda batas dipersoalkan",
+    "url": "https://www.al-madina.com/article/5530/"
+   }
+  ]
+ }
+}

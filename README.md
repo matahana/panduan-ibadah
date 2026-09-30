@@ -1,10 +1,10 @@
-# Panduan Ibadah — Umrah, Haji, Jarak & Waktu, Lokasi Sejarah, Haram 3D, Nabawi 3D, Bahasa Arab, Belajar Qur'an
+# Panduan Ibadah — Umrah, Haji, Jarak & Waktu, Lokasi Sejarah, Haram 3D, Nabawi 3D, Madinah Explorer, Bahasa Arab, Belajar Qur'an
 
 **Situs:** https://matahana.github.io/panduan-ibadah/
 
-Tujuh panduan dan dua aplikasi peta 3D dalam satu halaman bertab — lima panduan ibadah, aplikasi
-*Haram 3D Explorer* dan *Nabawi 3D Explorer*, dan dua panduan belajar bahasa Arab/Al-Qur'an — lengkap
-dengan ilustrasi dan berkas unduhan.
+Tujuh panduan dan tiga aplikasi peta dalam satu halaman bertab — lima panduan ibadah, aplikasi
+*Haram 3D Explorer*, *Nabawi 3D Explorer*, dan *Madinah Explorer*, serta dua panduan belajar bahasa
+Arab/Al-Qur'an — lengkap dengan ilustrasi dan berkas unduhan.
 
 | Tab | Isi | Bab | Ilustrasi |
 |---|---|---:|---:|
@@ -14,14 +14,15 @@ dengan ilustrasi dan berkas unduhan.
 | [Lokasi Sejarah](https://matahana.github.io/panduan-ibadah/#sejarah) | Kisah Hajar–Zamzam, Ka'bah, hijrah, Masjid Nabawi, Badar–Uhud–Khandaq, situs dan adab ziarah | 13 | 10 |
 | [Haram 3D](https://matahana.github.io/panduan-ibadah/#haram-3d) | Aplikasi peta dan model 3D Masjidil Haram: 49 titik penting, lantai B–R, kiblat dan istiwa' a'zham, enam langkah umrah, penghitung thawaf dan sa'i, rute berlantai, garis waktu 15 periode. Halaman penuh: [haram-3d/](https://matahana.github.io/panduan-ibadah/haram-3d/) | aplikasi | — |
 | [Nabawi 3D](https://matahana.github.io/panduan-ibadah/#nabawi-3d) | Aplikasi peta dan model 3D Masjid Nabawi serta enam masjid bersejarah di sekitarnya (al-Ghamamah, Abu Bakar, Umar, Ali, al-Ijabah, as-Sajdah): 33 titik penting, peta 2D–2,5D–3D–4D, GPS dan rute jalan kaki, empat tur, garis waktu 13 periode perluasan. Halaman penuh: [nabawi-3d/](https://matahana.github.io/panduan-ibadah/nabawi-3d/) · APK Android: [unduh/nabawi-3d.apk](unduh/nabawi-3d.apk) | aplikasi | — |
+| [Madinah Explorer](https://matahana.github.io/panduan-ibadah/#madinah-explorer) | Aplikasi peta luring 23 situs bersejarah Madinah (Quba, Qiblatain, Uhud, Khandaq, dll.): kepastian lokasi & sejarah tiap situs, pencarian Latin/Arab, rute jalan kaki dan estimasi mobil yang dihitung di perangkat, tiga tur dengan narasi suara, garis waktu Hijriah, kiblat; UI Indonesia/Arab/Inggris. Halaman penuh: [madinah-explorer/](https://matahana.github.io/panduan-ibadah/madinah-explorer/) · APK Android: [unduh/madinah-explorer.apk](unduh/madinah-explorer.apk) | aplikasi | — |
 | [Bahasa Arab](https://matahana.github.io/panduan-ibadah/#arab) | Alfabet, tata bahasa dasar, kosakata dan dialog Arab–Indonesia–English (bandara, hotel, restoran, transportasi, kesehatan, belanja, darurat), doa manasik, indeks 291 kosakata | 19 | — |
 | [Bahasa Arab Dasar](https://matahana.github.io/panduan-ibadah/#bahasa-arab-dasar) | Alfabet dan bentuk huruf menurut posisi (lepas/awal/tengah/akhir), peringkat huruf tersering di Al-Qur'an, jenis kata dan pola kalimat Qur'ani, 6 tahap belajar dari huruf sampai makna ayat dengan rujukan surat/ayat, rencana belajar 12 bulan | 15 | 2 |
 | [Kosakata Pareto](https://matahana.github.io/panduan-ibadah/#kosakata-pareto) | 750 kata tersering di Al-Qur'an (250 kata kerja + 500 kata non-kerja) yang mencakup ≈81% teks, berikut akar kata, kelas kata, dan arti — tabel dapat dicari langsung di situs | 6 | 1 |
 
 Setiap panduan tersedia sebagai **PDF** (siap cetak A4) dan **Word** melalui tombol *Unduh* di situs,
 atau langsung dari folder [`unduh/`](unduh/). Panduan *Bahasa Arab*, *Bahasa Arab Dasar*, dan
-*Kosakata Pareto* tersedia sebagai PDF saja. Aplikasi *Nabawi 3D Explorer* juga tersedia sebagai
-**APK Android** (build debug, dipasang manual dengan mengizinkan pemasangan dari sumber tak dikenal).
+*Kosakata Pareto* tersedia sebagai PDF saja. Aplikasi *Nabawi 3D Explorer* dan *Madinah Explorer* juga tersedia
+sebagai **APK Android** (build debug, dipasang manual dengan mengizinkan pemasangan dari sumber tak dikenal).
 
 ## Catatan penyusunan
 
@@ -55,6 +56,15 @@ atau langsung dari folder [`unduh/`](unduh/). Panduan *Bahasa Arab*, *Bahasa Ara
   ditinjau. Pustaka Three.js dan MapLibre GL dibundel di dalam aplikasi (tanpa CDN) dan service
   worker menyimpannya, sehingga setelah dibuka sekali aplikasi tetap berjalan luring. GPS perangkat
   aktif setelah izin lokasi diberikan. Tautan berbagi satu titik berbentuk `nabawi-3d/#ghamamah`.
+- **Madinah Explorer** adalah prototipe v0.1.0. Koordinat tiap situs diambil dari minimal dua sumber
+  independen dan diberi label *bersumber*, *diturunkan*, atau *perkiraan*; kepastian sejarah dan hukum
+  amalan (wajib/sunnah/mubah/tidak berdasar dalil) tertulis di kartu situs; semua kontennya berstatus draf
+  sampai ditinjau. Peta, medan, glyph, dan graf jalan (±11 MB) diunduh sebagai paket luring bertanda
+  tangan Ed25519 dan diperiksa SHA-256; tanpa CDN dan tanpa pelacak. Data: © OpenStreetMap contributors
+  (ODbL) melalui Protomaps dan Overture Maps, serta Copernicus DEM GLO-30. Rute jalan kaki mengikuti ruas
+  yang tercatat, jadi plaza terbuka bisa membuat rute pendek lebih panjang dari aslinya; rute mobil
+  adalah estimasi. Tombol modul di kartu Masjid Nabawi, Raudhah, Baqi', dan Masjid al-Ijabah membuka
+  *Nabawi 3D Explorer*. Tautan berbagi satu situs berbentuk `madinah-explorer/#S04` (Masjid Quba).
 
 ## Penafian
 
@@ -71,15 +81,18 @@ Repositori ini hanya memuat **hasil akhir** untuk GitHub Pages:
 index.html     halaman bertab, mandiri (gambar tertanam)
 haram-3d/      aplikasi Haram 3D Explorer (index.html satu berkas + ikon)
 nabawi-3d/     aplikasi Nabawi 3D Explorer (build Vite: index.html, assets/, service worker, manifest, ikon)
-unduh/         PDF dan Word tiap panduan, APK Android Nabawi 3D
+madinah-explorer/  aplikasi Madinah Explorer (build Vite: index.html, assets/, packs/ data luring bertanda tangan, service worker, manifest, ikon)
+unduh/         PDF dan Word tiap panduan, APK Android Nabawi 3D dan Madinah Explorer
 .nojekyll      agar GitHub Pages menyajikan berkas apa adanya
 ```
 
 Sumber teks, ilustrasi, dan skrip pembangunnya berada di luar repositori ini.
 
-Tab yang punya kunci `src` pada data `#data` di `index.html` (saat ini Haram 3D dan Nabawi 3D) dimuat
+Tab yang punya kunci `src` pada data `#data` di `index.html` (saat ini Haram 3D, Nabawi 3D, dan Madinah Explorer) dimuat
 dari berkasnya sendiri; tab lain tetap memakai `srcdoc`. Bila `index.html` dibangun ulang dengan skrip
-di luar repositori, sertakan entri tab `haram-3d` dan `nabawi-3d`, dukungan `src`, serta entri
-`nabawi-3d` berekstensi `apk` pada menu *Unduh* agar tab dan unduhannya tidak hilang.
+di luar repositori, sertakan entri tab `haram-3d`, `nabawi-3d`, dan `madinah-explorer`, dukungan `src`, serta entri
+`nabawi-3d` dan `madinah-explorer` berekstensi `apk` pada menu *Unduh* agar tab dan unduhannya tidak hilang.
 `haram-3d/index.html` dihasilkan dari proyek Haram 3D Explorer dengan `npm run build:pages`;
 isi `nabawi-3d/` adalah folder `build/pages/` hasil `npm run build:pages` di proyek Nabawi 3D Explorer.
+Isi `madinah-explorer/` adalah folder `web/dist` hasil `npm run build` di proyek Madinah Explorer;
+`unduh/madinah-explorer.apk` adalah hasil `./gradlew assembleDebug` di `web/android`.
