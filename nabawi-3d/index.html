@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Nabawi 3D Explorer</title>
+    <meta name="description" content="Model 3D dan peta GIS Masjid Nabawi serta enam masjid bersejarah di sekitarnya: peta 2D–4D, GPS, rute jalan kaki, tur, dan garis waktu perluasan. Prototipe dengan data skematis." />
+    <link rel="canonical" href="https://matahana.github.io/panduan-ibadah/nabawi-3d/" />
+    <link rel="manifest" href="./manifest.webmanifest" />
+    <link rel="icon" href="./icon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="./icon-512.png" />
+    <meta name="theme-color" content="#1d6a4e" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Panduan Ibadah" />
+    <meta property="og:title" content="Nabawi 3D Explorer" />
+    <meta property="og:description" content="Model 3D dan peta GIS Masjid Nabawi serta enam masjid bersejarah di sekitarnya: peta 2D–4D, GPS, rute jalan kaki, tur, dan garis waktu perluasan." />
+    <meta property="og:url" content="https://matahana.github.io/panduan-ibadah/nabawi-3d/" />
+    <meta property="og:image" content="https://matahana.github.io/panduan-ibadah/nabawi-3d/icon-512.png" />
+    <meta property="og:locale" content="id_ID" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+Arabic:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&family=Marcellus&display=swap" rel="stylesheet" />
+    <script>
+      // Jembatan tema situs Panduan Ibadah: halaman induk menulis data-tema (terang/gelap) ke dokumen
+      // tab ini; aplikasi memakai data-theme (light/dark). Tanpa data-tema, ikuti tema sistem.
+      (function () {
+        var de = document.documentElement, PETA = { terang: 'light', gelap: 'dark' };
+        function selaras() {
+          var v = PETA[de.getAttribute('data-tema')];
+          if (v) { if (de.getAttribute('data-theme') !== v) de.setAttribute('data-theme', v); }
+          else if (de.hasAttribute('data-theme')) de.removeAttribute('data-theme');
+        }
+        new MutationObserver(selaras).observe(de, { attributes: true, attributeFilter: ['data-tema'] });
+        selaras();
+      })();
+    </script>
+    <script type="module" crossorigin src="./assets/index-CDhQLDd0.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-o4y9_jTT.css">
+  </head>
+  <body>
+    <div id="app"><p class="boot">Memuat Nabawi 3D Explorer…</p></div>
+    <noscript><p style="padding:24px;font:16px system-ui">Nabawi 3D Explorer memerlukan JavaScript dan WebGL.</p></noscript>
+  </body>
+</html>
