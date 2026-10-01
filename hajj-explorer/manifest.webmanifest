@@ -1,0 +1,15 @@
+{
+  "name": "Hajj Explorer Makkah",
+  "short_name": "Hajj Explorer",
+  "description": "Peta luring urutan, tempat, waktu, dan hukum amalan haji di Makkah, miqat, dan Masyair (DRAF v0.1).",
+  "lang": "id",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f1f4f1",
+  "theme_color": "#13201a",
+  "icons": [
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
+  ]
+}

@@ -1,0 +1,29 @@
+<!doctype html><html lang="id"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#13201a"><title>Hajj Explorer Makkah</title><link rel="manifest" href="manifest.webmanifest"><link rel="icon" href="icons/icon-192.png">
+<link rel="stylesheet" href="vendor/maplibre-gl.css"><link rel="stylesheet" href="fonts/fonts.css"><link rel="stylesheet" href="app.css"></head><body>
+<div id="app" class="app" data-view="timeline">
+  <header class="topbar">
+    <div class="brand">
+      <span class="brand-mark" aria-hidden="true"></span>
+      <div style="min-width:0">
+        <h1 id="app-title">Hajj Explorer Makkah</h1>
+        <div class="hijri-line" id="hijri-line"></div>
+      </div>
+    </div>
+    <span class="chip chip-draft" id="draft-chip">DRAF v0.1</span>
+    <button class="icon-btn" id="btn-lang" type="button" aria-label="Bahasa">ID</button>
+  </header>
+  <main class="main">
+    <section id="panel" class="panel" aria-live="polite"></section>
+    <section class="mapwrap" aria-label="Peta">
+      <div id="map" role="application" aria-label="Peta luring Makkah dan Masyair"></div>
+      <div id="map-overlay"></div>
+      <div id="sheet" class="sheet" hidden></div>
+    </section>
+  </main>
+  <nav class="tabbar" id="tabbar" aria-label="Navigasi utama"></nav>
+</div>
+<div id="banner-area" class="banner-area" aria-live="polite"></div>
+<div id="modal" hidden></div>
+<script src="vendor/maplibre-gl.js"></script><script src="vendor/pmtiles.js"></script><script src="app.js"></script>
+<script>if('serviceWorker' in navigator && !(window.Capacitor&&window.Capacitor.isNativePlatform&&window.Capacitor.isNativePlatform()) && (location.protocol==='https:'||location.hostname==='localhost')){navigator.serviceWorker.register('sw.js').catch(function(){});}</script></body></html>

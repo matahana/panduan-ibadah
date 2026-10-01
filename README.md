@@ -81,6 +81,7 @@ Repositori ini hanya memuat **hasil akhir** untuk GitHub Pages:
 index.html     halaman bertab, mandiri (gambar tertanam)
 haram-3d/      aplikasi Haram 3D Explorer (index.html satu berkas + ikon)
 nabawi-3d/     aplikasi Nabawi 3D Explorer (build Vite: index.html, assets/, service worker, manifest, ikon)
+hajj-explorer/  aplikasi Hajj Explorer Makkah (prototipe v0.1 DRAF; PWA luring MapLibre + PMTiles; APK: unduh/hajj-explorer-makkah.apk)
 madinah-explorer/  aplikasi Madinah Explorer (build Vite: index.html, assets/, packs/ data luring bertanda tangan, service worker, manifest, ikon)
 unduh/         PDF dan Word tiap panduan, APK Android Nabawi 3D dan Madinah Explorer
 .nojekyll      agar GitHub Pages menyajikan berkas apa adanya
@@ -96,3 +97,8 @@ di luar repositori, sertakan entri tab `haram-3d`, `nabawi-3d`, dan `madinah-exp
 isi `nabawi-3d/` adalah folder `build/pages/` hasil `npm run build:pages` di proyek Nabawi 3D Explorer.
 Isi `madinah-explorer/` adalah folder `web/dist` hasil `npm run build` di proyek Madinah Explorer;
 `unduh/madinah-explorer.apk` adalah hasil `./gradlew assembleDebug` di `web/android`.
+
+## Hajj Explorer Makkah (DRAF v0.1)
+
+Halaman penuh: https://matahana.github.io/panduan-ibadah/hajj-explorer/ · APK Android: [unduh/hajj-explorer-makkah.apk](unduh/hajj-explorer-makkah.apk).
+Konten belum ditinjau peninjau sejarah, syariah, dan geospasial; jangan dipakai sebagai rujukan ibadah. Peta © OpenStreetMap contributors (ODbL), tile Protomaps.
