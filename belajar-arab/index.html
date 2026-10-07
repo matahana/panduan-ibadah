@@ -1,0 +1,898 @@
+<!DOCTYPE html>
+<html lang="id"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Belajar Bahasa Arab — pengucapan, dialog, kuis</title>
+<meta name="description" content="Latihan bahasa Arab untuk jamaah: cek pengucapan dengan pengenalan suara, latihan dialog bermain peran, kuis, dan analisis hasil belajar. Berjalan di perangkat; progres tersimpan lokal.">
+<style>
+:root{
+  --bg:#fdfaf4; --kertas:#ffffff; --tinta:#12212f; --tinta2:#4a6274; --garis:#e4dccd;
+  --hijau:#0f6e5c; --hijau2:#0b5446; --emas:#e3c485; --salah:#b3392f; --benar:#177a4d; --kuning:#b7791f;
+  --lembut:#eef6f3;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-tema="terang"]){
+    --bg:#101820; --kertas:#18232e; --tinta:#e8eef3; --tinta2:#a9bccb; --garis:#2a3844;
+    --hijau:#6ec3ae; --hijau2:#0b3f36; --salah:#ef8a80; --benar:#6fd4a0; --kuning:#e6b85c; --lembut:#1c2c36;
+  }
+}
+:root[data-tema="gelap"]{
+  --bg:#101820; --kertas:#18232e; --tinta:#e8eef3; --tinta2:#a9bccb; --garis:#2a3844;
+  --hijau:#6ec3ae; --hijau2:#0b3f36; --salah:#ef8a80; --benar:#6fd4a0; --kuning:#e6b85c; --lembut:#1c2c36;
+}
+*{box-sizing:border-box}
+html,body{margin:0; min-height:100%}
+body{background:var(--bg); color:var(--tinta); font:15px/1.55 "Segoe UI","Helvetica Neue",-apple-system,Arial,sans-serif; -webkit-text-size-adjust:100%}
+.ar{font-family:"Amiri","Scheherazade New","Noto Naskh Arabic","Traditional Arabic","Geeza Pro",serif; direction:rtl; line-height:1.9}
+nav.sub{position:sticky; top:0; z-index:5; display:flex; gap:2px; overflow-x:auto; scrollbar-width:none; background:var(--kertas); border-bottom:1px solid var(--garis); padding:0 8px}
+nav.sub::-webkit-scrollbar{display:none}
+nav.sub button{flex:1 0 auto; font:inherit; font-weight:600; font-size:14px; color:var(--tinta2); background:none; border:0; border-bottom:3px solid transparent; padding:11px 14px 8px; cursor:pointer; white-space:nowrap}
+nav.sub button[aria-selected="true"]{color:var(--hijau); border-bottom-color:var(--hijau)}
+nav.sub button:focus-visible,.btn:focus-visible,select:focus-visible,.opsi:focus-visible,input:focus-visible{outline:2px solid var(--hijau); outline-offset:2px}
+main{max-width:860px; margin:0 auto; padding:14px 14px 60px}
+h2{font-size:18px; margin:6px 0 4px} h3{font-size:15px; margin:14px 0 6px}
+p.ket{color:var(--tinta2); margin:2px 0 12px; font-size:13.5px}
+.kartu{background:var(--kertas); border:1px solid var(--garis); border-radius:12px; padding:12px 14px; margin:10px 0}
+.baris{display:flex; gap:8px; flex-wrap:wrap; align-items:center}
+.grid{display:grid; gap:10px; grid-template-columns:repeat(auto-fit,minmax(150px,1fr))}
+.btn{font:inherit; font-size:14px; font-weight:600; cursor:pointer; border-radius:999px; padding:8px 16px; color:#fff; background:var(--hijau2); border:1px solid var(--hijau2)}
+:root[data-tema="gelap"] .btn.utama{color:#06251f}
+@media (prefers-color-scheme: dark){:root:not([data-tema="terang"]) .btn.utama{color:#06251f}}
+.btn.utama{background:var(--hijau); border-color:var(--hijau)}
+.btn.garis{background:transparent; color:var(--hijau); border-color:var(--hijau)}
+.btn.kecil{padding:4px 11px; font-size:12.5px}
+.btn:disabled{opacity:.45; cursor:default}
+.btn.rekam.aktif{background:var(--salah); border-color:var(--salah); color:#fff; animation:denyut 1s infinite}
+@keyframes denyut{50%{opacity:.65}}
+select,input[type=text]{font:inherit; font-size:14px; color:var(--tinta); background:var(--kertas); border:1px solid var(--garis); border-radius:8px; padding:7px 10px; max-width:100%}
+label.f{font-size:12.5px; color:var(--tinta2); display:flex; flex-direction:column; gap:3px}
+.kata{display:grid; grid-template-columns:1fr; gap:2px}
+.kata .ar{font-size:26px; text-align:right}
+.lat{color:var(--hijau); font-style:italic; font-size:14px}
+.id{font-size:14.5px} .en{font-size:12.5px; color:var(--tinta2)}
+.item{display:flex; gap:10px; align-items:flex-start; justify-content:space-between; padding:10px 0; border-top:1px solid var(--garis)}
+.item:first-child{border-top:0}
+.item .isi{flex:1; min-width:0}
+.item .aksi{display:flex; flex-direction:column; gap:5px}
+.lencana{display:inline-block; font-size:11px; padding:1px 8px; border-radius:999px; background:var(--lembut); color:var(--hijau); border:1px solid var(--garis)}
+.lencana.b{color:var(--benar)} .lencana.s{color:var(--salah)} .lencana.k{color:var(--kuning)}
+.skor{font-size:40px; font-weight:700; line-height:1}
+.skor.b{color:var(--benar)} .skor.k{color:var(--kuning)} .skor.s{color:var(--salah)}
+.diff{font-size:24px; display:flex; flex-wrap:wrap; gap:4px 10px; justify-content:flex-end; direction:rtl; margin:6px 0}
+.diff span{padding:0 6px; border-radius:6px}
+.diff .ok{background:rgba(23,122,77,.16); color:var(--benar)}
+.diff .no{background:rgba(179,57,47,.15); color:var(--salah); text-decoration:underline wavy}
+.dengar{font-size:13px; color:var(--tinta2); direction:rtl; text-align:right}
+.opsi{display:block; width:100%; text-align:left; font:inherit; color:var(--tinta); background:var(--kertas); border:1.5px solid var(--garis); border-radius:10px; padding:10px 12px; margin:7px 0; cursor:pointer}
+.opsi.ar{text-align:right; font-size:22px}
+.opsi:hover:not(:disabled){border-color:var(--hijau)}
+.opsi.benar{border-color:var(--benar); background:rgba(23,122,77,.13)}
+.opsi.salah{border-color:var(--salah); background:rgba(179,57,47,.12)}
+.opsi:disabled{cursor:default}
+.soal-ar{font-size:34px; text-align:center; margin:8px 0}
+.bar{height:9px; border-radius:99px; background:var(--garis); overflow:hidden}
+.bar > i{display:block; height:100%; background:var(--hijau); border-radius:99px}
+.bar.b > i{background:var(--benar)} .bar.k > i{background:var(--kuning)} .bar.s > i{background:var(--salah)}
+.metrik{display:grid; gap:10px; grid-template-columns:repeat(auto-fit,minmax(130px,1fr))}
+.metrik .kartu{margin:0; text-align:center}
+.metrik b{display:block; font-size:26px; line-height:1.15} .metrik small{color:var(--tinta2)}
+.baris-s{display:grid; grid-template-columns:130px 1fr 44px; gap:8px; align-items:center; margin:7px 0; font-size:13.5px}
+.baris-s span:last-child{text-align:right; font-variant-numeric:tabular-nums}
+.susun{display:flex; flex-wrap:wrap; gap:8px; justify-content:center; min-height:52px; direction:rtl; padding:8px; border:1.5px dashed var(--garis); border-radius:10px; margin:8px 0}
+.susun button{font-size:22px}
+.kunci{font:inherit; font-size:22px; padding:2px 12px; border-radius:8px; cursor:pointer; background:var(--kertas); color:var(--tinta); border:1.5px solid var(--garis)}
+.giliran{max-width:92%; margin:10px 0; padding:10px 12px; border-radius:12px; border:1px solid var(--garis); background:var(--kertas)}
+.giliran.lawan{margin-right:auto; border-top-left-radius:2px}
+.giliran.saya{margin-left:auto; border-top-right-radius:2px; background:var(--lembut); border-color:var(--hijau)}
+.giliran.mati{opacity:.45}
+.giliran .p{font-size:11.5px; letter-spacing:.5px; text-transform:uppercase; color:var(--tinta2)}
+.giliran .ar{font-size:23px; text-align:right}
+.info{font-size:13px; padding:9px 12px; border-radius:10px; background:var(--lembut); border:1px solid var(--garis); color:var(--tinta2); margin:10px 0}
+.info.peringatan{border-color:var(--kuning); color:var(--tinta)}
+svg.garis{width:100%; height:120px; display:block}
+.kosong{color:var(--tinta2); text-align:center; padding:26px 8px}
+[hidden]{display:none!important}
+@media (max-width:520px){ .baris-s{grid-template-columns:96px 1fr 40px} .kata .ar{font-size:24px} }
+</style></head>
+<body>
+<nav class="sub" id="sub" role="tablist" aria-label="Menu belajar">
+  <button role="tab" data-v="belajar">Belajar</button>
+  <button role="tab" data-v="ucap">Pengucapan</button>
+  <button role="tab" data-v="dialog">Dialog</button>
+  <button role="tab" data-v="kuis">Kuis</button>
+  <button role="tab" data-v="analisis">Analisis</button>
+</nav>
+<main id="m"></main>
+
+<script>
+var DATA = [{"id":"bab-tatabahasa","no":"BAB 02","t":"Tata Bahasa & Angka Dasar","rows":[["أنا","anā","saya","I"],["أنتَ","anta","kamu (kepada laki-laki)","you (to a man)"],["أنتِ","anti","kamu (kepada perempuan)","you (to a woman)"],["هو","huwa","dia (laki-laki)","he"],["هي","hiya","dia (perempuan)","she"],["نحن","naḥnu","kami / kita","we"],["أنتم","antum","kalian (laki-laki / campuran)","you (plural)"],["هم","hum","mereka (laki-laki / campuran)","they"],["هن","hunna","mereka (perempuan)","they (women)"],["ما / ماذا","mā / mādhā","apa","what"],["من","man","siapa","who"],["أين","ayna","di mana","where"],["متى","matā","kapan","when"],["كيف","kayfa","bagaimana","how"],["كم","kam","berapa","how much / how many"],["لماذا","limādhā","mengapa","why"],["هل","hal","apakah (penanda pertanyaan ya/tidak)","(yes/no question marker)"],["أي","ayyu","yang mana","which"],["نعم","na’am","ya","yes"],["لا","lā","tidak","no"],["من فضلك","min faḍlik","tolong","please"],["شكراً","shukran","terima kasih","thank you"],["عفواً","‘afwan","sama-sama / permisi","you're welcome / excuse me"],["آسف / آسفة","āsif (L) / āsifah (P)","maaf","sorry"],["أريد","urīdu","saya mau / ingin","I want"],["عندي","‘indī","saya punya","I have"],["يوجد","yūjad","ada","there is / are"],["لا يوجد","lā yūjad","tidak ada","there isn't / aren't"],["هذا / هذه","hādhā (L) / hādhihi (P)","ini","this"],["بكم هذا؟","bikam hādhā?","berapa harga ini?","how much is this?"],["ممكن","mumkin","boleh / mungkin","possible / may I"],["ممنوع","mamnū‘","dilarang","forbidden"],["مسموح","masmūḥ","diperbolehkan","allowed"],["قليلاً","qalīlan","sedikit","a little"],["كثيراً","kathīran","banyak","a lot"],["واحد","wāḥid","1","one"],["اثنان","ithnān","2","two"],["ثلاثة","thalāthah","3","three"],["أربعة","arba‘ah","4","four"],["خمسة","khamsah","5","five"],["ستة","sittah","6","six"],["سبعة","sab‘ah","7","seven"],["ثمانية","thamāniyah","8","eight"],["تسعة","tis‘ah","9","nine"],["عشرة","‘asharah","10","ten"],["عشرون","‘ishrūn","20","twenty"],["ثلاثون","thalāthūn","30","thirty"],["أربعون","arba‘ūn","40","forty"],["خمسون","khamsūn","50","fifty"],["ستون","sittūn","60","sixty"],["سبعون","sab‘ūn","70","seventy"],["ثمانون","thamānūn","80","eighty"],["تسعون","tis‘ūn","90","ninety"],["مئة","mi’ah","100","one hundred"],["خمسمئة","khams mi’ah","500","five hundred"],["ألف","alf","1.000","one thousand"],["عشرة آلاف","‘asharat ālāf","10.000","ten thousand"],["الأحد","al-aḥad","Minggu","Sunday"],["الاثنين","al-ithnayn","Senin","Monday"],["الثلاثاء","ath-thulāthā’","Selasa","Tuesday"],["الأربعاء","al-arbi‘ā’","Rabu","Wednesday"],["الخميس","al-khamīs","Kamis","Thursday"],["الجمعة","al-jumu‘ah","Jumat","Friday"],["السبت","as-sabt","Sabtu","Saturday"],["محرم","muḥarram","Muharram","Muharram"],["صفر","ṣafar","Safar","Safar"],["ربيع الأول","rabī‘ al-awwal","Rabiul Awal","Rabi' al-Awwal"],["ربيع الآخر","rabī‘ al-ākhir","Rabiul Akhir","Rabi' al-Thani"],["جمادى الأولى","jumādā al-ūlā","Jumadil Awal","Jumada al-Ula"],["جمادى الآخرة","jumādā al-ākhirah","Jumadil Akhir","Jumada al-Akhirah"],["رجب","rajab","Rajab","Rajab"],["شعبان","sha‘bān","Sya'ban","Sha'ban"],["رمضان","ramaḍān","Ramadan","Ramadan"],["شوال","shawwāl","Syawal","Shawwal"],["ذو القعدة","dhū al-qa‘dah","Dzulkaidah","Dhu al-Qi'dah"],["ذو الحجة","dhū al-ḥijjah","Dzulhijah","Dhu al-Hijjah"],["كم الساعة؟","kam as-sā‘ah?","jam berapa sekarang?","what time is it?"],["الساعة الآن...","as-sā‘ah al-ān...","sekarang jam...","the time now is..."],["صباحاً","ṣabāḥan","pagi (AM)","in the morning (AM)"],["مساءً","masā’an","sore/malam (PM)","in the evening (PM)"],["الساعة الواحدة","as-sā‘ah al-wāḥidah","jam satu","one o'clock"],["نصف ساعة","niṣf sā‘ah","setengah jam","half an hour"],["بعد قليل","ba‘da qalīl","sebentar lagi","in a little while"],["الآن","al-ān","sekarang","now"],["الفجر","al-fajr","Subuh","Fajr"],["الظهر","aẓ-ẓuhr","Zuhur","Dhuhr"],["العصر","al-‘aṣr","Asar","Asr"],["المغرب","al-maghrib","Magrib","Maghrib"],["العشاء","al-‘ishā’","Isya","Isha"]],"dialogs":[]},{"id":"bab-sapaan","no":"BAB 03","t":"Sapaan & Perkenalan","rows":[["السلام عليكم","as-salāmu ‘alaykum","semoga keselamatan atasmu (salam)","peace be upon you (greeting)"],["وعليكم السلام","wa ‘alaykumus salām","dan atasmu juga (jawaban salam)","and peace be upon you too (reply)"],["صباح الخير","ṣabāḥul khayr","selamat pagi","good morning"],["صباح النور","ṣabāḥun nūr","jawaban selamat pagi","reply to good morning"],["مساء الخير","masā’ul khayr","selamat sore/malam","good evening"],["مساء النور","masā’un nūr","jawaban selamat sore/malam","reply to good evening"],["كيف حالك؟","kayfa ḥāluk(a/i)?","apa kabar?","how are you?"],["بخير، الحمد لله","bikhayr, alḥamdulillāh","baik, alhamdulillah","I'm fine, thank God"],["ما اسمك؟","mā ismuk(a/i)?","siapa namamu?","what is your name?"],["اسمي...","ismī...","nama saya...","my name is..."],["من أين أنت؟","min ayna anta/anti?","kamu dari mana?","where are you from?"],["أنا من إندونيسيا","anā min indūnīsiyā","saya dari Indonesia","I'm from Indonesia"],["تشرفنا","tasharrafnā","senang berkenalan","nice to meet you"],["مع السلامة","ma’as salāmah","sampai jumpa","goodbye / go safely"],["إن شاء الله","in shā’a Allāh","insya Allah","God willing"],["بارك الله فيك","bārakallāhu fīk","semoga Allah memberkahimu","may God bless you"],["حجّ مبرور","ḥajjun mabrūr","semoga hajinya mabrur (doa untuk jemaah haji)","may your Hajj be accepted"],["عمرة مقبولة","‘umratun maqbūlah","semoga umrahnya diterima (doa untuk jemaah umrah)","may your Umrah be accepted"],["جزاك الله خيراً","jazākallāhu khayran","semoga Allah membalasmu dengan kebaikan","may God reward you with good"]],"dialogs":[{"t":"Berkenalan dengan Sesama Jemaah","k":"Di lobi hotel, dua jemaah dari negara berbeda bertegur sapa.","turns":[{"s":"a","p":"A","ar":"السلام عليكم","lat":"as-salāmu ‘alaykum","id":"Assalamualaikum","en":"Peace be upon you"},{"s":"b","p":"B","ar":"وعليكم السلام ورحمة الله","lat":"wa ‘alaykumus salāmu wa raḥmatullāh","id":"Waalaikumsalam warahmatullah","en":"And peace and God's mercy be upon you"},{"s":"a","p":"A","ar":"ما اسمك؟","lat":"mā ismuk?","id":"Siapa namamu?","en":"What is your name?"},{"s":"b","p":"B","ar":"اسمي أحمد. وأنتَ؟","lat":"ismī aḥmad. wa anta?","id":"Nama saya Ahmad. Kamu?","en":"My name is Ahmad. And you?"},{"s":"a","p":"A","ar":"اسمي مطاهانا. من أين أنتَ؟","lat":"ismī māţāhānā. min ayna anta?","id":"Nama saya Matahana. Kamu dari mana?","en":"My name is Matahana. Where are you from?"},{"s":"b","p":"B","ar":"أنا من ماليزيا. وأنتَ؟","lat":"anā min mālīziyā. wa anta?","id":"Saya dari Malaysia. Kamu?","en":"I'm from Malaysia. And you?"},{"s":"a","p":"A","ar":"أنا من إندونيسيا. تشرفنا!","lat":"anā min indūnīsiyā. tasharrafnā!","id":"Saya dari Indonesia. Senang berkenalan!","en":"I'm from Indonesia. Nice to meet you!"},{"s":"b","p":"B","ar":"تشرفنا، وحجّ مبرور إن شاء الله","lat":"tasharrafnā, wa ḥajjun mabrūrun in shā’a Allāh","id":"Senang berkenalan juga, semoga hajinya mabrur","en":"Nice to meet you too, may your Hajj be accepted"}]}]},{"id":"bab-bandara","no":"BAB 04","t":"Di Bandara & Imigrasi","rows":[["جواز السفر","jawāz as-safar","paspor","passport"],["تأشيرة","ta’shīrah","visa","visa"],["البطاقة الشخصية","al-biţāqah ash-shakhṣiyyah","kartu identitas","ID card"],["الحقيبة","al-ḥaqībah","koper / tas","suitcase / bag"],["أين تجميع الحقائب؟","ayna tajmī‘ al-ḥaqā’ib?","di mana pengambilan bagasi?","where is baggage claim?"],["الجمارك","al-jamārik","bea cukai","customs"],["ما الغرض من زيارتك؟","mā al-gharaḍ min ziyāratik?","apa tujuan kunjungan Anda?","what is the purpose of your visit?"],["أنا في رحلة حج / عمرة","anā fī riḥlati ḥajj / ‘umrah","saya dalam perjalanan haji / umrah","I'm on a Hajj / Umrah trip"],["كم مدة إقامتك؟","kam muddatu iqāmatik?","berapa lama Anda tinggal?","how long is your stay?"],["بطاقة الوصول","biţāqat al-wuṣūl","kartu kedatangan","arrival card"]],"dialogs":[{"t":"Di Konter Imigrasi","k":"Bandara King Abdulaziz, Jeddah — pemeriksaan paspor kedatangan.","turns":[{"s":"a","p":"Petugas","ar":"السلام عليكم، جواز السفر من فضلك","lat":"as-salāmu ‘alaykum, jawāz as-safar min faḍlik","id":"Assalamualaikum, paspornya tolong","en":"Peace be upon you, passport please"},{"s":"b","p":"Jemaah","ar":"تفضل","lat":"tafaḍḍal","id":"Silakan (sambil menyerahkan)","en":"Here you are"},{"s":"a","p":"Petugas","ar":"ما الغرض من زيارتك؟","lat":"mā al-gharaḍ min ziyāratik?","id":"Apa tujuan kunjungan Anda?","en":"What's the purpose of your visit?"},{"s":"b","p":"Jemaah","ar":"أنا في رحلة عمرة","lat":"anā fī riḥlati ‘umrah","id":"Saya dalam perjalanan umrah","en":"I'm on an Umrah trip"},{"s":"a","p":"Petugas","ar":"كم مدة إقامتك؟","lat":"kam muddatu iqāmatik?","id":"Berapa lama tinggal?","en":"How long is your stay?"},{"s":"b","p":"Jemaah","ar":"عشرة أيام","lat":"‘asharatu ayyām","id":"Sepuluh hari","en":"Ten days"},{"s":"a","p":"Petugas","ar":"تفضل، عمرة مقبولة","lat":"tafaḍḍal, ‘umratun maqbūlah","id":"Silakan, semoga umrahnya diterima","en":"Here you go, may your Umrah be accepted"},{"s":"b","p":"Jemaah","ar":"شكراً جزيلاً","lat":"shukran jazīlan","id":"Terima kasih banyak","en":"Thank you very much"}]},{"t":"Mengambil Bagasi di Bandara","k":"Area pengambilan bagasi setelah mendarat.","turns":[{"s":"a","p":"Jemaah","ar":"عفواً، أين تجميع الحقائب لرحلة جاكرتا؟","lat":"‘afwan, ayna tajmī‘ al-ḥaqā’ib lirriḥlati jākārtā?","id":"Maaf, di mana pengambilan bagasi untuk penerbangan Jakarta?","en":"Excuse me, where's baggage claim for the Jakarta flight?"},{"s":"b","p":"Petugas","ar":"الحزام رقم خمسة، هناك","lat":"al-ḥizām raqam khamsah, hunāk","id":"Ban berjalan nomor 5, di sana","en":"Carousel number five, over there"},{"s":"a","p":"Jemaah","ar":"شكراً، وهل هناك عربات للحقائب؟","lat":"shukran, wa hal hunāka ‘arabāt lil-ḥaqā’ib?","id":"Terima kasih, apakah ada troli bagasi?","en":"Thank you, are there luggage carts?"},{"s":"b","p":"Petugas","ar":"نعم، بجانب الحزام مباشرة","lat":"na‘am, bijānib al-ḥizām mubāsharatan","id":"Ya, tepat di samping ban berjalan","en":"Yes, right next to the carousel"}]}]},{"id":"bab-hotel","no":"BAB 05","t":"Di Hotel","rows":[["عندي حجز باسم...","‘indī ḥajz bismi...","saya ada reservasi atas nama...","I have a reservation under the name..."],["أريد غرفة","urīdu ghurfah","saya mau kamar","I would like a room"],["رقم الغرفة","raqam al-ghurfah","nomor kamar","room number"],["المفتاح من فضلك","al-miftāḥ min faḍlik","tolong kuncinya","the key please"],["في أي طابق؟","fī ayyi ţābiq?","di lantai berapa?","on which floor?"],["أين المصعد؟","ayna al-miṣ‘ad?","di mana lift?","where is the elevator?"],["الواي فاي لا يعمل","al-wāy fāy lā ya‘mal","wifi tidak berfungsi","the wifi isn't working"],["المكيف لا يعمل","al-mukayyif lā ya‘mal","AC tidak berfungsi","the air conditioner isn't working"],["أحتاج بطانية / منشفة","aḥtāju baţţāniyyah / minshafah","saya butuh selimut / handuk","I need a blanket / towel"],["هل الإفطار مشمول؟","hal al-ifţār mashmūl?","apakah sarapan termasuk?","is breakfast included?"],["متى وقت المغادرة؟","matā waqt al-mughādarah?","jam berapa check-out?","what time is check-out?"],["أيقظني الساعة... من فضلك","ayqiẓnī as-sā‘ah... min faḍlik","tolong bangunkan saya jam...","please wake me up at..."]],"dialogs":[{"t":"Check-in di Hotel","k":"Meja resepsionis hotel di Mekkah, sore hari.","turns":[{"s":"a","p":"Resepsionis","ar":"مساء الخير، كيف يمكنني مساعدتك؟","lat":"masā’ul khayr, kayfa yumkinunī musā‘adatuk?","id":"Selamat sore, ada yang bisa saya bantu?","en":"Good evening, how can I help you?"},{"s":"b","p":"Jemaah","ar":"عندي حجز باسم ماطاهانا","lat":"‘indī ḥajz bismi māţāhānā","id":"Saya ada reservasi atas nama Matahana","en":"I have a reservation under the name Matahana"},{"s":"a","p":"Resepsionis","ar":"لحظة من فضلك... نعم، غرفة في الطابق الخامس","lat":"laḥẓah min faḍlik... na‘am, ghurfah fī aţ-ţābiq al-khāmis","id":"Sebentar... ya, kamar Anda di lantai lima","en":"One moment... yes, your room is on the fifth floor"},{"s":"b","p":"Jemaah","ar":"هل الإفطار مشمول؟","lat":"hal al-ifţār mashmūl?","id":"Apakah sarapan termasuk?","en":"Is breakfast included?"},{"s":"a","p":"Resepsionis","ar":"نعم، من الساعة السادسة إلى العاشرة صباحاً","lat":"na‘am, min as-sā‘ah as-sādisah ilā al-‘āshirah ṣabāḥan","id":"Ya, dari jam 6 sampai jam 10 pagi","en":"Yes, from 6 to 10 AM"},{"s":"b","p":"Jemaah","ar":"شكراً جزيلاً","lat":"shukran jazīlan","id":"Terima kasih banyak","en":"Thank you very much"}]},{"t":"Keluhan Kamar","k":"Jemaah menelepon meja depan karena AC di kamar bermasalah.","turns":[{"s":"a","p":"Jemaah","ar":"عفواً، المكيف لا يعمل في غرفتي","lat":"‘afwan, al-mukayyif lā ya‘mal fī ghurfatī","id":"Maaf, AC di kamar saya tidak berfungsi","en":"Excuse me, the AC isn't working in my room"},{"s":"b","p":"Resepsionis","ar":"آسف جداً، سنرسل الفني حالاً","lat":"āsif jiddan, sanursilu al-fanniyya ḥālan","id":"Mohon maaf, kami akan segera mengirim teknisi","en":"I'm very sorry, we'll send a technician right away"},{"s":"a","p":"Jemaah","ar":"شكراً، وهل يمكن غرفة أخرى إن لم يُصلَح؟","lat":"shukran, wa hal yumkin ghurfah ukhrā in lam yuṣlaḥ?","id":"Terima kasih, apakah bisa pindah kamar jika tidak bisa diperbaiki?","en":"Thank you, can I get another room if it can't be fixed?"},{"s":"b","p":"Resepsionis","ar":"بالتأكيد، لا تقلق","lat":"bit-ta’kīd, lā taqlaq","id":"Tentu, jangan khawatir","en":"Certainly, don't worry"}]}]},{"id":"bab-restoran","no":"BAB 06","t":"Di Rumah Makan / Restoran","rows":[["أين المطعم؟","ayna al-maţ‘am?","di mana restoran?","where is the restaurant?"],["القائمة من فضلك","al-qā’imah min faḍlik","tolong menunya","the menu please"],["أريد هذا","urīdu hādhā","saya mau ini (sambil tunjuk)","I'd like this (while pointing)"],["بدون لحم","bidūn laḥm","tanpa daging","without meat"],["بدون فلفل","bidūn filfil","tanpa cabai / pedas","without chili"],["هل هذا حار؟","hal hādhā ḥārr?","apakah ini pedas?","is this spicy?"],["هل فيه لحم خنزير؟","hal fīhi laḥm khinzīr?","apakah ada daging babi?","does it contain pork?"],["كل طعامنا حلال","kullu ţa‘āminā ḥalāl","semua makanan kami halal","all our food is halal"],["ماء بارد / ماء ساخن","mā’ bārid / mā’ sākhin","air dingin / air panas","cold water / hot water"],["شاي / قهوة","shāy / qahwah","teh / kopi","tea / coffee"],["خبز","khubz","roti","bread"],["أرز","aruzz","nasi","rice"],["دجاج","dajāj","ayam","chicken"],["لحم غنم","laḥm ghanam","daging kambing","lamb / mutton"],["سمك","samak","ikan","fish"],["فواكه","fawākih","buah-buahan","fruit"],["لذيذ","ladhīdh","enak","delicious"],["الحساب من فضلك","al-ḥisāb min faḍlik","tolong bill / tagihannya","the bill please"],["هل تقبلون البطاقة؟","hal taqbalūna al-biţāqah?","apakah menerima kartu?","do you accept card?"],["شكراً، كفى","shukran, kafā","terima kasih, cukup","thank you, that's enough"]],"dialogs":[{"t":"Memesan Makanan","k":"Jemaah bertanya soal kehalalan dan tingkat pedas sebelum memesan.","turns":[{"s":"a","p":"Pelayan","ar":"أهلاً وسهلاً، تفضل بالطلب","lat":"ahlan wa sahlan, tafaḍḍal biţ-ţalab","id":"Selamat datang, silakan pesan","en":"Welcome, please order"},{"s":"b","p":"Jemaah","ar":"أريد هذا الطبق، هل فيه لحم خنزير؟","lat":"urīdu hādhā aţ-ţabaq, hal fīhi laḥm khinzīr?","id":"Saya mau menu ini, apakah ada daging babi?","en":"I'd like this dish, does it contain pork?"},{"s":"a","p":"Pelayan","ar":"لا أبداً، كل طعامنا حلال","lat":"lā abadan, kullu ţa‘āminā ḥalāl","id":"Tidak sama sekali, semua makanan kami halal","en":"Not at all, all our food is halal"},{"s":"b","p":"Jemaah","ar":"جيد، وهل هو حار؟","lat":"jayyid, wa hal huwa ḥārr?","id":"Bagus, apakah pedas?","en":"Good, is it spicy?"},{"s":"a","p":"Pelayan","ar":"قليلاً، يمكن بدون فلفل إذا تريد","lat":"qalīlan, yumkin bidūn filfil idhā turīd","id":"Sedikit, bisa tanpa cabai kalau mau","en":"A little, it can be made without chili if you want"},{"s":"b","p":"Jemaah","ar":"نعم، بدون فلفل من فضلك، وماء بارد","lat":"na‘am, bidūn filfil min faḍlik, wa mā’ bārid","id":"Ya, tanpa cabai tolong, dan air dingin","en":"Yes, without chili please, and cold water"}]},{"t":"Membayar di Restoran","k":"Setelah makan, jemaah meminta bill kepada pelayan.","turns":[{"s":"a","p":"Jemaah","ar":"الحساب من فضلك","lat":"al-ḥisāb min faḍlik","id":"Tolong minta bill","en":"The bill please"},{"s":"b","p":"Pelayan","ar":"تفضل، المجموع خمسون ريالاً","lat":"tafaḍḍal, al-majmū‘ khamsūna riyālan","id":"Silakan, totalnya 50 riyal","en":"Here you go, the total is 50 riyals"},{"s":"a","p":"Jemaah","ar":"هل تقبلون البطاقة؟","lat":"hal taqbalūna al-biţāqah?","id":"Apakah menerima kartu?","en":"Do you accept card?"},{"s":"b","p":"Pelayan","ar":"نعم، تفضل الجهاز","lat":"na‘am, tafaḍḍal al-jihāz","id":"Ya, silakan mesinnya","en":"Yes, here's the machine"},{"s":"a","p":"Jemaah","ar":"شكراً، طعام لذيذ","lat":"shukran, ţa‘ām ladhīdh","id":"Terima kasih, makanan enak","en":"Thank you, delicious food"}]}]},{"id":"bab-transportasi","no":"BAB 07","t":"Taksi, Bus & Kereta","rows":[["إلى المسجد الحرام من فضلك","ilā al-masjid al-ḥarām min faḍlik","ke Masjidil Haram, tolong","to Masjid al-Haram, please"],["إلى المسجد النبوي من فضلك","ilā al-masjid an-nabawī min faḍlik","ke Masjid Nabawi, tolong","to the Prophet's Mosque, please"],["كم الأجرة؟","kam al-ujrah?","berapa ongkosnya?","how much is the fare?"],["توقف هنا من فضلك","tawaqqaf hunā min faḍlik","berhenti di sini, tolong","stop here, please"],["انتظرني من فضلك","intaẓirnī min faḍlik","tunggu saya, tolong","wait for me, please"],["أسرع قليلاً / ببطء من فضلك","asri‘ qalīlan / bibuţ’ min faḍlik","agak cepat / pelan-pelan, tolong","a bit faster / slower, please"],["هل تعرف الفندق...؟","hal ta‘rifu al-funduq...?","apakah Anda tahu hotel...?","do you know the ... hotel?"],["القطار السريع","al-qiţār as-sarī‘","kereta cepat","the high-speed train"],["المحطة","al-maḥaţţah","stasiun","station"],["الرصيف","ar-raṣīf","peron","platform"],["التذكرة","at-tadhkirah","tiket","ticket"],["الحافلة","al-ḥāfilah","bus","bus"]],"dialogs":[{"t":"Naik Taksi ke Masjidil Haram","k":"Jemaah memberhentikan taksi di depan hotel.","turns":[{"s":"a","p":"Jemaah","ar":"السلام عليكم، إلى المسجد الحرام من فضلك","lat":"as-salāmu ‘alaykum, ilā al-masjid al-ḥarām min faḍlik","id":"Assalamualaikum, ke Masjidil Haram tolong","en":"Peace be upon you, to Masjid al-Haram please"},{"s":"b","p":"Sopir","ar":"وعليكم السلام، تفضل","lat":"wa ‘alaykumus salām, tafaḍḍal","id":"Waalaikumsalam, silakan naik","en":"And peace be upon you, please get in"},{"s":"a","p":"Jemaah","ar":"كم الأجرة تقريباً؟","lat":"kam al-ujrah taqrīban?","id":"Kira-kira berapa ongkosnya?","en":"How much is the fare roughly?"},{"s":"b","p":"Sopir","ar":"حوالي خمسة عشر ريالاً","lat":"ḥawālī khamsata ‘ashara riyālan","id":"Sekitar 15 riyal","en":"About 15 riyals"},{"s":"a","p":"Jemaah","ar":"حسناً، شكراً","lat":"ḥasanan, shukran","id":"Baik, terima kasih","en":"Okay, thank you"},{"s":"a","p":"Jemaah","ar":"توقف هنا من فضلك، هذا يكفي","lat":"tawaqqaf hunā min faḍlik, hādhā yakfī","id":"Berhenti di sini tolong, ini cukup","en":"Stop here please, this is enough"}]},{"t":"Di Stasiun Kereta Cepat Haramain","k":"Jemaah mencari peron untuk kereta ke Madinah.","turns":[{"s":"a","p":"Jemaah","ar":"أين محطة القطار السريع؟","lat":"ayna maḥaţţat al-qiţār as-sarī‘?","id":"Di mana stasiun kereta cepat?","en":"Where's the high-speed train station?"},{"s":"b","p":"Petugas","ar":"على يمينك، بعد البوابة الرئيسية","lat":"‘alā yamīnik, ba‘da al-bawwābah ar-ra’īsiyyah","id":"Di sebelah kananmu, setelah gerbang utama","en":"On your right, after the main gate"},{"s":"a","p":"Jemaah","ar":"متى القطار القادم إلى المدينة؟","lat":"matā al-qiţār al-qādim ilā al-madīnah?","id":"Kapan kereta berikutnya ke Madinah?","en":"When's the next train to Madinah?"},{"s":"b","p":"Petugas","ar":"بعد نصف ساعة، من الرصيف رقم اثنين","lat":"ba‘da niṣf sā‘ah, min ar-raṣīf raqam ithnayn","id":"Setengah jam lagi, dari peron nomor dua","en":"In half an hour, from platform number two"}]}]},{"id":"bab-sosial","no":"BAB 08","t":"Bertemu Orang & Percakapan Umum","rows":[["عفواً، هل تتكلم إنجليزي؟","‘afwan, hal tatakallam injilīzī?","maaf, apakah Anda bisa bahasa Inggris?","excuse me, do you speak English?"],["لا أتكلم العربية جيداً","lā atakallamu al-‘arabiyyah jayyidan","saya tidak lancar bahasa Arab","I don't speak Arabic well"],["هل يمكنك مساعدتي؟","hal yumkinuka musā‘adatī?","bisakah Anda membantu saya?","can you help me?"],["أنا حاجّ / حاجّة","anā ḥājj (L) / ḥājjah (P)","saya jamaah haji","I am a Hajj pilgrim"],["أنا معتمر / معتمرة","anā mu’tamir (L) / mu’tamirah (P)","saya jamaah umrah","I am an Umrah pilgrim"],["أين...؟","ayna...?","di mana...?","where is...?"],["كم الساعة؟","kam as-sā‘ah?","jam berapa sekarang?","what time is it now?"],["هل تعرف الطريق إلى...؟","hal ta‘rifu aţ-ţarīq ilā...?","apakah Anda tahu jalan ke...?","do you know the way to...?"],["امشِ مستقيماً","imshi mustaqīman","jalan lurus","walk straight ahead"],["انعطف يميناً / يساراً","in‘aţif yamīnan / yasāran","belok kanan / kiri","turn right / left"],["بعيد / قريب","ba‘īd / qarīb","jauh / dekat","far / near"],["دقيقة","daqīqah","menit","minute"],["شكراً جزيلاً","shukran jazīlan","terima kasih banyak","thank you very much"]],"dialogs":[{"t":"Menanyakan Arah","k":"Jemaah bertanya arah ke salah satu gerbang Masjidil Haram.","turns":[{"s":"a","p":"Jemaah","ar":"عفواً، كيف أصل إلى باب الملك فهد؟","lat":"‘afwan, kayfa aṣilu ilā bāb al-malik fahd?","id":"Maaf, bagaimana saya sampai ke Pintu Raja Fahd?","en":"Excuse me, how do I get to King Fahd Gate?"},{"s":"b","p":"Orang","ar":"امشِ مستقيماً ثم انعطف يميناً","lat":"imshi mustaqīman thumma in‘aţif yamīnan","id":"Jalan lurus lalu belok kanan","en":"Walk straight then turn right"},{"s":"a","p":"Jemaah","ar":"هل هو بعيد من هنا؟","lat":"hal huwa ba‘īd min hunā?","id":"Apakah jauh dari sini?","en":"Is it far from here?"},{"s":"b","p":"Orang","ar":"لا، حوالي خمس دقائق مشياً","lat":"lā, ḥawālī khamsu daqā’iq mashyan","id":"Tidak, sekitar 5 menit jalan kaki","en":"No, about 5 minutes on foot"},{"s":"a","p":"Jemaah","ar":"شكراً جزيلاً على مساعدتك","lat":"shukran jazīlan ‘alā musā‘adatik","id":"Terima kasih banyak atas bantuannya","en":"Thank you very much for your help"},{"s":"b","p":"Orang","ar":"عفواً، حجّ مبرور","lat":"‘afwan, ḥajjun mabrūr","id":"Sama-sama, semoga hajinya mabrur","en":"You're welcome, may your Hajj be accepted"}]},{"t":"Ngobrol Ringan dengan Pedagang Lokal","k":"Percakapan santai di sebuah toko kecil.","turns":[{"s":"a","p":"Pedagang","ar":"من أين أنتم؟","lat":"min ayna antum?","id":"Kalian dari mana?","en":"Where are you all from?"},{"s":"b","p":"Jemaah","ar":"نحن من إندونيسيا، من جزيرة سولاويزي","lat":"naḥnu min indūnīsiyā, min jazīrati sūlāwīzī","id":"Kami dari Indonesia, dari Pulau Sulawesi","en":"We're from Indonesia, from Sulawesi Island"},{"s":"a","p":"Pedagang","ar":"أهلاً وسهلاً بكم، إندونيسيا بلد جميل","lat":"ahlan wa sahlan bikum, indūnīsiyā baladun jamīl","id":"Selamat datang, Indonesia negara yang indah","en":"Welcome, Indonesia is a beautiful country"},{"s":"b","p":"Jemaah","ar":"شكراً، هل زرتها من قبل؟","lat":"shukran, hal zurtahā min qabl?","id":"Terima kasih, apakah Anda pernah ke sana?","en":"Thank you, have you been there before?"},{"s":"a","p":"Pedagang","ar":"لا، لكن أتمنى ذلك يوماً ما","lat":"lā, lākin atamannā dhālika yawman mā","id":"Belum, tapi saya berharap suatu hari nanti","en":"Not yet, but I hope to someday"}]}]},{"id":"bab-rs","no":"BAB 09","t":"Di Rumah Sakit / Klinik","rows":[["أحتاج طبيباً","aḥtāju ţabīban","saya butuh dokter","I need a doctor"],["أين المستشفى؟","ayna al-mustashfā?","di mana rumah sakit?","where is the hospital?"],["عندي ألم هنا","‘indī alam hunā","saya sakit di sini (sambil tunjuk)","I have pain here (while pointing)"],["عندي حمّى","‘indī ḥummā","saya demam","I have a fever"],["عندي صداع","‘indī ṣudā‘","saya sakit kepala","I have a headache"],["عندي ألم في الصدر","‘indī alam fī aṣ-ṣadr","saya nyeri dada","I have chest pain"],["لا أستطيع التنفس جيداً","lā astaţī‘u at-tanaffusa jayyidan","saya sulit bernapas","I can't breathe well"],["أنا مريض سكري","anā marīḍ sukkarī","saya penderita diabetes","I am a diabetic"],["عندي ضغط دم مرتفع","‘indī ḍaghţ dam murtafi‘","saya punya tekanan darah tinggi","I have high blood pressure"],["أتناول هذا الدواء","atanāwalu hādhā ad-dawā’","saya minum obat ini","I take this medicine"],["اتصل بالإسعاف من فضلك","ittaṣil bil-is‘āf min faḍlik","tolong panggil ambulans","please call an ambulance"],["طوارئ","ţawāri‘","unit gawat darurat","emergency department"],["الرأس","ar-ra’s","kepala","head"],["العين","al-‘ayn","mata","eye"],["الأذن","al-udhun","telinga","ear"],["الأنف","al-anf","hidung","nose"],["الفم","al-fam","mulut","mouth"],["الحلق","al-ḥalq","tenggorokan","throat"],["الصدر","aṣ-ṣadr","dada","chest"],["البطن","al-baţn","perut","abdomen / stomach"],["الظهر","aẓ-ẓahr","punggung","back"],["اليد","al-yad","tangan","hand"],["الرجل","ar-rijl","tungkai / kaki","leg"],["القدم","al-qadam","telapak kaki","foot"],["القلب","al-qalb","jantung","heart"]],"dialogs":[{"t":"Konsultasi ke Dokter","k":"Klinik kesehatan haji — pasien mengeluhkan demam dan sakit kepala.","turns":[{"s":"a","p":"Dokter","ar":"تفضل، ما مشكلتك؟","lat":"tafaḍḍal, mā mushkilatuk?","id":"Silakan, apa keluhannya?","en":"Please, what's your problem?"},{"s":"b","p":"Pasien","ar":"عندي حمى وصداع منذ يومين","lat":"‘indī ḥummā wa ṣudā‘ mundhu yawmayn","id":"Saya demam dan sakit kepala sejak dua hari","en":"I've had fever and headache for two days"},{"s":"a","p":"Dokter","ar":"هل عندك سعال أو ألم في الحلق؟","lat":"hal ‘indak su‘āl aw alam fī al-ḥalq?","id":"Apakah ada batuk atau sakit tenggorokan?","en":"Do you have a cough or sore throat?"},{"s":"b","p":"Pasien","ar":"قليل سعال فقط","lat":"qalīl su‘āl faqaţ","id":"Batuk sedikit saja","en":"Just a slight cough"},{"s":"a","p":"Dokter","ar":"هل عندك أمراض مزمنة؟","lat":"hal ‘indak amrāḍ muzminah?","id":"Apakah ada penyakit kronis?","en":"Do you have any chronic illnesses?"},{"s":"b","p":"Pasien","ar":"نعم، عندي ضغط دم مرتفع، وأتناول هذا الدواء يومياً","lat":"na‘am, ‘indī ḍaghţ dam murtafi‘, wa atanāwalu hādhā ad-dawā’ yawmiyyan","id":"Ya, saya punya tekanan darah tinggi, dan minum obat ini setiap hari","en":"Yes, I have high blood pressure, and I take this medicine daily"},{"s":"a","p":"Dokter","ar":"حسناً، سأصف لك دواءً للحمى، وينبغي أن تشرب ماءً كثيراً وترتاح","lat":"ḥasanan, sa’aṣifu laka dawā’an lil-ḥummā, wa yanbaghī an tashraba mā’an kathīran wa tartāḥ","id":"Baik, saya akan resepkan obat demam, dan Anda harus banyak minum air dan istirahat","en":"Alright, I'll prescribe fever medicine, and you should drink plenty of water and rest"},{"s":"b","p":"Pasien","ar":"شكراً يا دكتور","lat":"shukran yā duktūr","id":"Terima kasih, Dokter","en":"Thank you, Doctor"}]}]},{"id":"bab-apotek","no":"BAB 10","t":"Di Apotek","rows":[["أين الصيدلية؟","ayna aṣ-ṣaydaliyyah?","di mana apotek?","where is the pharmacy?"],["أريد دواء لـ...","urīdu dawā’an li...","saya mau obat untuk...","I need medicine for..."],["دواء للصداع","dawā’ liṣ-ṣudā‘","obat sakit kepala","headache medicine"],["دواء للحمّى","dawā’ lil-ḥummā","obat demam","fever medicine"],["دواء للسعال","dawā’ lis-su‘āl","obat batuk","cough medicine"],["دواء للإسهال","dawā’ lil-is-hāl","obat diare","diarrhea medicine"],["هل يوجد بديل؟","hal yūjad badīl?","apakah ada penggantinya?","is there an alternative?"],["هل له آثار جانبية؟","hal lahu āthār jānibiyyah?","apakah ada efek samping?","does it have side effects?"],["كم مرة في اليوم؟","kam marrah fīl-yawm?","berapa kali sehari?","how many times a day?"],["قبل الأكل / بعد الأكل","qabla al-akl / ba‘da al-akl","sebelum makan / sesudah makan","before eating / after eating"]],"dialogs":[{"t":"Membeli Obat di Apotek","k":"Apotek dekat penginapan — membeli obat sakit kepala dan demam.","turns":[{"s":"a","p":"Apoteker","ar":"أهلاً، كيف أقدر أساعدك؟","lat":"ahlan, kayfa aqdar usā‘iduk?","id":"Halo, bagaimana saya bisa bantu?","en":"Hello, how can I help you?"},{"s":"b","p":"Pasien","ar":"أريد دواء للصداع والحمى","lat":"urīdu dawā’an liṣ-ṣudā‘ wal-ḥummā","id":"Saya mau obat sakit kepala dan demam","en":"I need medicine for headache and fever"},{"s":"a","p":"Apoteker","ar":"تفضل، هذا الدواء فعّال، حبة كل ثماني ساعات","lat":"tafaḍḍal, hādhā ad-dawā’ fa’’āl, ḥabbah kulla thamānī sā‘āt","id":"Silakan, obat ini efektif, satu tablet tiap 8 jam","en":"Here, this medicine is effective, one tablet every 8 hours"},{"s":"b","p":"Pasien","ar":"هل له آثار جانبية؟","lat":"hal lahu āthār jānibiyyah?","id":"Apakah ada efek samping?","en":"Does it have side effects?"},{"s":"a","p":"Apoteker","ar":"لا، لكن خذه بعد الأكل","lat":"lā, lākin khudhhu ba‘da al-akl","id":"Tidak, tapi minumlah setelah makan","en":"No, but take it after eating"},{"s":"b","p":"Pasien","ar":"كم السعر؟","lat":"kam as-si‘r?","id":"Berapa harganya?","en":"How much is it?"},{"s":"a","p":"Apoteker","ar":"خمسة عشر ريالاً","lat":"khamsata ‘ashara riyālan","id":"15 riyal","en":"15 riyals"}]}]},{"id":"bab-masjid","no":"BAB 11","t":"Di Masjid & Manasik Haji/Umrah","rows":[["أين الحرم؟","ayna al-ḥaram?","di mana Al-Haram (Masjidil Haram)?","where is Al-Haram?"],["أين باب...؟","ayna bāb...?","di mana pintu/gerbang...?","where is ... gate?"],["أين الروضة؟","ayna ar-rawḍah?","di mana Raudhah?","where is the Raudhah?"],["أين دورة المياه؟","ayna dawrat al-miyāh?","di mana toilet?","where is the restroom?"],["أين مكان الوضوء؟","ayna makān al-wuḍū’?","di mana tempat wudhu?","where is the ablution area?"],["ماء زمزم","mā’ zamzam","air zamzam","Zamzam water"],["متى وقت الصلاة؟","matā waqt aṣ-ṣalāh?","kapan waktu shalat?","when is prayer time?"],["أين مصلى النساء؟","ayna muṣallā an-nisā’?","di mana tempat shalat wanita?","where is the women's prayer area?"],["فقدتُ جماعتي","faqadtu jamā‘atī","saya kehilangan rombongan saya","I've lost my group"],["أين مكتب الحجاج الإندونيسيين؟","ayna maktab al-ḥujjāj al-indūnīsiyyīn?","di mana kantor jemaah haji Indonesia?","where is the Indonesian pilgrims' office?"],["مكتب المفقودات","maktab al-mafqūdāt","kantor barang / orang hilang","lost-and-found office"],["رقم الحافلة","raqam al-ḥāfilah","nomor bus rombongan","group bus number"],["المشرف","al-mushrif","pembimbing / pemandu haji","the group supervisor / guide"]],"dialogs":[{"t":"Kehilangan Rombongan di Masjidil Haram","k":"Seorang jemaah terpisah dari rombongan dan meminta bantuan petugas keamanan.","turns":[{"s":"a","p":"Jemaah","ar":"عفواً، فقدتُ جماعتي، هل تعرف أين مكتب الحجاج الإندونيسيين؟","lat":"‘afwan, faqadtu jamā‘atī, hal ta‘rif ayna maktab al-ḥujjāj al-indūnīsiyyīn?","id":"Maaf, saya kehilangan rombongan, tahu di mana kantor jemaah haji Indonesia?","en":"Excuse me, I've lost my group, do you know where the Indonesian pilgrims' office is?"},{"s":"b","p":"Petugas","ar":"لا تقلق، تعال معي إلى مكتب المفقودات","lat":"lā taqlaq, ta‘āl ma‘ī ilā maktab al-mafqūdāt","id":"Jangan khawatir, ikut saya ke kantor barang hilang","en":"Don't worry, come with me to the lost-and-found office"},{"s":"a","p":"Jemaah","ar":"شكراً جزيلاً، جزاك الله خيراً","lat":"shukran jazīlan, jazākallāhu khayran","id":"Terima kasih banyak, semoga Allah membalas kebaikanmu","en":"Thank you very much, may God reward you with goodness"},{"s":"b","p":"Petugas","ar":"عفواً، هذا واجبي","lat":"‘afwan, hādhā wājibī","id":"Sama-sama, ini tugas saya","en":"You're welcome, it's my duty"}]}]},{"id":"bab-belanja","no":"BAB 12","t":"Belanja & Tawar-Menawar","rows":[["بكم هذا؟","bikam hādhā?","berapa harga ini?","how much is this?"],["غالٍ جداً","ghālin jiddan","terlalu mahal","too expensive"],["رخيص","rakhīṣ","murah","cheap"],["خفف السعر من فضلك","khaffif as-si‘r min faḍlik","tolong turunkan harganya","please lower the price"],["آخر سعر","ākhir si‘r","harga pas / terakhir","final price"],["اتفقنا","ittafaqnā","setuju / sepakat","it's a deal / agreed"],["آخذ هذا","ākhudhu hādhā","saya ambil ini","I'll take this"],["بطاقة أم نقد؟","biţāqah am naqd?","kartu atau tunai?","card or cash?"],["عندك فكة؟","‘indak fakkah?","ada kembalian?","do you have change?"]],"dialogs":[{"t":"Tawar-Menawar di Pasar","k":"Membeli oleh-oleh syal di pasar dekat Masjidil Haram.","turns":[{"s":"a","p":"Pembeli","ar":"بكم هذا الشال؟","lat":"bikam hādhā ash-shāl?","id":"Berapa harga syal ini?","en":"How much is this shawl?"},{"s":"b","p":"Penjual","ar":"خمسون ريالاً","lat":"khamsūna riyālan","id":"50 riyal","en":"50 riyals"},{"s":"a","p":"Pembeli","ar":"غالٍ جداً، ممكن أربعون؟","lat":"ghālin jiddan, mumkin arba‘ūn?","id":"Terlalu mahal, bisa 40?","en":"Too expensive, can it be 40?"},{"s":"b","p":"Penjual","ar":"حسناً، خمسة وأربعون آخر سعر","lat":"ḥasanan, khamsah wa arba‘ūn ākhir si‘r","id":"Baik, 45 harga terakhir","en":"Okay, 45 final price"},{"s":"a","p":"Pembeli","ar":"اتفقنا، آخذ اثنين","lat":"ittafaqnā, ākhudhu ithnayn","id":"Setuju, saya ambil dua","en":"Deal, I'll take two"},{"s":"b","p":"Penjual","ar":"تفضل، شكراً لك","lat":"tafaḍḍal, shukran lak","id":"Silakan, terima kasih","en":"Here you go, thank you"}]}]},{"id":"bab-darurat","no":"BAB 13","t":"Keadaan Darurat","rows":[["النجدة!","an-najdah!","tolong! (darurat)","help! (emergency)"],["ساعدوني!","sā‘idūnī!","tolong saya!","help me!"],["فقدتُ جواز سفري","faqadtu jawāza safarī","saya kehilangan paspor saya","I've lost my passport"],["اتصل بالشرطة من فضلك","ittaṣil bish-shurţah min faḍlik","tolong panggil polisi","please call the police"],["أين القنصلية الإندونيسية؟","ayna al-qunṣuliyyah al-indūnīsiyyah?","di mana konsulat Indonesia?","where is the Indonesian consulate?"],["هذه حالة طارئة","hādhihi ḥālah ţāri‘ah","ini keadaan darurat","this is an emergency"],["الدوار","ad-dawār","pusing / vertigo","dizziness"],["ضربة شمس","ḍarbat shams","sengatan panas","heatstroke"],["كرسي متحرك","kursiyy mutaḥarrik","kursi roda","wheelchair"],["مسعف","mus‘if","petugas medis / paramedis","paramedic"],["جفاف","jafāf","dehidrasi","dehydration"]],"dialogs":[{"t":"Melaporkan Paspor Hilang","k":"Jemaah melapor ke kantor keamanan setelah kehilangan paspor.","turns":[{"s":"a","p":"Jemaah","ar":"السلام عليكم، فقدتُ جواز سفري","lat":"as-salāmu ‘alaykum, faqadtu jawāza safarī","id":"Assalamualaikum, saya kehilangan paspor saya","en":"Peace be upon you, I've lost my passport"},{"s":"b","p":"Petugas","ar":"متى وأين فقدته؟","lat":"matā wa ayna faqadtah?","id":"Kapan dan di mana hilangnya?","en":"When and where did you lose it?"},{"s":"a","p":"Jemaah","ar":"هذا الصباح، بالقرب من السوق","lat":"hādhā aṣ-ṣabāḥ, bil-qurbi min as-sūq","id":"Pagi ini, dekat pasar","en":"This morning, near the market"},{"s":"b","p":"Petugas","ar":"هل عندك صورة منه؟","lat":"hal ‘indak ṣūrah minh?","id":"Apakah ada fotokopi/fotonya?","en":"Do you have a copy/photo of it?"},{"s":"a","p":"Jemaah","ar":"نعم، عندي صورة في هاتفي","lat":"na‘am, ‘indī ṣūrah fī hātifī","id":"Ya, ada foto di ponsel saya","en":"Yes, I have a photo on my phone"},{"s":"b","p":"Petugas","ar":"حسناً، سنتصل بالقنصلية الإندونيسية لمساعدتك","lat":"ḥasanan, sanattaṣilu bil-qunṣuliyyah al-indūnīsiyyah limusā‘adatik","id":"Baik, kami akan hubungi konsulat Indonesia untuk membantu Anda","en":"Alright, we'll contact the Indonesian consulate to help you"}]},{"t":"Kelelahan &amp; Sengatan Panas saat Tawaf","k":"Seorang jemaah meminta bantuan petugas kesehatan untuk temannya yang pusing dan lemas.","turns":[{"s":"a","p":"Jemaah","ar":"عفواً! صديقي يشعر بالدوار وتعب شديد","lat":"‘afwan! ṣadīqī yash‘uru bid-dawār wa ta‘ab shadīd","id":"Permisi! Teman saya merasa pusing dan sangat lelah","en":"Excuse me! My friend feels dizzy and very exhausted"},{"s":"b","p":"Petugas","ar":"أين هو الآن؟","lat":"ayna huwa al-ān?","id":"Di mana dia sekarang?","en":"Where is he now?"},{"s":"a","p":"Jemaah","ar":"بجانب باب السلام، يجلس على الأرض","lat":"bijānib bāb as-salām, yajlisu ‘alā al-arḍ","id":"Di dekat Pintu Assalam, dia duduk di lantai","en":"Near Bab as-Salam gate, he's sitting on the floor"},{"s":"b","p":"Petugas","ar":"هل يشرب ماء؟ ربما ضربة شمس","lat":"hal yashrabu mā’? rubbamā ḍarbat shams","id":"Apakah dia minum air? Mungkin sengatan panas","en":"Is he drinking water? It might be heatstroke"},{"s":"a","p":"Jemaah","ar":"نعم، أعطيته ماء زمزم","lat":"na‘am, a‘ţaytuhu mā’a zamzam","id":"Ya, saya beri dia air zamzam","en":"Yes, I gave him Zamzam water"},{"s":"b","p":"Petugas","ar":"جيد، سنأتي فوراً بكرسي متحرك ومسعف","lat":"jayyid, sana’tī fawāran bikursiyy mutaḥarrik wa mus‘if","id":"Bagus, kami akan segera datang dengan kursi roda dan petugas medis","en":"Good, we'll come right away with a wheelchair and a paramedic"}]}]},{"id":"bab-bank","no":"BAB 14","t":"Bank, Uang & Komunikasi","rows":[["أين أقرب صراف آلي؟","ayna aqrab ṣarrāf āliyy?","di mana ATM terdekat?","where is the nearest ATM?"],["أريد تحويل عملة","urīdu taḥwīl ‘umlah","saya mau menukar uang","I want to exchange currency"],["كم سعر الصرف اليوم؟","kam si‘r aṣ-ṣarf al-yawm?","berapa kurs hari ini?","what's today's exchange rate?"],["أريد شريحة اتصال","urīdu sharīḥat ittiṣāl","saya mau kartu SIM","I'd like a SIM card"],["كم تكلفة باقة الإنترنت؟","kam taklifat bāqat al-internet?","berapa harga paket internet?","how much is the internet package?"],["هل يوجد إنترنت مجاني هنا؟","hal yūjad internet majānī hunā?","apakah ada wifi gratis di sini?","is there free wifi here?"],["أحتاج شاحن هاتف","aḥtāju shāḥin hātif","saya butuh charger ponsel","I need a phone charger"]],"dialogs":[{"t":"Membeli Kartu SIM","k":"Di konter operator seluler dekat bandara.","turns":[{"s":"a","p":"Jemaah","ar":"السلام عليكم، أريد شريحة اتصال للسياحة","lat":"as-salāmu ‘alaykum, urīdu sharīḥat ittiṣāl lis-siyāḥah","id":"Assalamualaikum, saya mau kartu SIM untuk turis","en":"Peace be upon you, I'd like a tourist SIM card"},{"s":"b","p":"Penjual","ar":"عندنا باقة بعشرة غيغابايت لمدة أسبوعين","lat":"‘indanā bāqah bi‘asharati gīghābāyt limuddati usbū‘ayn","id":"Kami punya paket 10GB untuk dua minggu","en":"We have a 10GB package for two weeks"},{"s":"a","p":"Jemaah","ar":"كم السعر؟","lat":"kam as-si‘r?","id":"Berapa harganya?","en":"How much is it?"},{"s":"b","p":"Penjual","ar":"خمسون ريالاً، ومعك جواز السفر؟","lat":"khamsūna riyālan, wa ma‘aka jawāz as-safar?","id":"50 riyal, apakah Anda bawa paspor?","en":"50 riyals, do you have your passport with you?"},{"s":"a","p":"Jemaah","ar":"نعم، تفضل","lat":"na‘am, tafaḍḍal","id":"Ya, silakan","en":"Yes, here you go"},{"s":"b","p":"Penjual","ar":"شكراً، سأفعّلها الآن","lat":"shukran, sa’ufa’’iluhā al-ān","id":"Terima kasih, saya aktifkan sekarang","en":"Thank you, I'll activate it now"}]}]},{"id":"bab-ekspresi","no":"BAB 15","t":"Ekspresi Islami Sehari-hari","rows":[["بسم الله","bismillāh","dengan nama Allah (sebelum memulai sesuatu)","in the name of Allah (before starting something)"],["الحمد لله","alḥamdulillāh","segala puji bagi Allah (rasa syukur)","praise be to Allah (giving thanks)"],["سبحان الله","subḥānallāh","Maha Suci Allah (ungkapan kagum)","glory be to Allah (expression of amazement)"],["الله أكبر","Allāhu akbar","Allah Maha Besar","Allah is the Greatest"],["أستغفر الله","astaghfirullāh","aku memohon ampun kepada Allah","I seek Allah's forgiveness"],["ما شاء الله","mā shā’a Allāh","atas kehendak Allah (kagum/pujian)","as Allah has willed (praise)"],["إن شاء الله","in shā’a Allāh","jika Allah menghendaki","God willing"],["لا حول ولا قوة إلا بالله","lā ḥawla walā quwwata illā billāh","tiada daya dan upaya kecuali dengan pertolongan Allah","there is no power or strength except with Allah"],["يرحمك الله","yarḥamukallāh","semoga Allah merahmatimu (untuk orang bersin)","may Allah have mercy on you (to someone who sneezes)"],["جزاك الله خيراً","jazākallāhu khayran","semoga Allah membalasmu dengan kebaikan","may Allah reward you with good"],["تقبل الله منا ومنكم","taqabbalallāhu minnā wa minkum","semoga Allah menerima amal kami dan kalian","may Allah accept our deeds and yours"],["بارك الله فيك","bārakallāhu fīk","semoga Allah memberkahimu","may Allah bless you"]],"dialogs":[{"t":"Ungkapan Sehari-hari di Antara Jemaah","k":"Dua jemaah mengobrol santai setelah shalat berjemaah.","turns":[{"s":"a","p":"A","ar":"الحمد لله، انتهينا من الصلاة","lat":"alḥamdulillāh, intahaynā min aṣ-ṣalāh","id":"Alhamdulillah, kita sudah selesai shalat","en":"Praise God, we've finished praying"},{"s":"b","p":"B","ar":"ما شاء الله، المسجد مزدحم اليوم","lat":"mā shā’a Allāh, al-masjid muzdaḥim al-yawm","id":"Masya Allah, masjid ramai sekali hari ini","en":"Praise God, the mosque is so crowded today"},{"s":"b","p":"B","ar":"يرحمك الله","lat":"yarḥamukallāh","id":"(kepada A yang bersin) Semoga Allah merahmatimu","en":"(to A, who sneezed) May Allah have mercy on you"},{"s":"a","p":"A","ar":"الحمد لله","lat":"alḥamdulillāh","id":"Alhamdulillah","en":"Praise be to Allah"},{"s":"b","p":"B","ar":"هل ستذهب للعشاء الآن؟","lat":"hal satadh-habu lil-‘ashā’ al-ān?","id":"Apakah kamu mau makan malam sekarang?","en":"Are you going to have dinner now?"},{"s":"a","p":"A","ar":"إن شاء الله، بعد قليل","lat":"in shā’a Allāh, ba‘da qalīl","id":"Insya Allah, sebentar lagi","en":"God willing, in a little while"}]}]},{"id":"lampiran-a","no":"LAMPIRAN A","t":"Kosakata Tambahan","rows":[["أبيض","abyaḍ","putih","white"],["أسود","aswad","hitam","black"],["أحمر","aḥmar","merah","red"],["أخضر","akhḍar","hijau","green"],["أزرق","azraq","biru","blue"],["أصفر","aṣfar","kuning","yellow"],["بني","bunniyy","coklat","brown"],["الأب","al-ab","ayah","father"],["الأم","al-umm","ibu","mother"],["الابن","al-ibn","anak laki-laki","son"],["الابنة","al-ibnah","anak perempuan","daughter"],["الزوج","az-zawj","suami","husband"],["الزوجة","az-zawjah","istri","wife"],["الأخ","al-akh","saudara laki-laki","brother"],["الأخت","al-ukht","saudara perempuan","sister"],["الإحرام","al-iḥrām","kain ihram","the ihram garment"],["المخيط","al-mukhayyaţ","pakaian berjahit (dilarang bagi pria berihram)","stitched clothing (forbidden for men in ihram)"],["النعال","an-ni‘āl","sandal","sandals"],["الحزام","al-ḥizām","ikat pinggang","belt"],["المظلة","al-miẓallah","payung","umbrella"],["ريال","riyāl","riyal (mata uang Saudi)","Saudi riyal"],["هللة","hallalah","halalah (1/100 riyal)","halalah (1/100 riyal)"],["صراف آلي","ṣarrāf āliyy","ATM","ATM machine"],["تحويل عملة","taḥwīl ‘umlah","penukaran uang","currency exchange"],["حار","ḥārr","panas","hot"],["بارد","bārid","dingin","cold"],["رطب","raţb","lembap","humid"],["غبار","ghubār","debu","dust"]],"dialogs":[]},{"id":"lampiran-b","no":"LAMPIRAN B","t":"Rambu & Tanda Umum","rows":[["مدخل","madkhal","masuk","entrance"],["مخرج","makhraj","keluar","exit"],["رجال","rijāl","pria","men"],["نساء","nisā’","wanita","women"],["ممنوع التدخين","mamnū‘ at-tadkhīn","dilarang merokok","no smoking"],["مغلق","mughlaq","tutup","closed"],["مفتوح","maftūḥ","buka","open"]],"dialogs":[]}];
+</script>
+<script>
+(function(){
+'use strict';
+/* ===== Utilitas ===== */
+var $ = function(s,r){return (r||document).querySelector(s)};
+function el(tag, attrs, kids){
+  var e = document.createElement(tag);
+  if(attrs) for(var k in attrs){
+    if(k==='class') e.className = attrs[k];
+    else if(k==='text') e.textContent = attrs[k];
+    else if(k.slice(0,2)==='on') e.addEventListener(k.slice(2), attrs[k]);
+    else if(attrs[k]===true) e.setAttribute(k,'');
+    else if(attrs[k]!==false && attrs[k]!=null) e.setAttribute(k, attrs[k]);
+  }
+  (kids||[]).forEach(function(c){ if(c!=null) e.appendChild(typeof c==='string' ? document.createTextNode(c) : c) });
+  return e;
+}
+function acak(a){ a = a.slice(); for(var i=a.length-1;i>0;i--){ var j=Math.floor(Math.random()*(i+1)); var t=a[i]; a[i]=a[j]; a[j]=t } return a }
+function ambil(a,n){ return acak(a).slice(0,n) }
+function pct(x){ return Math.round(x*100) }
+function kelas(p){ return p>=75 ? 'b' : p>=50 ? 'k' : 's' }
+
+/* ===== Data: kartu kosakata/frasa & dialog ===== */
+var BAB = DATA.map(function(b){ return {id:b.id, t:b.t, rows:b.rows, dialogs:b.dialogs} });
+var KARTU = [], DIALOG = [];
+BAB.forEach(function(b){
+  b.rows.forEach(function(r, i){
+    KARTU.push({k:b.id+'#'+i, bab:b.id, ar:r[0], lat:r[1], id:r[2], en:r[3]});
+  });
+  b.dialogs.forEach(function(d, i){ DIALOG.push({k:b.id+'@'+i, bab:b.id, t:d.t, ctx:d.k, turns:d.turns}) });
+});
+var BABJUDUL = {}; BAB.forEach(function(b){ BABJUDUL[b.id] = b.t });
+var KUNCI_KARTU = {}; KARTU.forEach(function(c){ KUNCI_KARTU[c.k] = c });
+
+/* ===== Penyimpanan lokal ===== */
+var KEY = 'belajarArab.v1';
+var S = {item:{}, kuis:[], ucap:{}, dialog:[], tanda:{}};
+try{ var raw = localStorage.getItem(KEY); if(raw){ var p = JSON.parse(raw); for(var k in S) if(p[k]) S[k] = p[k] } }catch(e){}
+function simpan(){ try{ localStorage.setItem(KEY, JSON.stringify(S)) }catch(e){} }
+function catatItem(k, ok, jenis){
+  var it = S.item[k] || (S.item[k] = {n:0, ok:0, j:{}});
+  it.n++; if(ok) it.ok++; it.t = Date.now();
+  var j = it.j[jenis] || (it.j[jenis] = [0,0]); j[0]++; if(ok) j[1]++;
+}
+
+/* ===== Normalisasi Arab & penilaian ===== */
+function normAr(s){
+  return String(s||'')
+    .replace(/[ً-ٰٟـۖ-ۭ]/g,'')
+    .replace(/[أإآٱ]/g,'ا').replace(/ى/g,'ي').replace(/ة/g,'ه').replace(/ؤ/g,'و').replace(/ئ/g,'ي').replace(/ء/g,'')
+    .replace(/[^ء-ي0-9\s]/g,' ')
+    .replace(/\s+/g,' ').trim();
+}
+/* Sasaran ucapan: ambil alternatif pertama sebelum "/", buang "..." penanda isian */
+function sasaran(ar){
+  var s = String(ar).split('/')[0].replace(/\.{2,}|…/g,' ');
+  return normAr(s);
+}
+function lev(a,b){
+  var m=a.length, n=b.length; if(!m) return n; if(!n) return m;
+  var d=[], i, j;
+  for(j=0;j<=n;j++) d[j]=j;
+  for(i=1;i<=m;i++){
+    var prev=d[0]; d[0]=i;
+    for(j=1;j<=n;j++){
+      var tmp=d[j];
+      d[j]=Math.min(d[j]+1, d[j-1]+1, prev+(a[i-1]===b[j-1]?0:1));
+      prev=tmp;
+    }
+  }
+  return d[n];
+}
+function mirip(a,b){ var L=Math.max(a.length,b.length); return L ? 1-lev(a,b)/L : 1 }
+/* Jajarkan kata sasaran dengan kata ucapan (LCS dengan toleransi kemiripan) */
+function bandingkan(target, ucap){
+  var T = target.split(' ').filter(Boolean), U = ucap.split(' ').filter(Boolean);
+  var n=T.length, m=U.length, i, j, sk=[];
+  for(i=0;i<=n;i++){ sk[i]=[]; for(j=0;j<=m;j++) sk[i][j]=0 }
+  for(i=n-1;i>=0;i--) for(j=m-1;j>=0;j--){
+    var s = mirip(T[i],U[j]);
+    sk[i][j] = Math.max(sk[i+1][j], sk[i][j+1], sk[i+1][j+1] + (s>=0.67 ? s : 0));
+  }
+  var hasil = T.map(function(w){ return {w:w, s:0} });
+  i=0; j=0;
+  while(i<n && j<m){
+    var s2 = mirip(T[i],U[j]);
+    if(s2>=0.67 && Math.abs(sk[i][j]-(sk[i+1][j+1]+s2))<1e-9){ hasil[i].s=s2; i++; j++ }
+    else if(sk[i+1][j] >= sk[i][j+1]) i++;
+    else j++;
+  }
+  return hasil;
+}
+function nilaiUcapan(targetAr, ucapan){
+  var t = sasaran(targetAr), u = normAr(ucapan);
+  if(!t) return {skor:0, kata:[]};
+  var kata = bandingkan(t, u);
+  var rata = kata.length ? kata.reduce(function(a,x){return a+x.s},0)/kata.length : 0;
+  var total = mirip(t.replace(/ /g,''), u.replace(/ /g,''));
+  var skor = Math.round(100*(0.6*rata + 0.4*total));
+  return {skor:Math.max(0,Math.min(100,skor)), kata:kata};
+}
+
+/* ===== Suara: pengenalan (STT) & sintesis (TTS) ===== */
+var SR = window.SpeechRecognition || window.webkitSpeechRecognition;
+var suaraArab = null;
+function muatSuara(){
+  if(!window.speechSynthesis) return;
+  var v = speechSynthesis.getVoices() || [];
+  suaraArab = v.filter(function(x){ return /^ar/i.test(x.lang) })[0] || null;
+}
+if(window.speechSynthesis){ muatSuara(); speechSynthesis.addEventListener && speechSynthesis.addEventListener('voiceschanged', muatSuara) }
+function ucapkan(teks, lambat, selesai){
+  if(!window.speechSynthesis || !window.SpeechSynthesisUtterance){ if(selesai) selesai(); return false }
+  try{
+    speechSynthesis.cancel();
+    var u = new SpeechSynthesisUtterance(String(teks).split('/')[0].replace(/\.{2,}|…/g,' '));
+    u.lang = 'ar-SA'; if(suaraArab) u.voice = suaraArab;
+    u.rate = lambat ? 0.6 : 0.9;
+    if(selesai){ u.onend = selesai; u.onerror = selesai }
+    speechSynthesis.speak(u);
+    return true;
+  }catch(e){ if(selesai) selesai(); return false }
+}
+var perekam = null;
+function berhentiRekam(){ if(perekam){ try{ perekam.abort() }catch(e){} perekam = null } }
+function dengarkan(cb){
+  /* cb(err, [alternatif]) */
+  berhentiRekam();
+  var r = new SR(); perekam = r;
+  r.lang = 'ar-SA'; r.interimResults = false; r.maxAlternatives = 5; r.continuous = false;
+  var selesai = false;
+  r.onresult = function(e){
+    selesai = true;
+    var alt = []; var res = e.results[0];
+    for(var i=0;i<res.length;i++) alt.push(res[i].transcript);
+    cb(null, alt);
+  };
+  r.onerror = function(e){ if(!selesai){ selesai = true; cb(e.error || 'error') } };
+  r.onend = function(){ if(!selesai){ selesai = true; cb('no-speech') } if(perekam===r) perekam = null };
+  try{ r.start() }catch(e){ cb('error') }
+  return r;
+}
+var PESAN_ERR = {
+  'not-allowed':'Izin mikrofon ditolak. Izinkan mikrofon pada peramban lalu coba lagi.',
+  'service-not-allowed':'Layanan suara tidak diizinkan di peramban ini.',
+  'no-speech':'Suara tidak terdengar. Dekatkan mikrofon lalu coba lagi.',
+  'audio-capture':'Mikrofon tidak ditemukan.',
+  'network':'Pengenalan suara memerlukan koneksi internet pada sebagian peramban.',
+  'language-not-supported':'Peramban tidak mendukung pengenalan suara bahasa Arab.',
+  'aborted':'Perekaman dihentikan.'
+};
+
+/* ===== Tampilan: kerangka ===== */
+var elM = $('#m'), tampil = 'belajar';
+function pilihTampil(v){
+  tampil = v; berhentiRekam(); if(window.speechSynthesis) try{ speechSynthesis.cancel() }catch(e){}
+  [].forEach.call(document.querySelectorAll('#sub button'), function(b){ b.setAttribute('aria-selected', b.dataset.v===v ? 'true':'false') });
+  elM.textContent = '';
+  ({belajar:vBelajar, ucap:vUcap, dialog:vDialog, kuis:vKuis, analisis:vAnalisis})[v]();
+  window.scrollTo(0,0);
+  try{ history.replaceState(null,'','#'+v) }catch(e){}
+}
+[].forEach.call(document.querySelectorAll('#sub button'), function(b){ b.addEventListener('click', function(){ pilihTampil(b.dataset.v) }) });
+
+function pilihBab(id, semua, tambah){
+  var s = el('select', {id:id, 'aria-label':'Pilih bab'});
+  if(semua) s.appendChild(el('option', {value:'*', text:semua}));
+  BAB.forEach(function(b){ if(tambah ? tambah(b) : true) s.appendChild(el('option', {value:b.id, text:b.t+' ('+b.rows.length+')'})) });
+  return s;
+}
+function catatanSuara(){
+  var d = [];
+  if(!SR) d.push('Peramban ini belum mendukung pengenalan suara — pengucapan dinilai sendiri (Belum / Hampir / Lancar). Gunakan Chrome atau Edge terbaru (Android/desktop) untuk penilaian otomatis.');
+  if(!window.speechSynthesis) d.push('Peramban ini tidak punya suara pembaca (TTS), sehingga tombol "Dengar" tidak tersedia.');
+  else if(!suaraArab) d.push('Belum terdeteksi suara Arab pada perangkat; suara contoh mungkin tidak terdengar. Pasang suara Arab pada pengaturan teks-ke-suara perangkat.');
+  if(!d.length) return null;
+  return el('div', {class:'info peringatan'}, d.map(function(x){ return el('div', {text:x}) }));
+}
+var LAMBAT = false;
+
+/* ===== 1. Belajar ===== */
+function vBelajar(){
+  elM.appendChild(el('h2', {text:'Kosakata & frasa'}));
+  elM.appendChild(el('p', {class:'ket', text:KARTU.length+' frasa dari '+BAB.length+' bab panduan Bahasa Arab. Ketuk "Dengar" untuk contoh lafal; tandai bintang untuk frasa yang ingin dilatih.'}));
+  var selBab = pilihBab('bab', 'Semua bab');
+  var cari = el('input', {type:'text', placeholder:'Cari Arab / Latin / Indonesia…', 'aria-label':'Cari'});
+  var cekLat = el('input', {type:'checkbox', id:'cl', checked:true});
+  var cekBin = el('input', {type:'checkbox', id:'cb'});
+  var tools = el('div', {class:'baris'}, [selBab, cari,
+    el('label', {class:'baris', for:'cl'}, [cekLat, 'Latin']),
+    el('label', {class:'baris', for:'cb'}, [cekBin, 'Hanya ★'])]);
+  var daftar = el('div', {class:'kartu'});
+  elM.appendChild(tools); elM.appendChild(daftar);
+  function gambar(){
+    daftar.textContent = '';
+    var q = cari.value.trim().toLowerCase(), qn = normAr(cari.value);
+    var hit = KARTU.filter(function(c){
+      if(selBab.value!=='*' && c.bab!==selBab.value) return false;
+      if(cekBin.checked && !S.tanda[c.k]) return false;
+      if(!q) return true;
+      return c.id.toLowerCase().indexOf(q)>=0 || c.lat.toLowerCase().indexOf(q)>=0 || c.en.toLowerCase().indexOf(q)>=0 || (qn && normAr(c.ar).indexOf(qn)>=0);
+    });
+    if(!hit.length){ daftar.appendChild(el('div', {class:'kosong', text:'Tidak ada yang cocok.'})); return }
+    hit.slice(0,150).forEach(function(c){
+      var it = S.item[c.k], pu = S.ucap[c.k];
+      var lenc = [];
+      if(it && it.n) lenc.push(el('span', {class:'lencana '+kelas(pct(it.ok/it.n)), text:'kuis '+it.ok+'/'+it.n}));
+      if(pu) lenc.push(el('span', {class:'lencana '+kelas(pu.best), text:'lafal '+pu.best}));
+      daftar.appendChild(el('div', {class:'item'}, [
+        el('div', {class:'isi kata'}, [
+          el('div', {class:'ar', text:c.ar, lang:'ar', dir:'rtl'}),
+          cekLat.checked ? el('div', {class:'lat', text:c.lat}) : null,
+          el('div', {class:'id', text:c.id}),
+          el('div', {class:'en', text:c.en}),
+          lenc.length ? el('div', {class:'baris'}, lenc) : null
+        ]),
+        el('div', {class:'aksi'}, [
+          el('button', {class:'btn kecil', type:'button', text:'▶ Dengar', onclick:function(){ ucapkan(c.ar, LAMBAT) }}),
+          el('button', {class:'btn kecil garis', type:'button', 'aria-pressed':!!S.tanda[c.k], text:S.tanda[c.k] ? '★ Ditandai' : '☆ Tandai', onclick:function(e){
+            if(S.tanda[c.k]) delete S.tanda[c.k]; else S.tanda[c.k] = 1;
+            simpan(); e.target.textContent = S.tanda[c.k] ? '★ Ditandai' : '☆ Tandai'; e.target.setAttribute('aria-pressed', !!S.tanda[c.k]);
+          }}),
+          el('button', {class:'btn kecil garis', type:'button', text:'🎤 Latih', onclick:function(){ ucapTarget = c.k; pilihTampil('ucap') }})
+        ])
+      ]));
+    });
+    if(hit.length>150) daftar.appendChild(el('div', {class:'info', text:'Menampilkan 150 dari '+hit.length+'. Persempit dengan pencarian atau pilihan bab.'}));
+  }
+  [selBab, cari, cekLat, cekBin].forEach(function(x){ x.addEventListener('input', gambar); x.addEventListener('change', gambar) });
+  gambar();
+}
+
+/* ===== 2. Pengucapan ===== */
+var ucapTarget = null, ucapAntrian = [], ucapIdx = 0;
+function catatUcap(k, skor, otomatis){
+  var u = S.ucap[k] || (S.ucap[k] = {n:0, sum:0, best:0});
+  u.n++; u.sum += skor; u.best = Math.max(u.best, skor); u.t = Date.now(); u.m = otomatis ? 1 : 0;
+  simpan();
+}
+function kotakSkor(wadah, target, skor, kata, alt, otomatis){
+  wadah.textContent = '';
+  var p = skor;
+  wadah.appendChild(el('div', {class:'baris', style:'justify-content:space-between'}, [
+    el('div', {class:'skor '+kelas(p), text:p+'%'}),
+    el('div', {class:'ket', text: p>=85 ? 'Sangat baik — lafal terbaca jelas.' : p>=65 ? 'Cukup baik — perbaiki kata bertanda merah.' : 'Perlu diulang — dengar contoh, lalu coba perlahan.'})
+  ]));
+  if(kata && kata.length){
+    var diff = el('div', {class:'diff', lang:'ar', dir:'rtl'});
+    kata.forEach(function(x){ diff.appendChild(el('span', {class:x.s>=0.67?'ok':'no', text:x.w})) });
+    wadah.appendChild(diff);
+  }
+  if(alt) wadah.appendChild(el('div', {class:'dengar'}, ['Terdengar: ', el('span', {lang:'ar', text:alt || '(kosong)'})]));
+  if(!otomatis) wadah.appendChild(el('div', {class:'ket', text:'Penilaian mandiri — tidak diukur otomatis.'}));
+}
+function bagianLatih(c, opsi){
+  /* Kartu latihan lafal untuk satu frasa. opsi.setelah(skor) dipanggil setelah menilai. */
+  var hasil = el('div', {'aria-live':'polite'});
+  var tmb = el('button', {class:'btn rekam utama', type:'button', text:'🎤 Ucapkan'});
+  var kartu = el('div', {class:'kartu'}, [
+    el('div', {class:'soal-ar ar', text:c.ar, lang:'ar', dir:'rtl'}),
+    el('div', {style:'text-align:center'}, [el('div', {class:'lat', text:c.lat}), el('div', {class:'id', text:c.id})]),
+    el('div', {class:'baris', style:'justify-content:center; margin-top:10px'}, [
+      el('button', {class:'btn garis', type:'button', text:'▶ Dengar', onclick:function(){ ucapkan(c.ar, LAMBAT) }}),
+      el('button', {class:'btn garis', type:'button', text:'🐢 Lambat', onclick:function(){ ucapkan(c.ar, true) }}),
+      tmb
+    ]),
+    hasil
+  ]);
+  function selesaiNilai(skor, kata, alt, otomatis){
+    catatUcap(c.k, skor, otomatis);
+    kotakSkor(hasil, c.ar, skor, kata, alt, otomatis);
+    if(opsi && opsi.setelah) opsi.setelah(skor);
+    tmb.classList.remove('aktif'); tmb.textContent = '🎤 Ulangi';
+  }
+  if(SR){
+    tmb.addEventListener('click', function(){
+      if(tmb.classList.contains('aktif')){ berhentiRekam(); return }
+      if(window.speechSynthesis) try{ speechSynthesis.cancel() }catch(e){}
+      tmb.classList.add('aktif'); tmb.textContent = '⏹ Mendengarkan…'; hasil.textContent = '';
+      dengarkan(function(err, alt){
+        tmb.classList.remove('aktif'); tmb.textContent = '🎤 Ulangi';
+        if(err){ hasil.textContent = ''; hasil.appendChild(el('div', {class:'info peringatan', text:PESAN_ERR[err] || ('Gagal merekam ('+err+').')})); return }
+        var terbaik = null, teks = '';
+        alt.forEach(function(a){ var n = nilaiUcapan(c.ar, a); if(!terbaik || n.skor>terbaik.skor){ terbaik = n; teks = a } });
+        selesaiNilai(terbaik.skor, terbaik.kata, teks, true);
+      });
+    });
+  } else {
+    tmb.textContent = '🎤 Saya sudah mencoba'; tmb.classList.remove('utama');
+    tmb.addEventListener('click', function(){
+      hasil.textContent = '';
+      hasil.appendChild(el('div', {class:'ket', text:'Bagaimana lafal Anda dibanding contoh?'}));
+      hasil.appendChild(el('div', {class:'baris', style:'justify-content:center'}, [['Belum',30],['Hampir',65],['Lancar',100]].map(function(x){
+        return el('button', {class:'btn garis', type:'button', text:x[0], onclick:function(){ selesaiNilai(x[1], null, null, false) }});
+      })));
+    });
+  }
+  return kartu;
+}
+function vUcap(){
+  elM.appendChild(el('h2', {text:'Cek pengucapan'}));
+  elM.appendChild(el('p', {class:'ket', text:'Dengar contoh, ucapkan frasa, dan lihat kata mana yang kurang tepat. Penilaian membandingkan hasil pengenalan suara dengan teks sasaran (tanpa harakat) — ini indikator, bukan pengganti guru tahsin/bahasa Arab.'}));
+  var cs = catatanSuara(); if(cs) elM.appendChild(cs);
+  var selBab = pilihBab('bab', 'Semua bab');
+  var mode = el('select', {'aria-label':'Mode'}, [
+    el('option', {value:'acak', text:'Acak'}), el('option', {value:'lemah', text:'Yang masih lemah'}),
+    el('option', {value:'tanda', text:'Yang ditandai ★'}), el('option', {value:'urut', text:'Berurutan'})]);
+  var cekLambat = el('input', {type:'checkbox', id:'lb'});
+  cekLambat.addEventListener('change', function(){ LAMBAT = cekLambat.checked });
+  cekLambat.checked = LAMBAT;
+  var tools = el('div', {class:'baris'}, [selBab, mode, el('label', {class:'baris', for:'lb'}, [cekLambat, 'Contoh pelan'])]);
+  var area = el('div'); var nav = el('div', {class:'baris', style:'justify-content:space-between'});
+  elM.appendChild(tools); elM.appendChild(area); elM.appendChild(nav);
+  function susun(){
+    var pool = KARTU.filter(function(c){ return (selBab.value==='*' || c.bab===selBab.value) && sasaran(c.ar).length>0 });
+    if(mode.value==='tanda') pool = pool.filter(function(c){ return S.tanda[c.k] });
+    if(mode.value==='lemah'){
+      pool.sort(function(a,b){ return (S.ucap[a.k] ? S.ucap[a.k].best : -1) - (S.ucap[b.k] ? S.ucap[b.k].best : -1) });
+      pool = pool.filter(function(c){ return !S.ucap[c.k] || S.ucap[c.k].best<80 }).slice(0,30);
+    } else if(mode.value==='acak') pool = acak(pool);
+    ucapAntrian = pool; ucapIdx = 0;
+    if(ucapTarget){
+      var pos = ucapAntrian.findIndex(function(c){ return c.k===ucapTarget });
+      if(pos<0 && KUNCI_KARTU[ucapTarget]){ ucapAntrian.unshift(KUNCI_KARTU[ucapTarget]); pos = 0 }
+      ucapIdx = Math.max(0,pos); ucapTarget = null;
+    }
+    tunjuk();
+  }
+  function tunjuk(){
+    area.textContent = ''; nav.textContent = '';
+    if(!ucapAntrian.length){ area.appendChild(el('div', {class:'kosong', text: mode.value==='tanda' ? 'Belum ada frasa bertanda ★. Tandai dari menu Belajar.' : 'Tidak ada frasa untuk pilihan ini.'})); return }
+    var c = ucapAntrian[ucapIdx];
+    area.appendChild(bagianLatih(c));
+    var pu = S.ucap[c.k];
+    nav.appendChild(el('button', {class:'btn garis', type:'button', text:'← Sebelumnya', disabled:ucapIdx===0, onclick:function(){ ucapIdx--; tunjuk() }}));
+    nav.appendChild(el('span', {class:'ket', text:(ucapIdx+1)+' / '+ucapAntrian.length+(pu ? ' · terbaik '+pu.best+'% · '+pu.n+'×' : '')}));
+    nav.appendChild(el('button', {class:'btn', type:'button', text:'Berikutnya →', disabled:ucapIdx>=ucapAntrian.length-1, onclick:function(){ ucapIdx++; tunjuk() }}));
+  }
+  [selBab, mode].forEach(function(x){ x.addEventListener('change', susun) });
+  susun();
+}
+
+/* ===== 3. Dialog (bermain peran) ===== */
+function vDialog(){
+  elM.appendChild(el('h2', {text:'Dialog bermain peran'}));
+  elM.appendChild(el('p', {class:'ket', text:DIALOG.length+' dialog situasi nyata (bandara, hotel, restoran, rumah sakit, dll.). Pilih peran Anda; lawan bicara dibacakan suara perangkat, giliran Anda diucapkan lewat mikrofon dan dinilai.'}));
+  var cs = catatanSuara(); if(cs) elM.appendChild(cs);
+  var sel = el('select', {'aria-label':'Pilih dialog'});
+  DIALOG.forEach(function(d, i){ sel.appendChild(el('option', {value:i, text:(BABJUDUL[d.bab]||'')+' — '+d.t})) });
+  var area = el('div');
+  elM.appendChild(sel); elM.appendChild(area);
+  sel.addEventListener('change', function(){ siapkan(DIALOG[+sel.value]) });
+  siapkan(DIALOG[0]);
+
+  function siapkan(d){
+    area.textContent = '';
+    var pemb = []; d.turns.forEach(function(t){ if(pemb.indexOf(t.s)<0) pemb.push(t.s) });
+    var nama = {}; d.turns.forEach(function(t){ nama[t.s] = t.p });
+    area.appendChild(el('div', {class:'kartu'}, [
+      el('div', {class:'id', text:d.ctx || d.t}),
+      el('div', {class:'baris', style:'margin-top:8px'}, [
+        el('span', {class:'ket', text:'Peran Anda:'}),
+        pemb.map(function(s){ return el('button', {class:'btn', type:'button', text:nama[s], onclick:function(){ mulai(d, s) }}) })[0],
+        pemb[1] ? el('button', {class:'btn', type:'button', text:nama[pemb[1]], onclick:function(){ mulai(d, pemb[1]) }}) : null,
+        el('button', {class:'btn garis', type:'button', text:'▶ Dengarkan semua', onclick:function(){ putarSemua(d) }})
+      ])
+    ]));
+    /* pratinjau */
+    var pv = el('div'); d.turns.forEach(function(t){ pv.appendChild(gelembung(t, t.s===pemb[0] ? 'lawan':'saya', false)) });
+    area.appendChild(pv);
+  }
+  function gelembung(t, sisi, mati){
+    return el('div', {class:'giliran '+sisi+(mati?' mati':'')}, [
+      el('div', {class:'p', text:t.p}), el('div', {class:'ar', text:t.ar, lang:'ar', dir:'rtl'}),
+      el('div', {class:'lat', text:t.lat}), el('div', {class:'id', text:t.id})
+    ]);
+  }
+  var berhenti = false;
+  function putarSemua(d){
+    berhenti = false; var i = 0;
+    (function lanjut(){ if(berhenti || i>=d.turns.length) return; ucapkan(d.turns[i++].ar, LAMBAT, function(){ setTimeout(lanjut, 350) }) })();
+  }
+  function mulai(d, peran){
+    berhenti = true; area.textContent = '';
+    var skorGiliran = [], kotak = el('div');
+    area.appendChild(el('div', {class:'kartu'}, [el('b', {text:d.t}), el('div', {class:'ket', text:'Anda berperan sebagai '+d.turns.filter(function(t){return t.s===peran})[0].p+'.'}),
+      el('button', {class:'btn garis kecil', type:'button', text:'← Pilih peran lain', onclick:function(){ berhentiRekam(); if(window.speechSynthesis) speechSynthesis.cancel(); siapkan(d) }})]));
+    area.appendChild(kotak);
+    var i = 0;
+    function maju(){
+      if(i>=d.turns.length) return selesai();
+      var t = d.turns[i];
+      if(t.s!==peran){
+        var g = gelembung(t, 'lawan', false); kotak.appendChild(g); g.scrollIntoView({block:'nearest'});
+        i++; ucapkan(t.ar, LAMBAT, function(){ setTimeout(maju, 300) });
+      } else {
+        var w = el('div'); 
+        var k = { k:d.k+'/'+i, ar:t.ar, lat:t.lat, id:t.id };
+        var idx = i;
+        w.appendChild(bagianLatih(k, {setelah:function(skor){
+          skorGiliran[idx] = skor; lanjutTombol.disabled = false;
+        }}));
+        /* bagianLatih mencatat ke S.ucap dengan kunci giliran — itu disengaja untuk analisis dialog */
+        kotak.appendChild(w); w.scrollIntoView({block:'nearest'});
+        var lanjutTombol = el('button', {class:'btn', type:'button', text: i===d.turns.length-1 ? 'Selesai' : 'Lanjut →', onclick:function(){ lanjutTombol.remove(); i = idx+1; maju() }});
+        lanjutTombol.disabled = true;
+        w.appendChild(el('div', {class:'baris', style:'justify-content:flex-end'}, [
+          el('button', {class:'btn garis kecil', type:'button', text:'Lewati', onclick:function(){ lanjutTombol.remove(); i = idx+1; maju() }}), lanjutTombol]));
+      }
+    }
+    function selesai(){
+      var nilai = skorGiliran.filter(function(x){ return x!=null });
+      var rata = nilai.length ? Math.round(nilai.reduce(function(a,b){return a+b},0)/nilai.length) : 0;
+      if(nilai.length){ S.dialog.push({t:Date.now(), d:d.k, skor:rata, n:nilai.length, peran:peran}); simpan() }
+      kotak.appendChild(el('div', {class:'kartu'}, [
+        el('h3', {text:'Dialog selesai'}),
+        nilai.length ? el('div', {class:'baris'}, [el('div', {class:'skor '+kelas(rata), text:rata+'%'}), el('div', {class:'ket', text:'rata-rata '+nilai.length+' giliran Anda'})])
+                     : el('div', {class:'ket', text:'Tidak ada giliran yang dinilai.'}),
+        el('div', {class:'baris', style:'margin-top:8px'}, [
+          el('button', {class:'btn', type:'button', text:'Ulangi', onclick:function(){ mulai(d, peran) }}),
+          el('button', {class:'btn garis', type:'button', text:'Tukar peran', onclick:function(){ var lain = d.turns.filter(function(t){return t.s!==peran})[0]; mulai(d, lain ? lain.s : peran) }})
+        ])
+      ]));
+    }
+    maju();
+  }
+}
+
+/* ===== 4. Kuis ===== */
+var JENIS = {
+  arti:   'Arab → arti',
+  arab:   'Arti → Arab',
+  simak:  'Menyimak',
+  dialog: 'Dialog',
+  susun:  'Susun kalimat'
+};
+function pengecoh(c, n, kolom){
+  var sama = KARTU.filter(function(x){ return x.k!==c.k && x[kolom]!==c[kolom] && (x.bab===c.bab) });
+  var lain = KARTU.filter(function(x){ return x.k!==c.k && x[kolom]!==c[kolom] && x.bab!==c.bab });
+  var seen = {}; seen[c[kolom]] = 1; var out = [];
+  acak(sama).concat(acak(lain)).forEach(function(x){ if(out.length<n && !seen[x[kolom]] && x[kolom].length<110){ seen[x[kolom]] = 1; out.push(x) } });
+  return out;
+}
+function buatSoal(jenis, c){
+  if(jenis==='arti' || jenis==='simak'){
+    var pg = pengecoh(c, 3, 'id');
+    return {jenis:jenis, k:c.k, bab:c.bab, c:c, opsi:acak([c].concat(pg)).map(function(x){ return {t:x.id, ok:x.k===c.k} })};
+  }
+  if(jenis==='arab'){
+    var pg2 = pengecoh(c, 3, 'ar');
+    return {jenis:jenis, k:c.k, bab:c.bab, c:c, opsi:acak([c].concat(pg2)).map(function(x){ return {t:x.ar, ok:x.k===c.k, ar:true} })};
+  }
+  if(jenis==='susun'){
+    var kata = c.ar.split('/')[0].replace(/\.{2,}|…/g,' ').split(/\s+/).filter(Boolean);
+    return {jenis:jenis, k:c.k, bab:c.bab, c:c, kata:kata};
+  }
+}
+function soalDialog(){
+  var cand = [];
+  DIALOG.forEach(function(d){ d.turns.forEach(function(t, i){ if(i+1<d.turns.length) cand.push({d:d, i:i}) }) });
+  var x = cand[Math.floor(Math.random()*cand.length)];
+  var benar = x.d.turns[x.i+1], salah = [];
+  var semua = []; DIALOG.forEach(function(d){ d.turns.forEach(function(t){ if(t.ar!==benar.ar && t.ar!==x.d.turns[x.i].ar) semua.push(t) }) });
+  salah = ambil(semua, 3);
+  var key = x.d.k+'/'+(x.i+1);
+  return {jenis:'dialog', k:key, bab:x.d.bab, d:x.d, tanya:x.d.turns[x.i], opsi:acak([benar].concat(salah)).map(function(t){ return {t:t.ar, lat:t.lat, id:t.id, ok:t===benar, ar:true} })};
+}
+function susunKuis(jenisDipilih, babId, n, hanyaLemah){
+  var pool = KARTU.filter(function(c){ return (babId==='*' || c.bab===babId) });
+  if(hanyaLemah){
+    pool = pool.filter(function(c){ var it = S.item[c.k]; return it && it.n && it.ok/it.n<0.7 });
+    if(pool.length<4) pool = KARTU.filter(function(c){ var it = S.item[c.k]; return !it || !it.n || it.ok/it.n<0.7 }).filter(function(c){ return babId==='*' || c.bab===babId });
+  }
+  pool = pool.filter(function(c){ return c.ar.length<70 });
+  var soal = [], jenisAda = jenisDipilih.slice();
+  if(jenisAda.indexOf('simak')>=0 && !window.speechSynthesis) jenisAda.splice(jenisAda.indexOf('simak'),1);
+  if(!jenisAda.length) jenisAda = ['arti'];
+  /* prioritaskan butir yang jarang diuji / lemah */
+  pool.sort(function(a,b){
+    var ia = S.item[a.k], ib = S.item[b.k];
+    var sa = ia && ia.n ? ia.ok/ia.n : 0.5, sb = ib && ib.n ? ib.ok/ib.n : 0.5;
+    return (sa+Math.random()*0.6) - (sb+Math.random()*0.6);
+  });
+  var dipakai = {};
+  var hitung = 0, guard = 0;
+  while(soal.length<n && guard++<400){
+    var j = jenisAda[hitung++ % jenisAda.length];
+    if(j==='dialog'){
+      var s = soalDialog(); if(babId!=='*' && s.bab!==babId){ if(!DIALOG.some(function(d){return d.bab===babId})) continue }
+      if(dipakai[s.k]) continue; dipakai[s.k] = 1; soal.push(s); continue;
+    }
+    var c = pool[soal.length % Math.max(1,pool.length)];
+    if(!c) break;
+    if(j==='susun'){
+      var kb = pool.filter(function(x){ var w = x.ar.split('/')[0].replace(/\.{2,}|…/g,' ').split(/\s+/).filter(Boolean).length; return w>=2 && w<=7 && !dipakai['susun|'+x.k] });
+      if(kb.length) c = kb[0]; else j = 'arti';
+    }
+    var key = j+'|'+c.k; if(dipakai[key]){ pool = pool.slice(1).concat(pool.slice(0,1)); continue }
+    dipakai[key] = 1; var q = buatSoal(j, c); if(q.opsi && q.opsi.length<2) continue; soal.push(q);
+  }
+  return acak(soal);
+}
+function vKuis(){
+  elM.appendChild(el('h2', {text:'Kuis'}));
+  elM.appendChild(el('p', {class:'ket', text:'Kuis menguji lima keterampilan. Hasil tiap soal direkam untuk analisis kemampuan di menu Analisis.'}));
+  var selBab = pilihBab('bab', 'Semua bab');
+  var jml = el('select', {'aria-label':'Jumlah soal'}, [10,15,20,30].map(function(n){ return el('option', {value:n, text:n+' soal'}) }));
+  var cek = {};
+  var kot = el('div', {class:'baris'}, Object.keys(JENIS).map(function(j){
+    var c = el('input', {type:'checkbox', id:'j-'+j, checked:true}); cek[j] = c;
+    return el('label', {class:'baris', for:'j-'+j}, [c, JENIS[j]]);
+  }));
+  var lemah = el('input', {type:'checkbox', id:'lm'});
+  var area = el('div');
+  elM.appendChild(el('div', {class:'kartu'}, [
+    el('div', {class:'baris'}, [selBab, jml, el('label', {class:'baris', for:'lm'}, [lemah, 'Fokus butir lemah'])]),
+    el('div', {style:'margin-top:8px'}, [kot]),
+    el('div', {style:'margin-top:10px'}, [el('button', {class:'btn utama', type:'button', text:'Mulai kuis', onclick:function(){
+      var j = Object.keys(JENIS).filter(function(x){ return cek[x].checked });
+      if(!j.length){ alert('Pilih minimal satu jenis soal.'); return }
+      jalankan(susunKuis(j, selBab.value, +jml.value, lemah.checked), selBab.value);
+    }})])
+  ]));
+  elM.appendChild(area);
+  if(window.__kuisAwal){ var aw = window.__kuisAwal; window.__kuisAwal = null; jalankan(aw, '*') }
+
+  function jalankan(soal, babId){
+    elM.textContent = '';
+    if(!soal.length){ elM.appendChild(el('div', {class:'kosong', text:'Tidak ada soal untuk pilihan ini.'})); return }
+    var idx = 0, benar = 0, mulai = Date.now(), perJenis = {}, perBab = {}, salahList = [];
+    var kepala = el('div', {class:'baris', style:'justify-content:space-between'});
+    var bar = el('div', {class:'bar'}, [el('i')]);
+    var kotak = el('div', {class:'kartu'});
+    elM.appendChild(kepala); elM.appendChild(bar); elM.appendChild(kotak);
+    function tampilSoal(){
+      if(idx>=soal.length) return hasil();
+      var q = soal[idx]; kotak.textContent = '';
+      kepala.textContent = ''; kepala.appendChild(el('span', {class:'lencana', text:JENIS[q.jenis]})); kepala.appendChild(el('span', {class:'ket', text:'Soal '+(idx+1)+' / '+soal.length}));
+      bar.firstChild.style.width = pct(idx/soal.length)+'%';
+      var jawab = function(ok, tanya){
+        if(ok) benar++;
+        var pj = perJenis[q.jenis] || (perJenis[q.jenis] = [0,0]); pj[0]++; if(ok) pj[1]++;
+        var pb = perBab[q.bab] || (perBab[q.bab] = [0,0]); pb[0]++; if(ok) pb[1]++;
+        catatItem(q.k, ok, q.jenis);
+        if(!ok) salahList.push(q);
+        simpan();
+        var next = el('button', {class:'btn utama', type:'button', text: idx===soal.length-1 ? 'Lihat hasil' : 'Soal berikutnya →', onclick:function(){ idx++; tampilSoal() }});
+        kotak.appendChild(el('div', {class:'baris', style:'justify-content:flex-end; margin-top:10px'}, [next])); next.focus();
+      };
+      if(q.jenis==='susun') return soalSusun(q, jawab);
+      if(q.jenis==='dialog') return soalDlg(q, jawab);
+      soalPilihan(q, jawab);
+    }
+    function soalPilihan(q, jawab){
+      var c = q.c;
+      if(q.jenis==='arti'){
+        kotak.appendChild(el('div', {class:'ket', text:'Apa arti frasa ini?'}));
+        kotak.appendChild(el('div', {class:'soal-ar ar', text:c.ar, lang:'ar', dir:'rtl'}));
+        kotak.appendChild(el('div', {style:'text-align:center'}, [el('button', {class:'btn garis kecil', type:'button', text:'▶ Dengar', onclick:function(){ ucapkan(c.ar, LAMBAT) }})]));
+      } else if(q.jenis==='arab'){
+        kotak.appendChild(el('div', {class:'ket', text:'Pilih tulisan Arab yang tepat untuk:'}));
+        kotak.appendChild(el('div', {style:'text-align:center; font-size:19px; font-weight:600; margin:8px 0', text:c.id}));
+      } else {
+        kotak.appendChild(el('div', {class:'ket', text:'Dengarkan, lalu pilih artinya.'}));
+        kotak.appendChild(el('div', {style:'text-align:center; margin:10px 0'}, [el('button', {class:'btn utama', type:'button', text:'▶ Putar suara', onclick:function(){ ucapkan(c.ar, LAMBAT) }}), ' ', el('button', {class:'btn garis', type:'button', text:'🐢 Lambat', onclick:function(){ ucapkan(c.ar, true) }})]));
+        setTimeout(function(){ ucapkan(c.ar, LAMBAT) }, 250);
+      }
+      var tombol = [];
+      q.opsi.forEach(function(o){
+        var b = el('button', {class:'opsi'+(o.ar?' ar':''), type:'button', text:o.t, lang:o.ar?'ar':null, dir:o.ar?'rtl':null, onclick:function(){
+          tombol.forEach(function(x){ x.b.disabled = true; if(x.o.ok) x.b.classList.add('benar') });
+          if(!o.ok) b.classList.add('salah');
+          var tambah = el('div', {class:'info'}, [el('span', {class:'ar', lang:'ar', text:c.ar}), ' — ', el('i', {text:c.lat}), ' — ', c.id]);
+          kotak.appendChild(tambah); jawab(o.ok);
+        }});
+        tombol.push({b:b, o:o}); kotak.appendChild(b);
+      });
+    }
+    function soalDlg(q, jawab){
+      kotak.appendChild(el('div', {class:'ket', text:'Dialog: '+q.d.t+(q.d.ctx ? ' — '+q.d.ctx : '')}));
+      kotak.appendChild(el('div', {class:'giliran lawan'}, [el('div', {class:'p', text:q.tanya.p}), el('div', {class:'ar', text:q.tanya.ar, lang:'ar', dir:'rtl'}), el('div', {class:'id', text:q.tanya.id}),
+        el('button', {class:'btn garis kecil', type:'button', text:'▶ Dengar', onclick:function(){ ucapkan(q.tanya.ar, LAMBAT) }})]));
+      kotak.appendChild(el('div', {class:'ket', text:'Jawaban yang paling tepat?'}));
+      var tombol = [];
+      q.opsi.forEach(function(o){
+        var b = el('button', {class:'opsi ar', type:'button', text:o.t, lang:'ar', dir:'rtl', onclick:function(){
+          tombol.forEach(function(x){ x.b.disabled = true; if(x.o.ok) x.b.classList.add('benar') });
+          if(!o.ok) b.classList.add('salah');
+          kotak.appendChild(el('div', {class:'info'}, tombol.filter(function(x){return x.o.ok}).map(function(x){ return x.o.id+' — '+x.o.lat }).concat([])));
+          jawab(o.ok);
+        }});
+        tombol.push({b:b, o:o}); kotak.appendChild(b);
+      });
+    }
+    function soalSusun(q, jawab){
+      var c = q.c, urutan = [], acakKata = acak(q.kata.map(function(w,i){ return {w:w, i:i} }));
+      if(acakKata.length>1 && acakKata.every(function(x,i){ return x.i===i })) acakKata.reverse();
+      kotak.appendChild(el('div', {class:'ket', text:'Susun kalimat Arab (ketuk kata berurutan, dari kanan ke kiri):'}));
+      kotak.appendChild(el('div', {style:'text-align:center; font-size:19px; font-weight:600; margin:8px 0', text:c.id}));
+      var tujuan = el('div', {class:'susun', lang:'ar'}), bank = el('div', {class:'susun', lang:'ar', style:'border-style:solid'});
+      var cekBtn = el('button', {class:'btn utama', type:'button', text:'Periksa', disabled:true});
+      var ulang = el('button', {class:'btn garis', type:'button', text:'Reset', onclick:function(){ urutan = []; render() }});
+      kotak.appendChild(tujuan); kotak.appendChild(bank); kotak.appendChild(el('div', {class:'baris'}, [cekBtn, ulang]));
+      function render(){
+        tujuan.textContent = ''; bank.textContent = '';
+        urutan.forEach(function(x, p){ tujuan.appendChild(el('button', {class:'kunci', type:'button', text:x.w, onclick:function(){ urutan.splice(p,1); render() }})) });
+        acakKata.forEach(function(x){ if(urutan.indexOf(x)<0) bank.appendChild(el('button', {class:'kunci', type:'button', text:x.w, onclick:function(){ urutan.push(x); render() }})) });
+        cekBtn.disabled = urutan.length!==acakKata.length;
+      }
+      cekBtn.addEventListener('click', function(){
+        var ok = urutan.every(function(x,p){ return normAr(x.w)===normAr(q.kata[p]) });
+        cekBtn.disabled = true; ulang.disabled = true;
+        [].forEach.call(kotak.querySelectorAll('.kunci'), function(b){ b.disabled = true });
+        tujuan.style.borderColor = ok ? 'var(--benar)' : 'var(--salah)';
+        kotak.appendChild(el('div', {class:'info'}, [ok ? 'Tepat. ' : 'Susunan benar: ', el('span', {class:'ar', lang:'ar', text:q.kata.join(' ')}), ' — ', el('i', {text:c.lat})]));
+        jawab(ok);
+      });
+      render();
+    }
+    function hasil(){
+      kepala.textContent = ''; bar.firstChild.style.width = '100%'; kotak.textContent = '';
+      var p = pct(benar/soal.length);
+      S.kuis.push({t:Date.now(), n:soal.length, ok:benar, bab:babId, jenis:perJenis, babs:perBab, dur:Math.round((Date.now()-mulai)/1000)});
+      if(S.kuis.length>200) S.kuis = S.kuis.slice(-200);
+      simpan();
+      kotak.appendChild(el('h2', {text:'Hasil kuis'}));
+      kotak.appendChild(el('div', {class:'baris'}, [el('div', {class:'skor '+kelas(p), text:p+'%'}), el('div', {class:'ket', text:benar+' benar dari '+soal.length+' soal'})]));
+      Object.keys(perJenis).forEach(function(j){ kotak.appendChild(barisSkor(JENIS[j], perJenis[j][0] ? perJenis[j][1]/perJenis[j][0] : 0, perJenis[j][1]+'/'+perJenis[j][0])) });
+      if(salahList.length){
+        kotak.appendChild(el('h3', {text:'Perlu diulang ('+salahList.length+')'}));
+        var seen = {};
+        salahList.forEach(function(q){
+          var c = q.c || (q.d && {ar:q.opsi.filter(function(o){return o.ok})[0].t, lat:q.opsi.filter(function(o){return o.ok})[0].lat, id:q.opsi.filter(function(o){return o.ok})[0].id});
+          if(!c || seen[q.k]) return; seen[q.k] = 1;
+          kotak.appendChild(el('div', {class:'item'}, [el('div', {class:'isi kata'}, [el('div', {class:'ar', text:c.ar, lang:'ar', dir:'rtl'}), el('div', {class:'lat', text:c.lat}), el('div', {class:'id', text:c.id})]),
+            el('div', {class:'aksi'}, [el('button', {class:'btn kecil', type:'button', text:'▶ Dengar', onclick:function(){ ucapkan(c.ar, LAMBAT) }})])]));
+        });
+      }
+      kotak.appendChild(el('div', {class:'baris', style:'margin-top:12px'}, [
+        el('button', {class:'btn utama', type:'button', text:'Kuis lagi', onclick:function(){ pilihTampil('kuis') }}),
+        el('button', {class:'btn garis', type:'button', text:'Lihat analisis', onclick:function(){ pilihTampil('analisis') }})]));
+    }
+    tampilSoal();
+  }
+}
+
+/* ===== 5. Analisis ===== */
+function barisSkor(label, frac, teks){
+  var p = pct(frac);
+  return el('div', {class:'baris-s'}, [el('span', {text:label}), el('div', {class:'bar '+kelas(p)}, [el('i', {style:'width:'+p+'%'})]), el('span', {text:teks || p+'%'})]);
+}
+function garisTren(titik){
+  var W = 600, H = 120, pad = 18, n = titik.length;
+  var svg = document.createElementNS('http://www.w3.org/2000/svg','svg');
+  svg.setAttribute('viewBox','0 0 '+W+' '+H); svg.setAttribute('class','garis'); svg.setAttribute('role','img');
+  svg.setAttribute('aria-label','Tren skor kuis: '+titik.map(function(x){return x+'%'}).join(', '));
+  function xy(i, v){ return [pad + (n>1 ? i*(W-2*pad)/(n-1) : (W-2*pad)/2), H-pad-(v/100)*(H-2*pad)] }
+  [0,50,100].forEach(function(v){
+    var y = xy(0,v)[1];
+    var l = document.createElementNS(svg.namespaceURI,'line'); l.setAttribute('x1',pad); l.setAttribute('x2',W-pad); l.setAttribute('y1',y); l.setAttribute('y2',y); l.setAttribute('stroke','currentColor'); l.setAttribute('opacity','.15'); svg.appendChild(l);
+    var t = document.createElementNS(svg.namespaceURI,'text'); t.setAttribute('x',0); t.setAttribute('y',y+4); t.setAttribute('font-size','10'); t.setAttribute('fill','currentColor'); t.setAttribute('opacity','.6'); t.textContent = v; svg.appendChild(t);
+  });
+  var d = titik.map(function(v,i){ var p = xy(i,v); return (i?'L':'M')+p[0].toFixed(1)+' '+p[1].toFixed(1) }).join(' ');
+  var pth = document.createElementNS(svg.namespaceURI,'path'); pth.setAttribute('d',d); pth.setAttribute('fill','none'); pth.setAttribute('stroke','var(--hijau)'); pth.setAttribute('stroke-width','2.5'); svg.appendChild(pth);
+  titik.forEach(function(v,i){ var p = xy(i,v); var c = document.createElementNS(svg.namespaceURI,'circle'); c.setAttribute('cx',p[0]); c.setAttribute('cy',p[1]); c.setAttribute('r',3.5); c.setAttribute('fill','var(--hijau)'); svg.appendChild(c) });
+  return svg;
+}
+function ringkasan(){
+  var ids = Object.keys(S.item).filter(function(k){ return KUNCI_KARTU[k] });
+  var n = 0, ok = 0, kuasai = 0, lemah = [];
+  ids.forEach(function(k){
+    var it = S.item[k]; n += it.n; ok += it.ok;
+    var a = it.ok/it.n;
+    if(it.n>=2 && a>=0.75) kuasai++;
+    if(it.n>=1 && a<0.6) lemah.push({k:k, a:a, n:it.n});
+  });
+  var skill = {}; /* jenis soal */
+  ids.concat(Object.keys(S.item).filter(function(k){ return !KUNCI_KARTU[k] })).forEach(function(k){
+    var it = S.item[k]; Object.keys(it.j).forEach(function(j){ var s = skill[j] || (skill[j] = [0,0]); s[0] += it.j[j][0]; s[1] += it.j[j][1] });
+  });
+  var uk = Object.keys(S.ucap), usum = 0, un = 0, ubest = 0, ulemah = [];
+  uk.forEach(function(k){ var u = S.ucap[k]; usum += u.sum; un += u.n; ubest += u.best; if(u.best<65 && KUNCI_KARTU[k]) ulemah.push({k:k, best:u.best}) });
+  return {n:n, ok:ok, kuasai:kuasai, dicoba:ids.length, lemah:lemah.sort(function(a,b){return a.a-b.a}), skill:skill,
+    ucapN:uk.length, ucapRata:un ? Math.round(usum/un) : null, ucapBest:uk.length ? Math.round(ubest/uk.length) : null, ulemah:ulemah.sort(function(a,b){return a.best-b.best})};
+}
+function tingkat(r){
+  var cakupan = r.kuasai/KARTU.length;
+  var akurasi = r.n ? r.ok/r.n : 0;
+  if(r.n<10) return ['Belum cukup data', 'Kerjakan minimal 10 soal kuis agar perkiraan bermakna.'];
+  if(cakupan<0.08) return ['Pemula', 'Baru mengenal frasa dasar. Fokus pada sapaan, angka, dan kata ganti.'];
+  if(cakupan<0.25 || akurasi<0.6) return ['Dasar', 'Sudah menguasai sebagian frasa harian; perbanyak ulangan butir lemah.'];
+  if(cakupan<0.5 || akurasi<0.75) return ['Menengah awal', 'Cukup untuk situasi umum di bandara, hotel, dan restoran; lanjutkan dialog dan pengucapan.'];
+  return ['Menengah', 'Penguasaan frasa luas dan akurat; perdalam tata bahasa dan percakapan bebas.'];
+}
+function vAnalisis(){
+  elM.appendChild(el('h2', {text:'Analisis hasil belajar'}));
+  var r = ringkasan();
+  var tdata = r.n + r.ucapN + S.dialog.length + S.kuis.length;
+  if(!tdata){
+    elM.appendChild(el('div', {class:'kosong'}, [el('div', {text:'Belum ada data. Kerjakan kuis atau latihan pengucapan terlebih dahulu.'}), el('div', {style:'margin-top:10px'}, [el('button', {class:'btn utama', type:'button', text:'Mulai kuis', onclick:function(){ pilihTampil('kuis') }})])]));
+    return;
+  }
+  var tk = tingkat(r);
+  var akurasi = r.n ? r.ok/r.n : 0;
+  elM.appendChild(el('div', {class:'metrik'}, [
+    el('div', {class:'kartu'}, [el('b', {text:r.n ? pct(akurasi)+'%' : '—'}), el('small', {text:'akurasi kuis ('+r.n+' jawaban)'})]),
+    el('div', {class:'kartu'}, [el('b', {text:r.kuasai+' / '+KARTU.length}), el('small', {text:'frasa dikuasai (≥2×, ≥75%)'})]),
+    el('div', {class:'kartu'}, [el('b', {text:r.ucapBest!=null ? r.ucapBest+'%' : '—'}), el('small', {text:'lafal terbaik rata-rata ('+r.ucapN+' frasa)'})]),
+    el('div', {class:'kartu'}, [el('b', {text:tk[0]}), el('small', {text:'perkiraan tingkat'})])
+  ]));
+  elM.appendChild(el('div', {class:'info', text:tk[1]+' Perkiraan ini hanya dari latihan di aplikasi ini dan bukan tes kemahiran baku.'}));
+
+  /* keterampilan */
+  var kart = el('div', {class:'kartu'}, [el('h3', {text:'Profil keterampilan'})]);
+  var rek = [];
+  Object.keys(JENIS).forEach(function(j){
+    var s = r.skill[j]; if(!s) return;
+    var a = s[1]/s[0]; kart.appendChild(barisSkor(JENIS[j], a, pct(a)+'% ('+s[0]+')'));
+    if(s[0]>=3) rek.push({l:JENIS[j], a:a});
+  });
+  if(r.ucapN){ kart.appendChild(barisSkor('Pengucapan', r.ucapRata/100, r.ucapRata+'%')) ; rek.push({l:'Pengucapan', a:r.ucapRata/100}) }
+  if(S.dialog.length){ var dr = Math.round(S.dialog.reduce(function(a,x){return a+x.skor},0)/S.dialog.length); kart.appendChild(barisSkor('Dialog lisan', dr/100, dr+'% ('+S.dialog.length+')')) }
+  if(kart.children.length>1) elM.appendChild(kart);
+
+  /* tren */
+  if(S.kuis.length>=2){
+    var last = S.kuis.slice(-20).map(function(q){ return pct(q.ok/q.n) });
+    elM.appendChild(el('div', {class:'kartu'}, [el('h3', {text:'Tren skor kuis ('+last.length+' terakhir)'}), garisTren(last),
+      el('div', {class:'ket', text:'Rata-rata 5 terakhir: '+Math.round(last.slice(-5).reduce(function(a,b){return a+b},0)/Math.min(5,last.length))+'% · sebelumnya: '+(last.length>5 ? Math.round(last.slice(0,-5).reduce(function(a,b){return a+b},0)/(last.length-5))+'%' : '—')})]));
+  }
+
+  /* per bab */
+  var perBab = {};
+  Object.keys(S.item).forEach(function(k){ var c = KUNCI_KARTU[k], it = S.item[k]; if(!c) return; var b = perBab[c.bab] || (perBab[c.bab] = [0,0,0]); b[0] += it.n; b[1] += it.ok; if(it.n>=2 && it.ok/it.n>=0.75) b[2]++ });
+  var ba = Object.keys(perBab);
+  if(ba.length){
+    var kb = el('div', {class:'kartu'}, [el('h3', {text:'Penguasaan per bab'})]);
+    ba.sort(function(a,b){ return perBab[a][1]/perBab[a][0] - perBab[b][1]/perBab[b][0] }).forEach(function(id){
+      var s = perBab[id]; kb.appendChild(barisSkor(BABJUDUL[id].replace(/&.*/,'').slice(0,22), s[1]/s[0], pct(s[1]/s[0])+'%'));
+    });
+    elM.appendChild(kb);
+  }
+
+  /* butir lemah + rekomendasi */
+  var rk = el('div', {class:'kartu'}, [el('h3', {text:'Rekomendasi'})]);
+  var ul = el('ul', {style:'margin:4px 0 0; padding-left:20px'});
+  rek.sort(function(a,b){ return a.a-b.a });
+  if(rek.length && rek[0].a<0.7) ul.appendChild(el('li', {text:'Keterampilan terlemah: '+rek[0].l+' ('+pct(rek[0].a)+'%). Beri porsi latihan lebih di sini.'}));
+  if(r.lemah.length) ul.appendChild(el('li', {text:r.lemah.length+' frasa masih di bawah 60% — ulangi lewat "Kuis butir lemah".'}));
+  if(r.ulemah.length) ul.appendChild(el('li', {text:r.ulemah.length+' frasa lafalnya belum mencapai 65% — latih di menu Pengucapan (mode "Yang masih lemah").'}));
+  if(!r.ucapN) ul.appendChild(el('li', {text:'Belum ada latihan pengucapan. Coba menu Pengucapan atau Dialog.'}));
+  if(r.dicoba<KARTU.length*0.3) ul.appendChild(el('li', {text:'Baru '+r.dicoba+' dari '+KARTU.length+' frasa pernah diuji. Pakai "Semua bab" agar cakupan bertambah.'}));
+  if(!ul.children.length) ul.appendChild(el('li', {text:'Hasil baik. Pertahankan dengan ulangan berkala dan coba dialog dengan peran berbeda.'}));
+  rk.appendChild(ul);
+  rk.appendChild(el('div', {class:'baris', style:'margin-top:10px'}, [
+    el('button', {class:'btn utama', type:'button', text:'Kuis butir lemah', onclick:function(){
+      window.__kuisAwal = susunKuis(['arti','arab','simak','susun'], '*', 10, true); pilihTampil('kuis');
+    }}),
+    el('button', {class:'btn garis', type:'button', text:'Latih lafal yang lemah', onclick:function(){ pilihTampil('ucap') }})]));
+  elM.appendChild(rk);
+
+  if(r.lemah.length){
+    var kl = el('div', {class:'kartu'}, [el('h3', {text:'Butir terlemah'})]);
+    r.lemah.slice(0,8).forEach(function(x){
+      var c = KUNCI_KARTU[x.k];
+      kl.appendChild(el('div', {class:'item'}, [el('div', {class:'isi kata'}, [el('div', {class:'ar', text:c.ar, lang:'ar', dir:'rtl'}), el('div', {class:'id', text:c.id}), el('span', {class:'lencana s', text:pct(x.a)+'% dari '+x.n+'×'})]),
+        el('div', {class:'aksi'}, [el('button', {class:'btn kecil', type:'button', text:'▶ Dengar', onclick:function(){ ucapkan(c.ar, LAMBAT) }})])]));
+    });
+    elM.appendChild(kl);
+  }
+
+  elM.appendChild(el('div', {class:'baris'}, [
+    el('button', {class:'btn garis kecil', type:'button', text:'Ekspor data (JSON)', onclick:function(){
+      var blob = new Blob([JSON.stringify(S, null, 1)], {type:'application/json'});
+      var a = el('a', {href:URL.createObjectURL(blob), download:'belajar-arab-progres.json'}); document.body.appendChild(a); a.click(); a.remove();
+    }}),
+    el('button', {class:'btn garis kecil', type:'button', text:'Hapus semua progres', onclick:function(){
+      if(confirm('Hapus seluruh riwayat kuis, pengucapan, dan tanda bintang di perangkat ini?')){ S = {item:{}, kuis:[], ucap:{}, dialog:[], tanda:{}}; simpan(); pilihTampil('analisis') }
+    }})]));
+  elM.appendChild(el('p', {class:'ket', text:'Data hanya tersimpan di peramban perangkat ini (localStorage) dan tidak dikirim ke server. Audio tidak direkam oleh aplikasi; pengenalan suara dilakukan oleh layanan peramban (di Chrome, audio dapat diproses server Google).'}));
+}
+
+/* uji-akses internal untuk pengujian */
+window.__BA = {normAr:normAr, nilaiUcapan:nilaiUcapan, sasaran:sasaran, susunKuis:susunKuis, KARTU:KARTU, DIALOG:DIALOG};
+
+var awal = (location.hash||'').replace('#','');
+pilihTampil(['belajar','ucap','dialog','kuis','analisis'].indexOf(awal)>=0 ? awal : 'belajar');
+})();
+</script>
+</body></html>
