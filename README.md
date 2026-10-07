@@ -2,7 +2,7 @@
 
 **Situs:** https://matahana.github.io/panduan-ibadah/
 
-Tujuh panduan dan tiga aplikasi peta dalam satu halaman bertab — lima panduan ibadah, aplikasi
+Tujuh panduan dan empat aplikasi peta dalam satu halaman bertab — lima panduan ibadah, aplikasi
 *Haram 3D Explorer*, *Nabawi 3D Explorer*, dan *Madinah Explorer*, serta dua panduan belajar bahasa
 Arab/Al-Qur'an — lengkap dengan ilustrasi dan berkas unduhan.
 
@@ -16,6 +16,7 @@ Arab/Al-Qur'an — lengkap dengan ilustrasi dan berkas unduhan.
 | [Nabawi 3D](https://matahana.github.io/panduan-ibadah/#nabawi-3d) | Aplikasi peta dan model 3D Masjid Nabawi serta enam masjid bersejarah di sekitarnya (al-Ghamamah, Abu Bakar, Umar, Ali, al-Ijabah, as-Sajdah): 33 titik penting, peta 2D–2,5D–3D–4D, GPS dan rute jalan kaki, empat tur, garis waktu 13 periode perluasan. Halaman penuh: [nabawi-3d/](https://matahana.github.io/panduan-ibadah/nabawi-3d/) · APK Android: [unduh/nabawi-3d.apk](unduh/nabawi-3d.apk) | aplikasi | — |
 | [Madinah Explorer](https://matahana.github.io/panduan-ibadah/#madinah-explorer) | Aplikasi peta luring 23 situs bersejarah Madinah (Quba, Qiblatain, Uhud, Khandaq, dll.): kepastian lokasi & sejarah tiap situs, pencarian Latin/Arab, rute jalan kaki dan estimasi mobil yang dihitung di perangkat, tiga tur dengan narasi suara, garis waktu Hijriah, kiblat; UI Indonesia/Arab/Inggris. Halaman penuh: [madinah-explorer/](https://matahana.github.io/panduan-ibadah/madinah-explorer/) · APK Android: [unduh/madinah-explorer.apk](unduh/madinah-explorer.apk) | aplikasi | — |
 | [Bahasa Arab](https://matahana.github.io/panduan-ibadah/#arab) | Alfabet, tata bahasa dasar, kosakata dan dialog Arab–Indonesia–English (bandara, hotel, restoran, transportasi, kesehatan, belanja, darurat), doa manasik, indeks 291 kosakata | 19 | — |
+| [Latihan Arab](https://matahana.github.io/panduan-ibadah/#belajar-arab) | Aplikasi latihan bahasa Arab: cek pengucapan dengan pengenalan suara (Web Speech API, skor per kata), dialog bermain peran (19 dialog dari panduan Bahasa Arab), 750 kata tersering Al-Qur'an dari tab Kosakata Pareto sebagai bank soal (kuis arti/Arab/menyimak dan latihan lafal) dengan suara lawan bicara, kuis lima jenis (Arab→arti, arti→Arab, menyimak, dialog, susun kalimat), dan analisis hasil belajar (akurasi, profil keterampilan, tren, butir lemah, rekomendasi). Progres tersimpan lokal di peramban. Halaman penuh: [belajar-arab/](https://matahana.github.io/panduan-ibadah/belajar-arab/) | aplikasi | — |
 | [Bahasa Arab Dasar](https://matahana.github.io/panduan-ibadah/#bahasa-arab-dasar) | Alfabet dan bentuk huruf menurut posisi (lepas/awal/tengah/akhir), peringkat huruf tersering di Al-Qur'an, jenis kata dan pola kalimat Qur'ani, 6 tahap belajar dari huruf sampai makna ayat dengan rujukan surat/ayat, rencana belajar 12 bulan | 15 | 2 |
 | [Kosakata Pareto](https://matahana.github.io/panduan-ibadah/#kosakata-pareto) | 750 kata tersering di Al-Qur'an (250 kata kerja + 500 kata non-kerja) yang mencakup ≈81% teks, berikut akar kata, kelas kata, dan arti — tabel dapat dicari langsung di situs | 6 | 1 |
 
@@ -25,6 +26,8 @@ atau langsung dari folder [`unduh/`](unduh/). Panduan *Bahasa Arab*, *Bahasa Ara
 sebagai **APK Android** (build debug, dipasang manual dengan mengizinkan pemasangan dari sumber tak dikenal).
 
 ## Catatan penyusunan
+
+- **Latihan Arab** memakai kosakata dan dialog dari panduan *Bahasa Arab*. Penilaian pengucapan memakai pengenalan suara peramban (paling baik di Chrome/Edge; sebagian peramban mengirim audio ke server penyedia) dan membandingkan hasilnya dengan teks sasaran tanpa harakat — indikator kasar, bukan pengganti guru. Tanpa dukungan itu, pengucapan dinilai mandiri. "Tingkat" pada Analisis hanya perkiraan dari latihan di aplikasi. Progres hanya di localStorage perangkat.
 
 - Susunan rukun mengikuti **mazhab Syafi'i**, sejalan dengan bimbingan manasik resmi Kemenag RI.
   Pendapat Hanafi, Maliki, dan Hanbali dicantumkan pada setiap titik perbedaan.
