@@ -13,6 +13,7 @@ Arab/Al-Qur'an — lengkap dengan ilustrasi dan berkas unduhan.
 | [Jarak & Waktu](https://matahana.github.io/panduan-ibadah/#jarak) | Jarak dan durasi thawaf, sa'i, satu umrah, Armuzna, antar kota, situs | 8 | 7 |
 | [Lokasi Sejarah](https://matahana.github.io/panduan-ibadah/#sejarah) | Kisah Hajar–Zamzam, Ka'bah, hijrah, Masjid Nabawi, Badar–Uhud–Khandaq, situs dan adab ziarah | 13 | 10 |
 | [Haram 3D](https://matahana.github.io/panduan-ibadah/#haram-3d) | Aplikasi peta dan model 3D Masjidil Haram: 49 titik penting, lantai B–R, kiblat dan istiwa' a'zham, enam langkah umrah, penghitung thawaf dan sa'i, rute berlantai, garis waktu 15 periode. Halaman penuh: [haram-3d/](https://matahana.github.io/panduan-ibadah/haram-3d/) | aplikasi | — |
+| [Game Umrah 3D](https://matahana.github.io/panduan-ibadah/#umrah-game) | Game perjalanan umrah 3D dari miqat sampai tahalul: pilih miqat di peta Makkah sesuai asal perjalanan (5 miqat), persiapan ihram berbentuk checklist, kuis larangan ihram, niat dan talbiyah, masuk Masjidil Haram, thawaf 7 putaran dengan penghitung otomatis, shalat di belakang Maqam Ibrahim, Zamzam, sa'i 7 lintasan Shafa–Marwah (zona hijau), tahalul, dan ringkasan skor. Tiga kamera (orang ketiga, orang pertama, dari atas), joystick layar dan keyboard WASD, jamaah NPC, doa Arab–latin–arti dengan suara. Halaman penuh: [umrah-game/](https://matahana.github.io/panduan-ibadah/umrah-game/) | aplikasi | — |
 | [Nabawi 3D](https://matahana.github.io/panduan-ibadah/#nabawi-3d) | Aplikasi peta dan model 3D Masjid Nabawi serta enam masjid bersejarah di sekitarnya (al-Ghamamah, Abu Bakar, Umar, Ali, al-Ijabah, as-Sajdah): 33 titik penting, peta 2D–2,5D–3D–4D, GPS dan rute jalan kaki, empat tur, garis waktu 13 periode perluasan. Halaman penuh: [nabawi-3d/](https://matahana.github.io/panduan-ibadah/nabawi-3d/) · APK Android: [unduh/nabawi-3d.apk](unduh/nabawi-3d.apk) | aplikasi | — |
 | [Madinah Explorer](https://matahana.github.io/panduan-ibadah/#madinah-explorer) | Aplikasi peta luring 23 situs bersejarah Madinah (Quba, Qiblatain, Uhud, Khandaq, dll.): kepastian lokasi & sejarah tiap situs, pencarian Latin/Arab, rute jalan kaki dan estimasi mobil yang dihitung di perangkat, tiga tur dengan narasi suara, garis waktu Hijriah, kiblat; UI Indonesia/Arab/Inggris. Halaman penuh: [madinah-explorer/](https://matahana.github.io/panduan-ibadah/madinah-explorer/) · APK Android: [unduh/madinah-explorer.apk](unduh/madinah-explorer.apk) | aplikasi | — |
 | [Bahasa Arab](https://matahana.github.io/panduan-ibadah/#arab) | Alfabet, tata bahasa dasar, kosakata dan dialog Arab–Indonesia–English (bandara, hotel, restoran, transportasi, kesehatan, belanja, darurat), doa manasik, indeks 291 kosakata | 19 | — |
@@ -52,6 +53,7 @@ sebagai **APK Android** (build debug, dipasang manual dengan mengizinkan pemasan
   skematis dan semua kontennya berstatus draf sampai ditinjau. Pustaka Three.js 0.147 dan
   MapLibre GL 4.7.1 dimuat dari jsDelivr, jadi tab ini memerlukan koneksi internet. Tautan
   berbagi satu titik berbentuk `haram-3d/#P10`.
+- **Game Umrah 3D** adalah prototipe v0.1 (DRAF). Seluruh bangunan, jarak, dan posisi bersifat skematis (bukan model survei); koordinat miqat hanya perkiraan; susunan tata cara mengikuti mazhab Syafi'i; doa dan dalil belum ditinjau ulama. Three.js 0.147.0 dibundel di `umrah-game/vendor/` (tanpa CDN, tanpa pelacak). Suara doa memakai sintesis suara peramban (bila tersedia suara Arab). Tautan langsung ke satu tahap berbentuk `umrah-game/#stage=thawaf` (id: `map`, `ihram`, `niat`, `haram`, `thawaf`, `maqam`, `sai`, `tahalul`); parameter tambahan `&g=wanita`, `&speed=2`, `&cam=top`. Tombol rumah di dalam game membuka menu tahap.
 - **Nabawi 3D Explorer** adalah prototipe v0.2. Titik acuan dikalibrasi ke koordinat Kubah Hijau
   (Wikipedia); posisi Masjid al-Ghamamah, al-Ijabah, dan as-Sajdah diambil dari koordinat
   bersumber, sedangkan Masjid Abu Bakar, Umar, dan Ali diturunkan dari jarak tertulis (kepastian
@@ -83,6 +85,7 @@ Repositori ini hanya memuat **hasil akhir** untuk GitHub Pages:
 ```
 index.html     halaman bertab, mandiri (gambar tertanam)
 haram-3d/      aplikasi Haram 3D Explorer (index.html satu berkas + ikon)
+umrah-game/   game Perjalanan Umrah 3D (index.html, data.js, world.js, game.js, vendor/three.min.js)
 nabawi-3d/     aplikasi Nabawi 3D Explorer (build Vite: index.html, assets/, service worker, manifest, ikon)
 hajj-explorer/  aplikasi Hajj Explorer Makkah (prototipe v0.1 DRAF; PWA luring MapLibre + PMTiles; APK: unduh/hajj-explorer-makkah.apk)
 madinah-explorer/  aplikasi Madinah Explorer (build Vite: index.html, assets/, packs/ data luring bertanda tangan, service worker, manifest, ikon)
