@@ -127,7 +127,9 @@ window.DATA = (function () {
     { id: 'masuk', lvl: 3, kat: ['thawaf'], judul: `Ucapan masuk Masjidil Haram`, st: 'h', ar: 'بِسْمِ اللّٰهِ وَالصَّلَاةُ وَالسَّلَامُ عَلَى رَسُولِ اللّٰهِ، اللّٰهُمَّ اغْفِرْ لِي ذُنُوبِي وَافْتَحْ لِي أَبْوَابَ رَحْمَتِكَ', lat: `Bismillāh, wash shalātu was salāmu 'alā rasūlillāh. Allāhummaghfir lī dzunūbī waftah lī abwāba rahmatik.`, arti: 'Dengan nama Allah, shalawat dan salam atas Rasulullah. Ya Allah, ampunilah dosaku dan bukakan untukku pintu-pintu rahmat-Mu.', sumber: `HR. at-Tirmidzi dan Ibnu Majah (dari Fathimah r.a.); derajat sanadnya diperselisihkan ulama` },
     { id: 'rabbighfir', lvl: 3, kat: ['sai'], judul: `Doa di zona hijau`, st: 'a', ar: 'رَبِّ اغْفِرْ وَارْحَمْ إِنَّكَ أَنْتَ الْأَعَزُّ الْأَكْرَمُ', lat: `Rabbighfir warham, innaka antal a'azzul akram`, arti: 'Ya Tuhanku, ampunilah dan rahmatilah, sesungguhnya Engkau Mahaperkasa dan Mahamulia.', sumber: `Atsar dari sebagian sahabat (Ibnu 'Umar, Ibnu Mas'ud) saat berlari kecil di antara dua lampu hijau; bukan lafal yang dibakukan Nabi saw.` }
   ];
-  const DOA = {}; DOA_LIST.forEach(d => { DOA[d.id] = d; });
+  /* Rujukan surat:ayat untuk rekaman (EveryAyah) pada bacaan yang berupa ayat Al-Qur'an */
+  const QUR = { rabbana: [[2, 201]], taqabbal: [[2, 127]], zalamna: [[7, 23]], doaOrtu: [[14, 41]], maqam: [[2, 125]], safa: [[2, 158]], masyaril: [[2, 198]] };
+  const DOA = {}; DOA_LIST.forEach(d => { DOA[d.id] = d; if (QUR[d.id]) d.qur = QUR[d.id]; });
   const KAT_DOA = [['semua', 'Semua'], ['ihram', 'Ihram'], ['thawaf', 'Thawaf'], ['sai', `Sa'i`], ['arafah', 'Arafah'], ['muzdalifah', 'Muzdalifah'], ['jumrah', 'Jumrah & Mina'], ['wada', `Wada'`], ['umum', 'Umum']];
   const LVL_DOA = [[0, 'Semua tingkat'], [1, '1 · Sederhana & umum'], [2, '2 · Lazim & berdalil sahih'], [3, '3 · Lanjutan / atsar']];
 

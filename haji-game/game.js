@@ -47,7 +47,7 @@
       <p class="disc">Prototipe DRAF. Seluruh model bangunan, jarak, dan posisi bersifat skematis (bukan model survei). Susunan tata cara mengikuti mazhab Syafi'i (selaras bimbingan manasik Kemenag RI) dengan catatan mazhab lain; doa, dalil, dan angka dam belum ditinjau ulama. Skema pergerakan di Armuzna diatur pemerintah Saudi dan dapat berubah tiap tahun. Game ini tidak menggantikan bimbingan manasik resmi.</p>`);
       const mk = (host, list, cur, fn) => { host.innerHTML = ''; list.forEach(([v, t]) => { const b = el('button', 'chip' + (v === cur ? ' sel' : ''), t); b.onclick = () => { fn(v); mk(host, list, v, fn); }; host.appendChild(b); }); };
       mk($('gsel'), [['pria', 'Pria'], ['wanita', 'Wanita']], S.gender, v => { S.gender = v; persist(); avatar.build(); });
-      mk($('ssel'), [[1, 'Normal'], [2, 'Cepat ×2'], [4, 'Sangat cepat ×4']], S.speed, v => { S.speed = v; persist(); });
+      mk($('ssel'), [[1, 'Normal'], [2, 'Cepat ×2'], [4, 'Sangat cepat ×4']], S.speed, v => H.setSpeed(v, true));
       const tog = (id, lbl, key) => { const e = $(id); const r = () => { e.textContent = (S[key] ? '☑ ' : '☐ ') + lbl; e.classList.toggle('sel', S[key]); }; r(); e.onclick = () => { S[key] = !S[key]; persist(); r(); if (key === 'joy') document.body.classList.toggle('nojoy', !S.joy); }; };
       tog('sp', 'Suara bacaan doa', 'speech'); tog('jy', 'Joystick layar', 'joy');
       $('b1').onclick = () => openRef('doa'); $('b2').onclick = () => openRef('rukun'); $('b3').onclick = () => openRef('hari');
@@ -159,7 +159,7 @@
     const idId = kind === 'qiran' ? 'niatQiranId' : (kind === 'haji') ? 'niatHajiId' : 'niatUmrahId';
     await G(modal({
       title: o.title || 'Niat ihram', sub: 'Hadap kiblat atau arah perjalanan, lalu ucapkan.', speak: D.DOA[niatId].ar,
-      html: doa(niatId) + '<hr style="border-color:var(--line)">' + doa(idId) + (o.note || '') + `<div class="note"><b>Opsional (isytirath):</b> bila khawatir terhalang sakit, boleh menambahkan syarat:<div class="ar" style="font-size:1.3rem">${D.DOA.mahilli.ar}</div><div class="lat">${esc(D.DOA.mahilli.lat)}</div><div class="src">${esc(D.DOA.mahilli.sumber)}</div></div>`, buttons: [{ label: 'Saya sudah berniat', value: true, pri: true }]
+      html: doa(niatId) + '<hr style="border-color:var(--line)">' + doa(idId) + (o.note || '') + `<div class="note"><b>Opsional (isytirath):</b> bila khawatir terhalang sakit, boleh menambahkan syarat:</div>${doa('mahilli')}`, buttons: [{ label: 'Saya sudah berniat', value: true, pri: true }]
     }));
     await G(modal({
       title: 'Talbiyah', sub: S.gender === 'pria' ? 'Pria mengeraskan suara.' : 'Wanita melirihkan suara.', speak: D.DOA.talbiyah.ar, html: doa('talbiyah') + '<div class="prog"><b id="tb"></b></div><div class="sub" id="tn" style="text-align:center">0 / 3 — tekan <i>Ucapkan</i> tiap kali Anda melafalkan.</div>', buttons: [],
@@ -640,6 +640,7 @@
     $('load').remove(); H.frame();
     if (h.get('g')) { S.gender = h.get('g'); avatar.build(); }
     if (h.get('speed')) S.speed = +h.get('speed');
+    H.setSpeed(S.speed, true);
     if (h.get('cam')) H.setCam(h.get('cam'));
     if (h.get('mode') && D.MODE[h.get('mode')]) { S.mode = h.get('mode'); rebuildFlow(); }
     if (h.get('stage')) {

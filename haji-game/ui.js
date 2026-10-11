@@ -36,7 +36,7 @@ window.UI = (function () {
   /* ---------- Doa ---------- */
   function doaBlock(d, o) {
     o = o || {};
-    return `<div class="ar">${d.ar}</div><div class="lat">${esc(d.lat)}</div><div class="arti">${esc(d.arti)}</div>${d.sumber ? `<div class="src">${esc(d.sumber)} <span class="bdg ${d.st}">${esc(D.ST[d.st])}</span></div>` : ''}`;
+    return `<div class="ar">${d.ar}</div><div class="lat">${esc(d.lat)}</div><div class="arti">${esc(d.arti)}</div>${d.sumber ? `<div class="src">${esc(d.sumber)} <span class="bdg ${d.st}">${esc(D.ST[d.st])}</span></div>` : ''}<button class="btn play" data-doa="${esc(d.id)}" data-lbl="▶ Putar bacaan">▶ Putar bacaan</button><div class="src pst"></div>`;
   }
   function doaBookHtml(kat, lvl) {
     const list = D.DOA_LIST.filter(d => (!kat || kat === 'semua' || d.kat.includes(kat)) && (!lvl || d.lvl === lvl));

@@ -99,6 +99,11 @@ body.nojoy #joy,body.nojoy #run{display:none}
 @media (max-width:640px){.ar{font-size:1.4rem}#mini{width:104px;height:104px}.grid2{grid-template-columns:1fr}}
 
 /* ---- Tambahan game Haji ---- */
+#spd{position:fixed;right:max(24px,env(safe-area-inset-right));bottom:max(122px,calc(env(safe-area-inset-bottom) + 112px));z-index:4;min-width:74px;height:50px;border-radius:25px;border:2px solid rgba(255,255,255,.45);background:rgba(20,18,12,.7);color:var(--gold2);font-weight:800;font-size:1.15rem;line-height:1.05;padding:4px 10px}
+#spd small{display:block;font-size:.55rem;letter-spacing:.08em;color:var(--mut);font-weight:600}
+.btn.play{padding:6px 14px;font-size:.88rem;display:block;margin:6px auto 0}
+.btn.play.on{background:var(--gold2);color:#2a1d02}
+.pst{min-height:1em}
 #day{display:flex;gap:6px;align-items:center;flex-wrap:wrap;margin-bottom:6px;font-size:.78rem}
 #day b{background:var(--gold);color:#2a1d02;border-radius:10px;padding:1px 9px}
 #day span{color:var(--mut)}
@@ -164,6 +169,7 @@ body.nojoy #joy,body.nojoy #run{display:none}
  <canvas id="mini" width="264" height="264"></canvas>
 </div>
 <button id="action" class="hidden"></button>
+<button id="spd" class="hidden">×1</button>
 <div id="joy" class="hidden"><b></b></div>
 <button id="run" class="hidden">LARI</button>
 <div id="wukbar" class="hidden"></div>
@@ -174,6 +180,7 @@ body.nojoy #joy,body.nojoy #run{display:none}
 <div id="load"><div><svg class="logo" viewBox="0 0 512 512"><rect width="512" height="512" rx="112" fill="#16140f"/><circle cx="256" cy="256" r="196" fill="none" stroke="#c9a24e" stroke-width="10" opacity=".35"/><circle cx="256" cy="256" r="150" fill="none" stroke="#c9a24e" stroke-width="10" opacity=".6"/><circle cx="256" cy="256" r="104" fill="none" stroke="#c9a24e" stroke-width="10" opacity=".9"/><rect x="206" y="206" width="100" height="100" rx="6" fill="#0a0a0a" stroke="#c9a24e" stroke-width="6"/><rect x="206" y="234" width="100" height="14" fill="#c9a24e"/></svg><p style="margin-top:12px;color:var(--gold2)">Memuat model 3D Makkah dan Armuzna…</p></div></div>
 <script src="vendor/three.min.js"></script>
 <script src="data.js"></script>
+<script src="audio.js"></script>
 <script src="ui.js"></script>
 <script src="world.js"></script>
 <script src="world2.js"></script>
