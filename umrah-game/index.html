@@ -39,6 +39,22 @@ button{font:inherit;color:inherit;cursor:pointer}
 @keyframes pulse{50%{box-shadow:0 4px 26px rgba(241,211,107,.75)}}
 #joy{position:fixed;left:max(24px,env(safe-area-inset-left));bottom:max(30px,env(safe-area-inset-bottom));width:132px;height:132px;border-radius:50%;border:2px solid rgba(255,255,255,.4);background:rgba(255,255,255,.1);z-index:4;touch-action:none}
 #joy b{position:absolute;left:50%;top:50%;width:58px;height:58px;margin:-29px;border-radius:50%;background:rgba(255,255,255,.55);border:2px solid #fff}
+#spd{position:fixed;right:max(24px,env(safe-area-inset-right));bottom:max(122px,calc(env(safe-area-inset-bottom) + 112px));z-index:4;min-width:74px;height:50px;border-radius:25px;border:2px solid rgba(255,255,255,.45);background:rgba(20,18,12,.7);color:var(--gold2);font-weight:800;font-size:1.15rem;line-height:1.05;padding:4px 10px}
+#spd small{display:block;font-size:.55rem;letter-spacing:.08em;color:var(--mut);font-weight:600}
+#mini{cursor:pointer}
+.dcard{background:var(--card2);border:1px solid var(--line);border-radius:14px;padding:10px 12px;margin:10px 0}
+.dcard.g-atsar,.dcard.g-masyhur{border-style:dashed;border-color:rgba(255,255,255,.3)}
+.dh{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-bottom:2px}
+.gr{font-size:.7rem;padding:1px 8px;border-radius:10px;font-weight:700;color:#10200f}
+.gr-sahih{background:#7bd88f}.gr-hasan{background:#b7d96b}.gr-atsar{background:#e8c26a}.gr-masyhur{background:#e59a8a}
+.btn.play{padding:6px 14px;font-size:.88rem;display:block;margin:6px auto 0}
+.btn.play.on{background:var(--gold2);color:#2a1d02}
+.pst{min-height:1em}
+details.more{margin:12px 0;border:1px dashed rgba(255,255,255,.3);border-radius:12px;padding:6px 10px}
+details.more summary{cursor:pointer;color:var(--gold2);font-weight:600;padding:4px 0}
+.note.warn{border-color:var(--bad);background:rgba(226,104,90,.1)}
+#tabs{display:flex;flex-wrap:wrap;gap:2px;margin-bottom:6px}
+#tabs .chip{font-size:.8rem;padding:4px 9px;margin:2px}
 #run{position:fixed;right:max(24px,env(safe-area-inset-right));bottom:max(36px,env(safe-area-inset-bottom));width:74px;height:74px;border-radius:50%;border:2px solid rgba(255,255,255,.45);background:rgba(241,211,107,.25);z-index:4;font-weight:700;letter-spacing:.04em;font-size:.8rem}
 #run.on{background:rgba(241,211,107,.7);color:#2a1d02}
 #lookpad{position:fixed;inset:0;z-index:2;touch-action:none}
@@ -82,8 +98,10 @@ body.nojoy #joy,body.nojoy #run{display:none}
 .scr h1{margin:6px 0 2px;font-size:1.7rem;color:var(--gold2)}
 .scr p{margin:6px 0}
 .logo{width:76px;height:76px;margin:0 auto;display:block}
-#mapwrap{margin:10px 0}
-#mapwrap svg{display:block;width:auto;max-width:100%;height:min(66vh,770px);margin:0 auto;border:1px solid var(--line);border-radius:14px;touch-action:manipulation}
+#mapwrap{margin:10px 0;position:relative}
+.zc{position:absolute;left:6px;top:6px;display:flex;flex-direction:column;gap:6px}
+.zc button{width:40px;height:40px;border-radius:10px;border:1.5px solid var(--gold);background:rgba(20,18,12,.85);color:var(--gold2);font-size:1.3rem;line-height:1}
+#mapwrap svg{display:block;width:auto;max-width:100%;height:min(66vh,770px);margin:0 auto;border:1px solid var(--line);border-radius:14px;touch-action:none}
 .mq{cursor:pointer}
 .mq circle{fill:var(--gold);stroke:#fff;stroke-width:2}
 .mq.sel circle{fill:#fff;stroke:var(--gold2);stroke-width:4}
@@ -107,12 +125,14 @@ body.nojoy #joy,body.nojoy #run{display:none}
 <div id="arrow" class="hidden"><svg viewBox="0 0 30 30"><path d="M15 3 L25 25 L15 20 L5 25 Z" fill="#f1d36b" stroke="#000" stroke-width="1.5"/></svg><span id="arrTxt"></span></div>
 <div id="btns" class="hidden">
  <button class="rb" id="bSet" aria-label="Pengaturan"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/></svg></button>
+ <button class="rb" id="bDoa" aria-label="Pustaka doa"><svg viewBox="0 0 24 24"><path d="M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2zM4 19V5M8 7h7M8 11h7"/></svg></button>
  <button class="rb" id="bHome" aria-label="Menu tahap"><svg viewBox="0 0 24 24"><path d="M3 11l9-8 9 8M5 10v10h5v-6h4v6h5V10"/></svg></button>
  <button class="rb" id="bCam" aria-label="Ganti kamera"><svg viewBox="0 0 24 24"><rect x="2" y="7" width="14" height="10" rx="2"/><path d="M16 11l6-3v8l-6-3"/></svg></button>
  <button class="rb" id="bFull" aria-label="Layar penuh"><svg viewBox="0 0 24 24"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></svg></button>
  <canvas id="mini" width="264" height="264"></canvas>
 </div>
 <button id="action" class="hidden"></button>
+<button id="spd" class="hidden">×1</button>
 <div id="joy" class="hidden"><b></b></div>
 <button id="run" class="hidden">LARI</button>
 <div id="toast"></div>
@@ -122,6 +142,7 @@ body.nojoy #joy,body.nojoy #run{display:none}
 <div id="load"><div><svg class="logo" viewBox="0 0 512 512"><rect width="512" height="512" rx="112" fill="#16140f"/><circle cx="256" cy="256" r="196" fill="none" stroke="#c9a24e" stroke-width="10" opacity=".35"/><circle cx="256" cy="256" r="150" fill="none" stroke="#c9a24e" stroke-width="10" opacity=".6"/><circle cx="256" cy="256" r="104" fill="none" stroke="#c9a24e" stroke-width="10" opacity=".9"/><rect x="206" y="206" width="100" height="100" rx="6" fill="#0a0a0a" stroke="#c9a24e" stroke-width="6"/><rect x="206" y="234" width="100" height="14" fill="#c9a24e"/></svg><p style="margin-top:12px;color:var(--gold2)">Memuat model 3D…</p></div></div>
 <script src="vendor/three.min.js"></script>
 <script src="data.js"></script>
+<script src="audio.js"></script>
 <script src="world.js"></script>
 <script src="game.js"></script>
 </body>
