@@ -70,9 +70,23 @@ window.HG = (function () {
 
   /* ---------- UI dasar ---------- */
   function toast(html, ms) { const d = el('div', '', html); $('toast').appendChild(d); while ($('toast').children.length > 3) $('toast').firstChild.remove(); setTimeout(() => d.remove(), ms || 3800); }
-  function speak(text) {
-    if (!S.speech || !('speechSynthesis' in window)) return;
-    try { speechSynthesis.cancel(); const u = new SpeechSynthesisUtterance(text); u.lang = 'ar-SA'; u.rate = .8; const v = speechSynthesis.getVoices().find(v => /^ar/i.test(v.lang)); if (v) u.voice = v; speechSynthesis.speak(u); } catch (e) { }
+  /* ---------- Suara: rekaman ayat (online) → suara Arab perangkat → latin ---------- */
+  const doaByAr = {}; Object.values(D.DOA).forEach(d => { doaByAr[d.ar] = d; });
+  const MODE_MSG = { quran: 'Rekaman bacaan: Mishary Alafasy (EveryAyah, perlu internet).', ar: 'Suara Arab perangkat Anda (sintesis, bukan qari/tajwid sempurna).', latin: 'Perangkat tidak punya suara Arab: teks latin dibacakan suara lain sebagai bantuan lafal saja.', none: 'Tidak ada suara yang bisa diputar di perangkat ini. Buka Pengaturan → Tes suara.' };
+  async function playItem(it, out) { const m = await AUDIO.play(it); if (m === 'stopped') return m; if (out) out.textContent = MODE_MSG[m] || ''; else if (m !== 'quran' && m !== 'ar') toast(MODE_MSG[m]); return m; }
+  function speak(text) { if (!S.speech) return; playItem(doaByAr[text] || { ar: text, lat: '' }); }
+  AUDIO.on(id => document.querySelectorAll('.btn.play').forEach(b => { const on = id && (b.dataset.doa === id || b.dataset.id === id); b.classList.toggle('on', !!on); b.textContent = on ? '⏹ Berhenti' : (b.dataset.lbl || '▶ Putar bacaan'); }));
+  document.addEventListener('click', e => {
+    const b = e.target.closest && e.target.closest('.btn.play[data-doa]'); if (!b) return;
+    if (b.classList.contains('on')) { AUDIO.stop(); return; }
+    const st = b.nextElementSibling; if (st && st.classList.contains('pst')) st.textContent = 'Memuat suara…';
+    playItem(D.DOA[b.dataset.doa], st && st.classList.contains('pst') ? st : null);
+  });
+  /* putar otomatis semua bacaan pada satu jendela, berurutan (niat → talbiyah → dalil) */
+  async function autoplay(d, veil) {
+    await new Promise(r => setTimeout(r, 450));
+    const ids = [...d.querySelectorAll('.btn.play[data-doa]')].map(b => b.dataset.doa);
+    for (const id of ids) { if (S.modal !== veil || !S.speech) return; const st = d.querySelector(`.btn.play[data-doa="${id}"]`); const r = await playItem(D.DOA[id], st && st.nextElementSibling); if (r === 'stopped') return; await new Promise(r => setTimeout(r, 350)); }
   }
   const doaBlock = id => U.doaBlock(typeof id === 'string' ? D.DOA[id] : id);
   function modal(o) {
@@ -80,12 +94,12 @@ window.HG = (function () {
       const veil = el('div', 'veil'), d = el('div', 'dlg' + (o.wide ? ' wide' : ''));
       d.innerHTML = `<h2>${o.title || ''}</h2>${o.sub ? `<div class="sub">${o.sub}</div>` : ''}${o.html || ''}`;
       const row = el('div', 'row');
-      const close = v => { veil.remove(); if (S.modal === veil) S.modal = null; res(v); };
-      if (o.speak && S.speech && 'speechSynthesis' in window) { const b = el('button', 'btn ghost', '🔊 Dengar'); b.onclick = () => speak(o.speak); row.appendChild(b); }
-      (o.buttons || [{ label: 'Lanjut', value: true, pri: true }]).forEach(b => { const x = el('button', 'btn' + (b.pri ? ' pri' : '') + (b.ghost ? ' ghost' : ''), b.label); x.onclick = () => close(b.value); row.appendChild(x); });
+      const close = v => { AUDIO.stop(); veil.remove(); if (S.modal === veil) S.modal = null; res(v); };
+            (o.buttons || [{ label: 'Lanjut', value: true, pri: true }]).forEach(b => { const x = el('button', 'btn' + (b.pri ? ' pri' : '') + (b.ghost ? ' ghost' : ''), b.label); x.onclick = () => close(b.value); row.appendChild(x); });
       d.appendChild(row); veil.appendChild(d); $('modalHost').appendChild(veil); S.modal = veil;
       if (o.build) o.build(d, close, row);
       d.scrollTop = 0;
+      if (S.speech && !o.noAuto && d.querySelector('.btn.play[data-doa]')) autoplay(d, veil);
     });
   }
   function closeAllUI() { $('modalHost').innerHTML = ''; $('screenHost').innerHTML = ''; S.modal = null; S.screen = null; closeRef(); }
@@ -133,7 +147,7 @@ window.HG = (function () {
   function setChips(g) { $('chips').innerHTML = FASE.map((l, i) => `<i class="${i < g ? 'on' : i === g ? 'cur' : ''}" title="${esc(l)}"></i>`).join(''); }
   function obj(stage, text, sub) { $('stg').textContent = stage; $('obj').textContent = text; $('sub').textContent = sub || ''; }
   function ring(n, max, txt) { const r = $('ring'); if (n === null) { r.classList.add('hidden'); return; } r.classList.remove('hidden'); $('ringN').textContent = n; $('ringArc').style.strokeDashoffset = 119.4 * (1 - Math.min(1, n / max)); $('ringTxt').innerHTML = txt || ''; }
-  function showHud(on) { S.hud = on; ['hud', 'btns'].forEach(i => $(i).classList.toggle('hidden', !on)); $('joy').classList.toggle('hidden', !on || !S.joy); $('run').classList.toggle('hidden', !on || !S.joy); if (!on) { $('action').classList.add('hidden'); $('arrow').classList.add('hidden'); $('wukbar').classList.add('hidden'); } }
+  function showHud(on) { S.hud = on; ['hud', 'btns', 'spd'].forEach(i => $(i).classList.toggle('hidden', !on)); $('joy').classList.toggle('hidden', !on || !S.joy); $('run').classList.toggle('hidden', !on || !S.joy); if (!on) { $('action').classList.add('hidden'); $('arrow').classList.add('hidden'); $('wukbar').classList.add('hidden'); } }
   const fmtClock = h => { h = ((h % 24) + 24) % 24; const hh = Math.floor(h), mm = Math.floor((h - hh) * 60); return String(hh).padStart(2, '0') + ':' + String(mm).padStart(2, '0'); };
   function drawDay() { const h = D.HARI[S.dayId]; $('day').innerHTML = h ? `<b>${esc(h.tgl)}</b><span>${esc(h.nama)}</span><span>🕒 ${fmtClock(S.clock)}</span>` : (S.mode ? `<b>${esc(D.MODE[S.mode].nama)}</b>` : ''); }
   function setDay(id) { S.dayId = id; const h = D.HARI[id]; if (h && h.jam !== undefined) S.clock = h.jam; drawDay(); }
@@ -192,6 +206,11 @@ window.HG = (function () {
     if (k.t >= 1) { k.on = false; wb.classList.add('hidden'); k.done && k.done(); }
   }
 
+  /* ---------- Kecepatan ---------- */
+  function setSpeed(v, quiet) { S.speed = v; persist(); $('spd').innerHTML = '<small>KECEPATAN</small>×' + v; if (!quiet) toast('Kecepatan ×' + v, 1200); }
+  const cycleSpeed = () => setSpeed(S.speed >= 4 ? 1 : S.speed * 2);
+  $('spd').onclick = cycleSpeed;
+
   /* ---------- Layar rujukan (buku doa, rukun, dam, peta, kalender) ---------- */
   const REF_TABS = [['rukun', 'Rukun & Wajib'], ['dam', 'Dam & Fidyah'], ['badal', 'Badal / Wakil'], ['larangan', 'Larangan Ihram'], ['hari', 'Kalender Hari'], ['peta', 'Peta'], ['doa', 'Doa'], ['rujukan', 'Rujukan']];
   function closeRef() { if (S.ref) { S.ref.remove(); S.ref = null; } }
@@ -242,7 +261,7 @@ window.HG = (function () {
     const k = e.key.toLowerCase(); keys[k] = true;
     if (['arrowup', 'arrowdown', 'arrowleft', 'arrowright', ' '].includes(k)) e.preventDefault();
     if (S.modal || S.screen || S.ref) { if (k === 'escape' && S.ref) closeRef(); return; }
-    if (k === 'c') cycleCam(); if (k === ' ' || k === 'enter') doAction(); if (k === 'escape') HG.stageMenu && HG.stageMenu();
+    if (k === 'c') cycleCam(); if (k === 'x') cycleSpeed(); if (k === ' ' || k === 'enter') doAction(); if (k === 'escape') HG.stageMenu && HG.stageMenu();
     if (k === 'f') toggleFull(); if (k === 'b') openRef('doa'); if (k === 'm') openRef('peta'); if (k === 'r') openRef('rukun');
   });
   addEventListener('keyup', e => { keys[e.key.toLowerCase()] = false; });
@@ -295,9 +314,12 @@ window.HG = (function () {
       build(d) {
         const h = d.querySelector('#st');
         const group = (lbl, list, key, fn) => { const w = el('div', '', `<p><b>${lbl}</b></p>`), box = el('div'); const r = () => { box.innerHTML = ''; list.forEach(([v, t]) => { const b = el('button', 'chip' + (S[key] === v ? ' sel' : ''), t); b.onclick = () => { S[key] = v; persist(); fn && fn(v); r(); }; box.appendChild(b); }); }; r(); w.appendChild(box); h.appendChild(w); };
-        group('Kecepatan jalan', [[1, 'Normal'], [2, '×2'], [4, '×4']], 'speed');
+        group('Kecepatan jalan (juga tombol di layar atau X)', [[1, 'Normal ×1'], [2, 'Cepat ×2'], [4, 'Sangat cepat ×4']], 'speed', v => setSpeed(v, true));
         group('Kamera', [['third', 'Orang ketiga'], ['first', 'Orang pertama'], ['top', 'Dari atas']], 'cam', v => setCam(v));
-        group('Suara doa (sintesis suara peramban)', [[true, 'Hidup'], [false, 'Mati']], 'speech');
+        group('Putar otomatis bacaan', [[true, 'Hidup'], [false, 'Mati']], 'speech');
+        const vi = AUDIO.info(), tv = el('div', '', `<p><b>Suara</b></p><div class="src" style="text-align:left">Suara Arab perangkat: <b>${vi.ar ? 'ada (' + esc(vi.arName) + ')' : 'tidak ada'}</b> · mesin suara: ${vi.tts ? 'ada' : 'tidak ada'} · internet: ${vi.online ? 'online' : 'offline'}. Rekaman ayat Al-Qur'an (Mishary Alafasy) memerlukan internet; hadits dan doa lain memakai suara perangkat.</div>`), r1 = el('div', 'row'), pst = el('div', 'src');
+        [['▶ Tes suara Arab', { id: 't1', ar: 'بِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِيمِ', lat: 'Bismillahir rahmanir rahim' }], ['▶ Tes rekaman ayat', { id: 't2', ar: 'بِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِيمِ', lat: 'Bismillahir rahmanir rahim', qur: [[1, 1]] }]].forEach(([lbl, it]) => { const b = el('button', 'btn play', lbl); b.dataset.id = it.id; b.dataset.lbl = lbl; b.onclick = () => { if (b.classList.contains('on')) { AUDIO.stop(); return; } pst.textContent = 'Memutar…'; playItem(it, pst); }; r1.appendChild(b); });
+        tv.append(r1, pst); h.appendChild(tv);
         group('Dengung keramaian', [[true, 'Hidup'], [false, 'Mati']], 'ambient', v => ambient(v));
         group('Joystick layar', [[true, 'Tampil'], [false, 'Sembunyi']], 'joy', () => { document.body.classList.toggle('nojoy', !S.joy); showHud(S.hud); });
         group('Bayangan (matikan bila patah-patah)', [[true, 'Hidup'], [false, 'Mati']], 'shadows', v => { R.shadowMap.enabled = v; Object.values(WORLDS).forEach(w => w.scene.traverse(o => { if (o.material) o.material.needsUpdate = true; })); });
@@ -388,7 +410,7 @@ window.HG = (function () {
           if (th.cum > th.maxCum) th.maxCum = th.cum;
           else if (th.maxCum - th.cum > .8 && tAcc - th.warn > 5) { th.warn = tAcc; toast("Arah terbalik. Thawaf berlawanan arah jarum jam, Ka'bah di kiri."); }
           const rel = ((phi - L.phi0) % (PI * 2) + PI * 2) % (PI * 2), lap = Math.floor(Math.max(0, th.cum) / (PI * 2));
-          th.lm.forEach(m => { const key = lap + m.n; if (!th.seen[key] && th.prevRel < m.rel && rel >= m.rel && rel - th.prevRel < 1) { th.seen[key] = 1; toast(m.n + (m.doa ? `<div class="ar">${D.DOA.rabbana.ar}</div>` : ''), m.doa ? 5200 : 2500); } });
+          th.lm.forEach(m => { const key = lap + m.n; if (!th.seen[key] && th.prevRel < m.rel && rel >= m.rel && rel - th.prevRel < 1) { th.seen[key] = 1; toast(m.n + (m.doa ? `<div class="ar">${D.DOA.rabbana.ar}</div>` : ''), m.doa ? 5200 : 2500); if (m.doa) speak(D.DOA.rabbana.ar); } });
           th.prevRel = rel;
           const laps = Math.min(7, lap);
           if (laps > th.laps) { th.laps = laps; ring(laps, 7, "putaran selesai<br><small>Ka'bah di kiri</small>"); if (laps < 7) { obj(th.stage, `Putaran ${laps + 1} dari 7`, laps < 3 && th.ramal && S.gender === 'pria' ? 'Ramal: langkah cepat-pendek pada putaran 1–3.' : "Jaga Ka'bah di sebelah kiri."); toast(`Putaran ${laps} selesai`, 1800); } else { th.on = false; th.done && th.done(); } }
@@ -425,7 +447,7 @@ window.HG = (function () {
 
   const HG = {
     T, W, D, U, L, S, P, $, el, esc, shuffle, CANCEL, G, wait, store, persist, touchy, cam, R, hw, WORLDS, getWorld, avatar, beacon, marker, world, useScene, place, faceYaw, ensureScene,
-    toast, speak, doaBlock, modal, closeAllUI, fade, screen, quiz, quizPool, quizBin, mini, binItems, setChips, obj, ring, showHud, setDay, setClock, drawDay, fmtClock, goTo, clearTargets, doAction,
+    toast, speak, playItem, setSpeed, cycleSpeed, doaBlock, modal, closeAllUI, fade, screen, quiz, quizPool, quizBin, mini, binItems, setChips, obj, ring, showHud, setDay, setClock, drawDay, fmtClock, goTo, clearTargets, doAction,
     throwPebble, startWukuf, openRef, closeRef, setCam, cycleCam, settings, ambient, frame, hav, newToken() { return ++token; }, getToken() { return token; }, stageMenu: null
   };
   return HG;
